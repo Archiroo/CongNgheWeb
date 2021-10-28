@@ -1,5 +1,5 @@
 <?php
-include('sidebar.php');
+include('header.php');
 ?>
 <div class="main-content">
     <header>

@@ -154,3 +154,48 @@ header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
 .social-icons div img:hover{
     cursor: pointer;
 }
+
+/* 4 ô */
+.main-content main{  
+    margin-top: 6rem;
+    background: #f1f5f9;
+    min-height: 90vh;
+    padding: 1rem 3rem;
+}
+.main-content .dash-title{
+    color: var(--black);
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+.main-content .dash-cards{ 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 3rem; 
+}
+.main-content .card-single{
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+}
+.card-body{ 
+    padding: 1.3rem 1rem;
+    display: flex;
+    align-items: center;
+}
+.card-body span{
+    font-size: 1.5rem;
+    color: #777;
+    padding-right: 1.2rem;
+}
+.card-body h5{
+    color: var(--text-gray);
+    font-size: 1.4rem;
+}
+.card-body h4{
+    color: var(--color-dark);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+.card-footer a{
+    color: var(--main-color);
+}
