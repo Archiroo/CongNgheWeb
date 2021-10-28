@@ -13,72 +13,67 @@ include('search.php');
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th>Team</th>
-                                    <th>Status</th>
-
+                                    <th>Gender</th>
+                                    <th>Birthday</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>App Development</td>
-                                    <td>15 Aug, 2020</td>
-                                    <td>22 Aug, 2020</td>
-                                    <td class="td-team">
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-2">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-3">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
+                                    <td>Nguyễn Minh Đức</td>
+                                    <td>Nam</td>
+                                    <td>20 Sep, 2001</td>
+                                    <td>096 5269082</td>                                
+                                    <td>Ninh Bình</td>
+                                    <td>
+                                        <a href="#">
+                                            Sửa
+                                        </a>
                                     </td>
                                     <td>
-                                        <span class="badge success">Success</span>
+                                        <a href="#">
+                                            Xóa
+                                        </a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>App Development</td>
-                                    <td>15 Aug, 2020</td>
-                                    <td>22 Aug, 2020</td>
-                                    <td class="td-team">
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-2">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-3">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
+                                    <td>Trịnh Hoàng Long</td>
+                                    <td>Nam</td>
+                                    <td>29 Oc, 2001</td>
+                                    <td>096 1234567</td>                                
+                                    <td>Hà Nội</td>
+                                    <td>
+                                        <a href="#">
+                                            Sửa
+                                        </a>
                                     </td>
                                     <td>
-                                        <span class="badge success">Success</span>
+                                        <a href="#">
+                                            Xóa
+                                        </a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>Logo Design</td>
-                                    <td>15 Aug, 2020</td>
-                                    <td>22 Aug, 2020</td>
-                                    <td class="td-team">
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-2">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-3">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
+                                    <td>Hà Việt Dũng</td>
+                                    <td>Nam</td>
+                                    <td>10 Oct, 2001</td>
+                                    <td>096 21424241</td>                                
+                                    <td>Hà Tĩnh</td>
+                                    <td>
+                                        <a href="#">
+                                            Sửa
+                                        </a>
                                     </td>
                                     <td>
-                                        <span class="badge warning">Processing</span>
+                                        <a href="#">
+                                            Xóa
+                                        </a>
                                     </td>
                                 </tr>
                             </tbody>
