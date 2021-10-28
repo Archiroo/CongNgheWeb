@@ -143,7 +143,6 @@ header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
 .search-wrapper input{
     padding: 1rem;
     font-size: 1.8rem;
-    width: 70rem;
 }
 .social-icons div img{
     height: 4rem;
@@ -156,49 +155,175 @@ header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
     cursor: pointer;
 }
 
-/* 4 ô */
-.main-content main{  
-    margin-top: 6rem;
-    background: var(--bg-color);
+/* 4 Ô */
+main {
+    margin-top: 60px;
+    background: #f1f5f9;
     min-height: 90vh;
     padding: 1rem 2rem;
 }
-.main-content .dash-title{
-    color: var(--black);
+
+.dash-title {
+    color: var(--color-dark);
     margin-bottom: 1rem;
     font-size: 3rem;
+    color: var(--black);
+    font-weight: 450;
 }
-.main-content .dash-cards{ 
+
+.dash-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 3rem; 
+    gap: 3rem;
 }
-.main-content .card-single{
+
+.card-single {
     background: #fff;
-    border-radius: 1rem;
+    border-radius: 7px;
     box-shadow: var(--box-shadow);
 }
-.card-body{ 
-    padding: 1.5rem 1.3rem;
+
+.card-body {
+    padding: 1.5rem;
     display: flex;
     align-items: center;
 }
-.card-body span{
+
+.card-body span {
     font-size: 3rem;
     color: #777;
-    padding-right: 1.8rem;
+    padding-right: 1.5rem;
 }
-.card-body div h5{
+
+.card-body h5 {
+    color: var(--black);
     font-weight: 400;
-    color: var(--text-gray);
     font-size: 2rem;
 }
-.card-body div h4{
-    color: var(--color-dark);
+
+.card-body h4 {
+    color: var(--black);
     font-size: 2rem;
 }
-.card-body div a{
+.card-body a {
     color: var(--main-color);
-    font-size: 1.5rem;
     text-decoration: underline;
+    font-size: 1.7rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONVSIVE */
+@media only screen and (max-width: 1200px) {
+    .sidebar {
+        width: 6rem;
+        z-index: 150;
+    }
+
+    .sidebar .sidebar-header h3 span,
+    .sidebar li span:last-child {
+        display: none;
+    }
+
+    .sidebar .sidebar-header,
+    .sidebar li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 6rem;
+    }
+
+    .main-content header {
+        left: 6rem;
+        width: calc(100% - 6rem);
+    }
+    
+    #sidebar-toggle:checked ~ .sidebar {
+        width: 240px;
+    }
+
+    #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+    #sidebar-toggle:checked ~ .sidebar li span:last-child {
+        display: inline;
+    }
+
+    #sidebar-toggle:checked ~ .sidebar .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #sidebar-toggle:checked ~ .sidebar li {
+        display: block;
+    }
+
+    #sidebar-toggle:checked ~ .main-content {
+        margin-left: 6rem;
+    }
+
+    #sidebar-toggle:checked ~ .main-content header {
+        left: 6rem;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .dash-cards {
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    .card-single {
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .dash-cards {
+        grid-template-columns: 100%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+
+

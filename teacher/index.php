@@ -34,18 +34,17 @@ include('search.php');
                         <a href="">View all</a>
                     </div>
                 </div>
-            </div>
+            </div>            
             <div class="card-single">
                 <div class="card-body">
                     <span class="fas fa-folder"></span>
                     <div>
-                        <h5>Project</h5>
-                        <h4>8</h4>
+                        <h5>Projects</h5>
+                        <h4>3</h4>
                         <a href="">View all</a>
                     </div>
                 </div>
-            </div>
-            
+            </div>            
         </div>
 
 <?php
