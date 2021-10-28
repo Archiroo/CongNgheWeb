@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+:root{
+    --blue: #468acf;
+    --drak-blue: #1c78d4;
+    --rose: #ff4e68;
+    --rose-hover: #f33f5a;
+    --black: #444;
+    --border: 0.1rem solid rgba(0,0,0,0.1);
+    --border-hover: 0.1rem solid var(--black);
+    --box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1);
+    --main-color: #027581;
+    --main-color-hover: #1a7f8a;
+    --color-dark: #1D2231;
+    --text-gray: #8390A2;
+    --border: 0.1rem solid rgba(0,0,0,0.1);
+    --border-hover: 0.1rem solid var(--black);
+    --box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    transition: all .3s linear;
+    transition: width none;
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+}
+
+#sidebar-toggle{
+    display: none;
+}
+.sidebar{
+    height: 100%;
+    width: 24rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: var(--main-color);
+    color: #fff;
+    overflow-y: auto;
+    transition: width 500ms;
+}
+.sidebar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+.sidebar .sidebar-header .brand span{
+    font-size: 2rem;
+}
+.sidebar .sidebar-header label{
+    font-size: 2rem;
+}
+.sidebar .sidebar-header label:hover{
+    cursor: pointer;
+}
+.sidebar a{
+    color: #fff;
+    font-size: 1.5rem;
+}
+.sidebar span:last-child{
+    padding-left: 1rem;
+}
+.sidebar .sidebar-menu ul li a span{
+    font-size: 1.7rem;
+}
+.sidebar .sidebar-menu ul li{
+    padding: 2rem;
+}
+.sidebar .sidebar-menu ul li:hover{
+    background-color: var(--main-color-hover);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Dùng để kéo ra kéo vào */
+#sidebar-toggle:checked ~ .sidebar {
+    width: 60px;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+#sidebar-toggle:checked ~ .sidebar li span:last-child {
+    display: none;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header,
+#sidebar-toggle:checked ~ .sidebar li {
+    display: flex;
+    justify-content: center;
+}
+
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: 60px;
+}
+
+#sidebar-toggle:checked ~ .main-content header {
+    left: 60px;
+    width: calc(100% - 60px);
+}
