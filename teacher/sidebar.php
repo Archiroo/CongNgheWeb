@@ -1,5 +1,5 @@
 <?php
-include('header-teacher.php');
+include('header.php');
 ?>
 <input type="checkbox" id="sidebar-toggle">
 <div class="sidebar">

@@ -85,7 +85,7 @@ html{
 
 /* Dùng để kéo ra kéo vào */
 #sidebar-toggle:checked ~ .sidebar {
-    width: 60px;
+    width: 6rem;
 }
 
 #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
@@ -100,10 +100,57 @@ html{
 }
 
 #sidebar-toggle:checked ~ .main-content {
-    margin-left: 60px;
+    margin-left: 6rem;
 }
 
 #sidebar-toggle:checked ~ .main-content header {
-    left: 60px;
-    width: calc(100% - 60px);
+    left: 6rem;
+    width: calc(100% - 6rem);
+}
+
+/* SEARCH */
+.main-content{
+    position: relative;
+    margin-left: 24rem; 
+    transition: margin-left 500ms;
+}
+header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
+    position: fixed;
+    top: 0;
+    left: 24rem; /*độ rộng của menu*/
+    z-index: 100;
+    width: calc(100% - 24rem);
+    background: #fff;
+    padding: 0rem 2rem;
+    height: 6rem; /*chiều cao item là 60px*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    transition: left 500ms;
+}
+.search-wrapper{
+    display: flex;
+    align-items: center;
+}
+.search-wrapper span{
+    font-size: 1.7rem;
+}
+.search-wrapper span:hover{
+    cursor: pointer;
+}
+.search-wrapper input{
+    padding: 1rem;
+    font-size: 1.8rem;
+    width: 70rem;
+}
+.social-icons div img{
+    height: 4rem;
+    width: 4rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+.social-icons div img:hover{
+    cursor: pointer;
 }
