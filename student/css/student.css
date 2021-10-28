@@ -187,6 +187,7 @@ html{
 }
 .card-body h3{
      font-size: 1.5rem;
+     color: #f33f5a;
 }
 .card-footer{
     border-top: 1px groove;

@@ -27,7 +27,7 @@ include('dashboard.php');
             </div>
             <div class="card-subject">
                 <div class="card-body">
-                    <img src="../image/database.png" alt="">
+                    <img src="../image/cnweb.jpg" alt="">
                     <h3>Hệ quản trị CSDL</h3>
                 </div>
                 <div class="card-footer">
@@ -36,7 +36,7 @@ include('dashboard.php');
             </div>
             <div class="card-subject">
                 <div class="card-body">
-                    <img src="../image/ai.jpg" alt="">
+                    <img src="../image/cnweb.jpg" alt="">
                     <h3>Trí tuệ nhân tạo</h3>
                 </div>
                 <div class="card-footer">

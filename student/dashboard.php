@@ -20,18 +20,6 @@
             </li>
             <li>
                 <a href="">
-                    <span class="fas fa-scroll"></span>
-                    <span>Subject</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="ti-clipboard"></span>
-                    <span>Task</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
                     <span class="far fa-comments"></span>
                     <span>Contact</span>
                 </a>
