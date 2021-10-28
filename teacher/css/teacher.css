@@ -119,7 +119,6 @@ html{
     transition: margin-left 500ms;
 }
 header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
-    position: fixed;
     top: 0;
     left: 24rem; /*độ rộng của menu*/
     z-index: 100;

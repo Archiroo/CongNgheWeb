@@ -32,6 +32,7 @@ html{
     font-size: 62.5%;
 }
 
+
 #sidebar-toggle{
     display: none;
 }
@@ -113,7 +114,7 @@ html{
     transition: margin-left 500ms;
 }
 /* form index */
-header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
+.main-content header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
     position: fixed;
     top: 0;
     left: 24rem; /*độ rộng của menu*/
@@ -151,4 +152,49 @@ header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
 }
 .social-icons div img:hover{
     cursor: pointer;
+}
+.main-content main {
+    margin-top: 60px;
+    min-height: 90vh;
+    padding: 1rem 2rem;
+    background: #f1f5f9;
+
+}
+
+.main-content main h2{
+    padding: 3rem;
+    font-size: 2rem;
+}
+
+.dash-cards img{
+    width: 25rem;
+    border-radius: 5px;
+}
+.dash-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-subject{
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: var(--box-shadow);
+    width: 30rem;
+    margin: 1.5rem;
+}
+.card-body{
+    padding: 1.5rem;
+}
+.card-body h3{
+     font-size: 1.5rem;
+}
+.card-footer{
+    border-top: 1px groove;
+    padding: 10px;
+}
+.card-footer a {
+    color: var(--main-color);
+    text-decoration: underline;
+    font-size: 1.7rem;
+    text-decoration: none;
 }
