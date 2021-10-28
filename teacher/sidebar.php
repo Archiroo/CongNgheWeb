@@ -14,49 +14,43 @@ include('header.php');
     <div class="sidebar-menu">
         <ul>
             <li>
-                <a href="">
+                <a href="index.php">
                     <span class="fas fa-home"></span>
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="student.php">
+                    <span class="fas fa-user"></span>
+                    <span>Student</span>
+                </a>
+            </li>
+            <li>
+                <a href="subject.php">
                     <span class="fas fa-scroll"></span>
                     <span>Subject</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="homework.php">
                     <span class="fas fa-paste"></span>
                     <span>Homework</span>
                 </a>
             </li>
             <li>
-                <a href="">
-                    <span class="fas fa-users"></span>
-                    <span>Team</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
+                <a href="project.php">
                     <span class="fas fa-folder"></span>
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="contact.php">
                     <span class="fas fa-comments"></span>
                     <span>Contact</span>
                 </a>
             </li>
             <li>
-                <a href="">
-                    <span class="ti-settings"></span>
-                    <span>Acount</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
+                <a href="../sign-out.php">
                     <span class="fas fa-power-off"></span>
                     <span>Log out</span>
                 </a>

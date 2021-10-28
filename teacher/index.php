@@ -130,7 +130,6 @@ include('search.php');
                 </div>
             </div>
         </section>
-    </main>
 
 <?php
     include('footer.php');

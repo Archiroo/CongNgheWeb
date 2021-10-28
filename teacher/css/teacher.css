@@ -378,9 +378,8 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     .dash-cards {
         grid-template-columns: 100%;
     }
-    .recent{
-        grid-template-columns: 100%;
-    }
+    /* Mai sửa */
+    
 }
 
 @media only screen and (max-width: 450px) {
