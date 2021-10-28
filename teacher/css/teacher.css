@@ -11,11 +11,14 @@
     --main-color: #027581;
     --main-color-hover: #1a7f8a;
     --color-dark: #1D2231;
-    --text-gray: #8390A2;
+    --text-gray: #8894a5;
     --border: 0.1rem solid rgba(0,0,0,0.1);
     --border-hover: 0.1rem solid var(--black);
     --box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1);
     --bg-color: #f1f5f9;
+    --text: #555;
+    --success: #DEF7EC;
+    --processing: #F0F6B2;
 }
 *{
     font-family: 'Poppins', sans-serif;
@@ -202,7 +205,7 @@ main {
 }
 
 .card-body h4 {
-    color: var(--black);
+    color: var(--text);
     font-size: 2rem;
 }
 .card-body a {
@@ -210,6 +213,10 @@ main {
     text-decoration: underline;
     font-size: 1.7rem;
 }
+
+
+
+
 
 
 
@@ -310,10 +317,21 @@ main {
     .card-single {
         margin-bottom: 1rem;
     }
+    
+    .activity-grid {
+        display: block;
+    }
+    
+    .summary {
+        margin-top: 1.5rem;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     .dash-cards {
+        grid-template-columns: 100%;
+    }
+    .recent{
         grid-template-columns: 100%;
     }
 }
