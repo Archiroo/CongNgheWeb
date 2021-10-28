@@ -15,7 +15,7 @@ include('header.php');
         <ul>
             <li>
                 <a href="">
-                    <span class="ti-home"></span>
+                    <span class="fas fa-home"></span>
                     <span>Home</span>
                 </a>
             </li>
@@ -27,25 +27,25 @@ include('header.php');
             </li>
             <li>
                 <a href="">
-                    <span class="ti-clipboard"></span>
+                    <span class="fas fa-paste"></span>
                     <span>Homework</span>
                 </a>
             </li>
             <li>
                 <a href="">
-                    <span class="far fa-user"></span>
+                    <span class="fas fa-users"></span>
                     <span>Team</span>
                 </a>
             </li>
             <li>
                 <a href="">
-                    <span class="ti-folder"></span>
+                    <span class="fas fa-folder"></span>
                     <span>Projects</span>
                 </a>
             </li>
             <li>
                 <a href="">
-                    <span class="far fa-comments"></span>
+                    <span class="fas fa-comments"></span>
                     <span>Contact</span>
                 </a>
             </li>
@@ -53,6 +53,12 @@ include('header.php');
                 <a href="">
                     <span class="ti-settings"></span>
                     <span>Acount</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="fas fa-power-off"></span>
+                    <span>Log out</span>
                 </a>
             </li>
         </ul>

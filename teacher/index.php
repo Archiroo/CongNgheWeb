@@ -7,7 +7,7 @@ include('search.php');
         <div class="dash-cards">
             <div class="card-single">
                 <div class="card-body">
-                    <span class="ti-briefcase"></span>
+                    <span class="fas fa-user-graduate"></span>
                     <div>
                         <h5>Student</h5>
                         <h4>10</h4>
@@ -17,30 +17,30 @@ include('search.php');
             </div>
             <div class="card-single">
                 <div class="card-body">
-                    <span class="ti-reload"></span>
+                    <span class="fas fa-book-open"></span>
                     <div>
                         <h5>Subject</h5>
-                        <h4>$19,500.45</h4>
+                        <h4>5</h4>
                         <a href="">View all</a>
                     </div>
                 </div>
             </div>
             <div class="card-single">
                 <div class="card-body">
-                    <span class="ti-briefcase"></span>
+                    <span class="fas fa-user-tie"></span>
                     <div>
                         <h5>Teacher</h5>
-                        <h4>10</h4>
+                        <h4>3</h4>
                         <a href="">View all</a>
                     </div>
                 </div>
             </div>
             <div class="card-single">
                 <div class="card-body">
-                    <span class="ti-reload"></span>
+                    <span class="fas fa-folder"></span>
                     <div>
                         <h5>Project</h5>
-                        <h4>$19,500.45</h4>
+                        <h4>8</h4>
                         <a href="">View all</a>
                     </div>
                 </div>
