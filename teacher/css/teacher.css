@@ -217,6 +217,86 @@ main {
 
 
 
+/* TABLE */
+.recent {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.recent .activity-grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 2rem;
+}
+
+.recent .activity-card{
+    background: #fff;
+    border-radius: 1rem;
+}
+
+.recent .activity-grid .activity-card h3 {
+    color: var(--text);
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+.recent .activity-grid .activity-card table{
+    width: 100%;
+    border-collapse: collapse; /*chỉ dữ lại 1 đường viền*/
+}
+
+.recent .activity-grid .activity-card table thead{
+    background: #efefef;
+    text-align: left;
+}
+
+th, td {
+    font-size: 1.7rem;
+    padding: 1rem 2rem;
+    color: var(--text);
+}
+
+td {
+    font-size: 1.5rem;
+}
+
+tbody tr:nth-child(even) { /*xen kẽ*/
+    background: #f9fafc;
+}
+
+.badge {
+    padding: 0.7rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.badge.success {
+    background: var(--success);
+    color: var(--main-color);
+}
+
+.badge.warning {
+    background: var(--processing);
+    color: orange;
+}
+
+.td-team {
+    display: flex;
+    align-items: center;
+}
+
+.td-team .img-1 img,
+.td-team .img-2 img,
+.td-team .img-3 img{
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    margin-left: -15px;
+    border: 3px solid #efefef;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 
 
@@ -231,34 +311,9 @@ main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* RESPONVSIVE */
 @media only screen and (max-width: 1200px) {
     .sidebar {
-        width: 6rem;
+        width: 60px;
         z-index: 150;
     }
 
@@ -274,12 +329,12 @@ main {
     }
 
     .main-content {
-        margin-left: 6rem;
+        margin-left: 60px;
     }
 
     .main-content header {
-        left: 6rem;
-        width: calc(100% - 6rem);
+        left: 60px;
+        width: calc(100% - 60px);
     }
     
     #sidebar-toggle:checked ~ .sidebar {
@@ -301,11 +356,11 @@ main {
     }
 
     #sidebar-toggle:checked ~ .main-content {
-        margin-left: 6rem;
+        margin-left: 60px;
     }
 
     #sidebar-toggle:checked ~ .main-content header {
-        left: 6rem;
+        left: 60px;
     }
 }
 
@@ -316,14 +371,6 @@ main {
     
     .card-single {
         margin-bottom: 1rem;
-    }
-    
-    .activity-grid {
-        display: block;
-    }
-    
-    .summary {
-        margin-top: 1.5rem;
     }
 }
 
@@ -342,6 +389,5 @@ main {
         padding-right: 1rem;
     }
 }
-
 
 

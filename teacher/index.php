@@ -71,13 +71,13 @@ include('search.php');
                                     <td>22 Aug, 2020</td>
                                     <td class="td-team">
                                         <div class="img-1">
-                                            
+                                            <img src="../image/user_1.jpg" alt="">
                                         </div>
                                         <div class="img-2">
-                                            
+                                            <img src="../image/user_1.jpg" alt="">
                                         </div>
                                         <div class="img-3">
-                                            
+                                            <img src="../image/user_1.jpg" alt="">
                                         </div>
                                     </td>
                                     <td>
@@ -90,9 +90,15 @@ include('search.php');
                                     <td>15 Aug, 2020</td>
                                     <td>22 Aug, 2020</td>
                                     <td class="td-team">
-                                        <div class="img-1"></div>
-                                        <div class="img-2"></div>
-                                        <div class="img-3"></div>
+                                        <div class="img-1">
+                                            <img src="../image/user_1.jpg" alt="">
+                                        </div>
+                                        <div class="img-2">
+                                            <img src="../image/user_1.jpg" alt="">
+                                        </div>
+                                        <div class="img-3">
+                                            <img src="../image/user_1.jpg" alt="">
+                                        </div>
                                     </td>
                                     <td>
                                         <span class="badge success">Success</span>
@@ -104,9 +110,15 @@ include('search.php');
                                     <td>15 Aug, 2020</td>
                                     <td>22 Aug, 2020</td>
                                     <td class="td-team">
-                                        <div class="img-1"></div>
-                                        <div class="img-2"></div>
-                                        <div class="img-3"></div>
+                                        <div class="img-1">
+                                            <img src="../image/user_1.jpg" alt="">
+                                        </div>
+                                        <div class="img-2">
+                                            <img src="../image/user_1.jpg" alt="">
+                                        </div>
+                                        <div class="img-3">
+                                            <img src="../image/user_1.jpg" alt="">
+                                        </div>
                                     </td>
                                     <td>
                                         <span class="badge warning">Processing</span>
@@ -118,6 +130,7 @@ include('search.php');
                 </div>
             </div>
         </section>
+    </main>
 
 <?php
     include('footer.php');
