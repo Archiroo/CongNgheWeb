@@ -19,6 +19,7 @@
     --text: #555;
     --success: #DEF7EC;
     --processing: #F0F6B2;
+    --btn-add: #30909b;
 }
 *{
     font-family: 'Poppins', sans-serif;
@@ -35,7 +36,34 @@
 html{
     font-size: 62.5%;
 }
-
+.btn{
+    display: inline-block;
+    padding: 0.9rem 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    background-color: var(--btn-add);
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+.btn-add{
+    margin-top: 1.5rem;
+}
+.btn-add:hover{
+    background-color: var(--main-color-hover);
+    color: #fff;
+}
+.update-icon, .delete-icon{
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: var(--main-color);
+    padding: 0 1rem;
+}
+.update-icon:hover{
+    color: var(--btn-add);
+}
+.delete-icon:hover{
+    color: var(--btn-add);
+}
 /*SIDEBAR*/
 #sidebar-toggle{
     display: none;
