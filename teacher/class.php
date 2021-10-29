@@ -1,7 +1,6 @@
 <?php
     include('sidebar.php');
     include('search.php');
-    include('connect_database/connect.php');
 ?>
     <main>
         <a href="connect_database/add_class.php" class="btn btn-add"><i class="fas fa-plus"></i> Add class</a>

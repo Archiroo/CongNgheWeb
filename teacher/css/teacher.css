@@ -314,18 +314,21 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     align-items: center;
 }
 
-.td-team .img-1 img,
-.td-team .img-2 img,
-.td-team .img-3 img{
-    height: 38px;
-    width: 38px;
+.td-team .img-1 img{
+    height: 4.5rem;
+    width: 4.5rem;
     border-radius: 50%;
-    margin-left: -15px;
-    border: 3px solid #efefef;
+    margin-left: -1.5rem;
+    border: 0.3rem solid #efefef;
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+.td-team .img_alone img{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    margin-left: 0;
+}
 /* SUBJECT */
 .box-container{
     display: grid;
@@ -342,7 +345,7 @@ tbody tr:nth-child(even) { /*xen kẽ*/
 .box-container .box .box-image img{
     height: 18rem;
     width: 100%;
-    border: 3px solid #efefef;
+    border: 0.3rem solid #efefef;
     background-size: cover;
     background-repeat: no-repeat;
     border: none;

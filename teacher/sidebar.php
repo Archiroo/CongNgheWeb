@@ -1,5 +1,6 @@
 <?php
-include('header.php');
+    include('header.php');
+    include('connect_database/connect.php');
 ?>
 <input type="checkbox" id="sidebar-toggle">
 <div class="sidebar">
