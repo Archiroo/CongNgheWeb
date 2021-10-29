@@ -118,14 +118,15 @@ html{
     margin-left: 24rem; 
     transition: margin-left 500ms;
 }
-header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
+header{
+    position: fixed;
     top: 0;
     left: 24rem; /*độ rộng của menu*/
     z-index: 100;
     width: calc(100% - 24rem);
     background: #fff;
     padding: 0rem 2rem;
-    height: 6rem; /*chiều cao item là 60px*/
+    height: 6rem; /*chiều cao item là 6rem*/
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -159,7 +160,7 @@ header{ /*kính tìm kiếm, textbox,chuông, tin nhắn*/
 
 /* 4 Ô */
 main {
-    margin-top: 60px;
+    margin-top: 6rem;
     background: #f1f5f9;
     min-height: 90vh;
     padding: 1rem 2rem;
@@ -310,9 +311,10 @@ tbody tr:nth-child(even) { /*xen kẽ*/
 
 
 
+/* RESPONVSIVE */
 @media only screen and (max-width: 1200px) {
     .sidebar {
-        width: 60px;
+        width: 5rem;
         z-index: 150;
     }
 
@@ -328,14 +330,14 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     }
 
     .main-content {
-        margin-left: 60px;
+        margin-left: 6rem;
     }
 
     .main-content header {
-        left: 60px;
-        width: calc(100% - 60px);
+        left: 6rem;
+        width: calc(100% - 6rem);
     }
-    
+
     #sidebar-toggle:checked ~ .sidebar {
         width: 240px;
     }
@@ -349,17 +351,17 @@ tbody tr:nth-child(even) { /*xen kẽ*/
         display: flex;
         justify-content: space-between;
     }
-    
+
     #sidebar-toggle:checked ~ .sidebar li {
         display: block;
     }
 
     #sidebar-toggle:checked ~ .main-content {
-        margin-left: 60px;
+        margin-left: 6rem;
     }
 
     #sidebar-toggle:checked ~ .main-content header {
-        left: 60px;
+        left: 6rem;
     }
 }
 
@@ -367,25 +369,11 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     .dash-cards {
         grid-template-columns: repeat(2,1fr);
     }
-    
     .card-single {
         margin-bottom: 1rem;
     }
 }
 
-@media only screen and (max-width: 600px) {
-    .dash-cards {
-        grid-template-columns: 100%;
-    }
-    /* Mai sửa */
-    
-}
 
-@media only screen and (max-width: 450px) {
-    main {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
 
 

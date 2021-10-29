@@ -11,7 +11,9 @@ include('search.php');
                     <div>
                         <h5>Student</h5>
                         <h4>10</h4>
-                        <a href="">View all</a>
+                        <a href="student.php">
+                            View all
+                        </a>
                     </div>
                 </div>
             </div>
@@ -21,7 +23,9 @@ include('search.php');
                     <div>
                         <h5>Subject</h5>
                         <h4>5</h4>
-                        <a href="">View all</a>
+                        <a href="subject.php">
+                            View all
+                        </a>
                     </div>
                 </div>
             </div>
@@ -31,7 +35,9 @@ include('search.php');
                     <div>
                         <h5>Teacher</h5>
                         <h4>3</h4>
-                        <a href="">View all</a>
+                        <a href="teacher.php">
+                            View all
+                        </a>
                     </div>
                 </div>
             </div>
@@ -41,7 +47,9 @@ include('search.php');
                     <div>
                         <h5>Projects</h5>
                         <h4>3</h4>
-                        <a href="">View all</a>
+                        <a href="project.php">
+                            View all
+                        </a>
                     </div>
                 </div>
             </div>

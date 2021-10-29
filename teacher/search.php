@@ -9,7 +9,7 @@ include('header.php');
         </div>
         <div class="social-icons">
             <div>
-                <img src="../image/user_1.jpg" alt="" width="100px">
+                <img src="../image/user_1.jpg" alt="">
             </div>
         </div>
     </header>
