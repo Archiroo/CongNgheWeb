@@ -12,102 +12,68 @@ include('search.php');
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Class</th> <!--userlevel = 2-->
-                                    <th>Student</th>
+                                    <th>ID student</th> <!--userlevel = 2-->
+                                    <th>Excercise</th>
                                     <th>Finish date</th>
                                     <th>Team</th>
                                     <th>Mark</th>
-                                    <th>Status</th>
+                                    <th>Mark status</th>
                                     <th>Update</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>61PM1</td>
-                                    <td>Nguyễn Minh Đức</td>                          
-                                    <td>29, Oc 2021</td>
-                                    <td class="td-team">
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                    </td>
-                                    <td>9</td>
-                                    <td>
-                                        <span class="badge success">Success</span>
-                                    </td>                                                                                               
-                                    <td>
-                                        <a href="#" class="update-icon">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="delete-icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>61PM1</td>
-                                    <td>Nguyễn Minh Đức</td>                          
-                                    <td>29, Oc 2021</td>
-                                    <td class="td-team">
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                    </td>
-                                    <td>9</td>
-                                    <td>
-                                        <span class="badge warning">Processing</span>
-                                    </td>                                                                                               
-                                    <td>
-                                        <a href="#" class="update-icon">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="delete-icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>61PM1</td>
-                                    <td>Nguyễn Minh Đức</td>                          
-                                    <td>29, Oc 2021</td>
-                                    <td class="td-team">
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                    </td>
-                                    <td>9</td>
-                                    <td>
-                                        <span class="badge success">Success</span>
-                                    </td>                                                                                               
-                                    <td>
-                                        <a href="#" class="update-icon">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="delete-icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                
+                                <!-- CODE PHP -->
+                                <?php
+                                    $sql = "SELECT * FROM tb_mark";
+                                    $res = mysqli_query($conn, $sql);
+                                    if($res == TRUE)
+                                    {
+                                        $count = mysqli_num_rows($res);
+                                        if($count>0)
+                                        {
+                                            while($row = mysqli_fetch_assoc($res))
+                                            {
+                                                $id_home = $row['id_homework'];
+                                                $id_std = $row['id_student'];
+                                                $excercise = $row['excercise'];
+                                                $finish = $row['finish_date'];
+                                                $team = $row['team'];
+                                                $mark = $row['mark'];
+                                                $status = $row['mark_status'];
+                                ?>
+                                                <tr>
+                                                    <td class="status"><?php echo  $id_home;?></td>                                
+                                                    <td class="status"><?php echo $id_std; ?></td>                                 
+                                                    <td><?php echo $excercise; ?></td>                                 
+                                                    <td><?php echo $finish ?></td>                                 
+                                                    <td class="td-team">
+                                                        <div class="img-1 img_alone">
+                                                            <img src="../image/<?php echo $team?>" alt="">
+                                                        </div>
+                                                    </td>                                
+                                                    <td class="status"><?php echo $mark; ?></td>                                                                 
+                                                    <td class="status"><?php echo $status; ?></td>                                                                                                                                
+                                                    <td>
+                                                        <a href="connect_database/update_mark.php?id_home=<?php echo $id_home ?>,id_student=<?php echo $id_home?>" class="update-icon">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="connect_database/delete_mark.php?id_home=<?php echo $id_home ?>,id_student=<?php echo $id_home?>" class="update-icon">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                <?php
+                                            }
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>

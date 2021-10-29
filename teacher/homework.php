@@ -57,7 +57,7 @@ include('search.php');
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="connect_database/delete_homework.php?id_home=?<?php echo $id_home ?>" class="update-icon">
+                                                        <a href="connect_database/delete_homework.php?id_home=<?php echo $id_home ?>" class="update-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>
