@@ -21,7 +21,7 @@ include('dashboard.php');
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                $name = $row['subject_name'];
+                $name = $row['name_sub'];
         ?>
                 <div class="dash-cards">
                     <div class="card-subject">
