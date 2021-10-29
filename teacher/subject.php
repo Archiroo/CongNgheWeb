@@ -12,9 +12,9 @@ include('search.php');
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>ID Teacher</th> <!--userlevel = 2-->
                                     <th>Name</th>
                                     <th>Description</th>
+                                    <th>Image</th>
                                     <th>Update</th>
                                     <th>Delete</th>
                                 </tr>
@@ -22,9 +22,25 @@ include('search.php');
                             <tbody>
                                 <tr>
                                     <td>1</td>
+                                    <td>Công nghệ web</td>
+                                    <td>Thiết kế website</td>                                    
+                                    <td>Thiết kế website abc</td>                                    
+                                    <td>
+                                        <a href="#">
+                                            Sửa
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#">
+                                            Xóa
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td>1</td>
                                     <td>Công nghệ web</td>
                                     <td>Thiết kế website</td>                                    
+                                    <td>Thiết kế website abc</td>                                    
                                     <td>
                                         <a href="#">
                                             Sửa
@@ -37,26 +53,10 @@ include('search.php');
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
-                                    <td>2</td>
-                                    <td>Hệ quản trị cơ sở dữ liệu</td>
-                                    <td></td>                                    
-                                    <td>
-                                        <a href="#">
-                                            Sửa
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#">
-                                            Xóa
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>3</td>
-                                    <td>Hệ điều hành</td>
-                                    <td>Thông tin máy tính</td>                                    
+                                    <td>1</td>
+                                    <td>Công nghệ web</td>
+                                    <td>Thiết kế website</td>                                    
+                                    <td>Thiết kế website abc</td>                                    
                                     <td>
                                         <a href="#">
                                             Sửa

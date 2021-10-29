@@ -12,11 +12,12 @@ include('search.php');
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>ID Teacher</th> <!--userlevel = 2-->
-                                    <th>ID Subject</th>
+                                    <th>Subject</th> <!--userlevel = 2-->
+                                    <th>Class</th>
                                     <th>Name</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
+                                    <th>Home level</th>
                                     <th>Update</th>
                                     <th>Delete</th>
                                 </tr>
@@ -25,10 +26,11 @@ include('search.php');
                                 <tr>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td>1</td>
-                                    <td>Thiết kế giao diện web</td>                                    
+                                    <td>61PM1</td>
+                                    <td>Thiết kế giao diện</td>                                    
                                     <td>29, Oc 2021</td>                                    
                                     <td>29, Oc 2021</td>                                    
+                                    <td>1</td>                                    
                                     <td>
                                         <a href="#">
                                             Sửa
@@ -43,10 +45,11 @@ include('search.php');
                                 <tr>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td>1</td>
-                                    <td>Thiết kế giao diện web</td>                                    
+                                    <td>61PM1</td>
+                                    <td>Thiết kế giao diện</td>                                    
                                     <td>29, Oc 2021</td>                                    
                                     <td>29, Oc 2021</td>                                    
+                                    <td>1</td>                                    
                                     <td>
                                         <a href="#">
                                             Sửa
@@ -61,10 +64,11 @@ include('search.php');
                                 <tr>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td>1</td>
-                                    <td>Thiết kế giao diện web</td>                                    
+                                    <td>61PM1</td>
+                                    <td>Thiết kế giao diện</td>                                    
                                     <td>29, Oc 2021</td>                                    
                                     <td>29, Oc 2021</td>                                    
+                                    <td>1</td>                                    
                                     <td>
                                         <a href="#">
                                             Sửa

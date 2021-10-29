@@ -12,11 +12,12 @@ include('search.php');
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>ID Class</th>
                                     <th>Name</th>
                                     <th>Gender</th>
-                                    <th>Birthday</th>
+                                    <th>Image</th>
+                                    <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Address</th>
                                     <th>Update</th>
                                     <th>Delete</th>
                                 </tr>
@@ -24,11 +25,12 @@ include('search.php');
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Nguyễn Minh Đức</td>
+                                    <td>61PM1</td>
+                                    <td>Nguyễn Văn Tân</td>
                                     <td>Nam</td>
-                                    <td>20 Sep, 2001</td>
-                                    <td>096 5269082</td>                                
-                                    <td>Ninh Bình</td>
+                                    <td></td>
+                                    <td>nvtan@gmail.com</td>                                
+                                    <td>012 2345678</td>
                                     <td>
                                         <a href="#">
                                             Sửa
@@ -41,12 +43,13 @@ include('search.php');
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
-                                    <td>Trịnh Hoàng Long</td>
+                                    <td>1</td>
+                                    <td>61PM1</td>
+                                    <td>Nguyễn Văn Tân</td>
                                     <td>Nam</td>
-                                    <td>29 Oc, 2001</td>
-                                    <td>096 1234567</td>                                
-                                    <td>Hà Nội</td>
+                                    <td></td>
+                                    <td>nvtan@gmail.com</td>                                
+                                    <td>012 2345678</td>
                                     <td>
                                         <a href="#">
                                             Sửa
@@ -59,12 +62,13 @@ include('search.php');
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>
-                                    <td>Hà Việt Dũng</td>
+                                    <td>1</td>
+                                    <td>61PM1</td>
+                                    <td>Nguyễn Văn Tân</td>
                                     <td>Nam</td>
-                                    <td>10 Oct, 2001</td>
-                                    <td>096 21424241</td>                                
-                                    <td>Hà Tĩnh</td>
+                                    <td></td>
+                                    <td>nvtan@gmail.com</td>                                
+                                    <td>012 2345678</td>
                                     <td>
                                         <a href="#">
                                             Sửa
@@ -76,6 +80,7 @@ include('search.php');
                                         </a>
                                     </td>
                                 </tr>
+                                
                             </tbody>
                         </table>
                     </div>
