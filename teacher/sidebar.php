@@ -33,7 +33,7 @@ include('header.php');
             </li>
             <li>
                 <a href="subject.php">
-                    <span class="fas fa-scroll"></span>
+                    <span class="fas fa-folder"></span>
                     <span>Subject</span>
                 </a>
             </li>
@@ -44,9 +44,9 @@ include('header.php');
                 </a>
             </li>
             <li>
-                <a href="project.php">
-                    <span class="fas fa-folder"></span>
-                    <span>Projects</span>
+                <a href="mark.php">
+                    <span class="fas fa-poll"></span>
+                    <span>Mark</span>
                 </a>
             </li>
             <li>
