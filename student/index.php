@@ -1,4 +1,5 @@
 <?php
+include('config.php');
 include('dashboard.php');
 ?>
 <div class="main-content">
@@ -15,35 +16,27 @@ include('dashboard.php');
     </header>
     <main>
         <h2>Overview</h2>
-        <div class="dash-cards">
-            <div class="card-subject">
-                <div class="card-body">
-                    <img src="../image/cnweb.jpg" alt="">
-                    <h3>Công nghệ web</h3>
-                </div>
-                <div class="card-footer">
-                    <a href="">View all</a>
-                </div>
-            </div>
-            <div class="card-subject">
-                <div class="card-body">
-                    <img src="../image/cnweb.jpg" alt="">
-                    <h3>Hệ quản trị CSDL</h3>
-                </div>
-                <div class="card-footer">
-                    <a href="">View all</a>
-                </div>
-            </div>
-            <div class="card-subject">
-                <div class="card-body">
-                    <img src="../image/cnweb.jpg" alt="">
-                    <h3>Trí tuệ nhân tạo</h3>
-                </div>
-                <div class="card-footer">
-                    <a href="">View all</a>
-                </div>
-            </div>
-        </div>
+        <?php
+        $sql = "SELECT * from tb_subject";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $name = $row['subject_name'];
+        ?>
+                <div class="dash-cards">
+                    <div class="card-subject">
+                        <div class="card-body">
+                            <img src="../image/cnweb.jpg" alt="">
+                            <h3><?php echo $name ?></h3>
+                        </div>
+                        <div class="card-footer">
+                            <a href="">View all</a>
+                        </div>
+                    </div>
+            <?php
+            }
+        }
+            ?>
     </main>
 </div>
 <?php
