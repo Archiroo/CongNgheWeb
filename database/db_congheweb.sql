@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 29, 2021 lúc 09:23 AM
+-- Thời gian đã tạo: Th10 29, 2021 lúc 10:03 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -52,7 +52,7 @@ CREATE TABLE `tb_homwork` (
   `id_home` int(11) NOT NULL,
   `id_sub` int(11) NOT NULL,
   `id_class` int(11) NOT NULL,
-  `home_name` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `home_name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `start_date` datetime DEFAULT NULL,
   `end_date` datetime DEFAULT NULL,
   `home_level` tinyint(4) NOT NULL
@@ -63,7 +63,7 @@ CREATE TABLE `tb_homwork` (
 --
 
 INSERT INTO `tb_homwork` (`id_home`, `id_sub`, `id_class`, `home_name`, `start_date`, `end_date`, `home_level`) VALUES
-(1, 1, 1, 'Thiết kế giao diện sử dụng boo', '2021-10-29 13:00:00', '2021-11-03 14:07:14', 1),
+(1, 1, 1, 'Thiết kế giao diện sử dụng boostrap 5\r\n', '2021-10-29 13:00:00', '2021-11-03 14:07:14', 1),
 (2, 1, 3, 'Tạo website bán hàng', '2021-10-29 09:14:30', '2021-11-02 14:14:30', 1),
 (3, 3, 4, 'Bài tập view, trigger', '2021-10-30 14:14:30', '2021-10-31 14:14:30', 0),
 (4, 2, 2, 'Vẽ không gian trạng thái', '2021-10-28 14:00:00', '2021-10-29 14:00:00', 0);
@@ -82,6 +82,15 @@ CREATE TABLE `tb_mark` (
   `mark` float DEFAULT NULL,
   `status` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tb_mark`
+--
+
+INSERT INTO `tb_mark` (`id_home`, `id_student`, `finish_date`, `team`, `mark`, `status`) VALUES
+(1, 1, '2021-10-28 15:00:07', 'user_1.jpg', 9, 1),
+(1, 2, '2021-10-28 15:00:07', 'user_2.jpg', 8.5, 1),
+(4, 3, '2021-10-29 10:02:25', 'user1.jpg', 7, 0);
 
 -- --------------------------------------------------------
 
