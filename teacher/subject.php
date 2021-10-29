@@ -3,6 +3,7 @@ include('sidebar.php');
 include('search.php');
 ?>
     <main>
+        <a href="" class="btn btn-add"><i class="fas fa-plus"></i> Add subject</a>
         <section class="recent">
             <div class="activity-grid">
                 <div class="activity-card">
@@ -26,29 +27,13 @@ include('search.php');
                                     <td>Thiết kế website</td>                                    
                                     <td>Thiết kế website abc</td>                                    
                                     <td>
-                                        <a href="#">
-                                            Sửa
+                                        <a href="#" class="update-icon">
+                                            <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#">
-                                            Xóa
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Công nghệ web</td>
-                                    <td>Thiết kế website</td>                                    
-                                    <td>Thiết kế website abc</td>                                    
-                                    <td>
-                                        <a href="#">
-                                            Sửa
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#">
-                                            Xóa
+                                        <a href="#" class="delete-icon">
+                                            <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -58,13 +43,29 @@ include('search.php');
                                     <td>Thiết kế website</td>                                    
                                     <td>Thiết kế website abc</td>                                    
                                     <td>
-                                        <a href="#">
-                                            Sửa
+                                        <a href="#" class="update-icon">
+                                            <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#">
-                                            Xóa
+                                        <a href="#" class="delete-icon">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Công nghệ web</td>
+                                    <td>Thiết kế website</td>                                    
+                                    <td>Thiết kế website abc</td>                                    
+                                    <td>
+                                        <a href="#" class="update-icon">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="delete-icon">
+                                            <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </td>
                                 </tr>

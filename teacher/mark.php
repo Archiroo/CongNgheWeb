@@ -38,13 +38,13 @@ include('search.php');
                                         <span class="badge success">Success</span>
                                     </td>                                                                                               
                                     <td>
-                                        <a href="#">
-                                            Sửa
+                                        <a href="#" class="update-icon">
+                                            <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#">
-                                            Xóa
+                                        <a href="#" class="delete-icon">
+                                            <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -66,13 +66,13 @@ include('search.php');
                                         <span class="badge warning">Processing</span>
                                     </td>                                                                                               
                                     <td>
-                                        <a href="#">
-                                            Sửa
+                                        <a href="#" class="update-icon">
+                                            <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#">
-                                            Xóa
+                                        <a href="#" class="delete-icon">
+                                            <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -97,13 +97,13 @@ include('search.php');
                                         <span class="badge success">Success</span>
                                     </td>                                                                                               
                                     <td>
-                                        <a href="#">
-                                            Sửa
+                                        <a href="#" class="update-icon">
+                                            <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#">
-                                            Xóa
+                                        <a href="#" class="delete-icon">
+                                            <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </td>
                                 </tr>
