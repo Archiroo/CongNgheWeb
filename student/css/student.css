@@ -158,7 +158,6 @@ html{
     min-height: 90vh;
     padding: 1rem 2rem;
     background: #f1f5f9;
-
 }
 
 .main-content main h2{
@@ -174,13 +173,12 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 2rem;
 }
-.card-subject{
+.card-single{
     background: #fff;
     border-radius: 7px;
     box-shadow: var(--box-shadow);
-    width: 30rem;
-    margin: 1.5rem;
 }
 .card-body{
     padding: 1.5rem;
@@ -199,3 +197,5 @@ html{
     font-size: 1.7rem;
     text-decoration: none;
 }
+
+/* form subject */
