@@ -26,8 +26,8 @@
             </li>
             <li>
                 <a href="">
-                    <span class="ti-settings"></span>
-                    <span>Acount</span>
+                    <span class="fas fa-power-off"></span>
+                    <span>Log out</span>
                 </a>
             </li>
         </ul>
@@ -41,7 +41,7 @@
         </div>
         <div class="social-icons">
             <div>
-                <img src="../image/user.png" alt="" width="100px">
+                <img src="../image/user.png" alt="">
             </div>
         </div>
     </header>
