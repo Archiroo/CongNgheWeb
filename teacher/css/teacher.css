@@ -329,6 +329,9 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     border-radius: 50%;
     margin-left: 0;
 }
+.status{
+    text-align: center;
+}
 /* SUBJECT */
 .box-container{
     display: grid;

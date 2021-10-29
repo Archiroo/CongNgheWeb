@@ -57,7 +57,7 @@ include('search.php');
                                         <div class="img-1">
                                             <img src="../image/user_1.jpg" alt="">
                                         </div>
-                                        <div class="img-2">
+                                        <div class="img-1">
                                             <img src="../image/user_1.jpg" alt="">
                                         </div>
                                     </td>
@@ -85,10 +85,10 @@ include('search.php');
                                         <div class="img-1">
                                             <img src="../image/user_1.jpg" alt="">
                                         </div>
-                                        <div class="img-2">
+                                        <div class="img-1">
                                             <img src="../image/user_1.jpg" alt="">
                                         </div>
-                                        <div class="img-3">
+                                        <div class="img-1">
                                             <img src="../image/user_1.jpg" alt="">
                                         </div>
                                     </td>

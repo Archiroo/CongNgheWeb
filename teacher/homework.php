@@ -3,7 +3,7 @@ include('sidebar.php');
 include('search.php');
 ?>
     <main>
-        <a href="" class="btn btn-add"><i class="fas fa-plus"></i> Add homework</a>
+        <a href="connect_database/add_homework.php" class="btn btn-add"><i class="fas fa-plus"></i> Add homework</a>
         <section class="recent">
             <div class="activity-grid">
                 <div class="activity-card">
@@ -13,74 +13,64 @@ include('search.php');
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Subject</th> <!--userlevel = 2-->
+                                    <th>Subject</th>
                                     <th>Class</th>
                                     <th>Name</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
-                                    <th>Home level</th>
+                                    <th>Level</th>
                                     <th>Update</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>61PM1</td>
-                                    <td>Thiết kế giao diện</td>                                    
-                                    <td>29, Oc 2021</td>                                    
-                                    <td>29, Oc 2021</td>                                    
-                                    <td>1</td>                                    
-                                    <td>
-                                        <a href="#" class="update-icon">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="delete-icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>61PM1</td>
-                                    <td>Thiết kế giao diện</td>                                    
-                                    <td>29, Oc 2021</td>                                    
-                                    <td>29, Oc 2021</td>                                    
-                                    <td>1</td>                                    
-                                    <td>
-                                        <a href="#" class="update-icon">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="delete-icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>61PM1</td>
-                                    <td>Thiết kế giao diện</td>                                    
-                                    <td>29, Oc 2021</td>                                    
-                                    <td>29, Oc 2021</td>                                    
-                                    <td>1</td>                                    
-                                    <td>
-                                        <a href="#" class="update-icon">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="delete-icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                            <tbody><tbody>
+                                <!-- CODE PHP -->
+                                <?php
+                                    $sql = "SELECT * FROM tb_homework";
+                                    $res = mysqli_query($conn, $sql);
+                                    if($res == TRUE)
+                                    {
+                                        $count = mysqli_num_rows($res);
+                                        if($count>0)
+                                        {
+                                            while($row = mysqli_fetch_assoc($res))
+                                            {
+                                                $id_home = $row['id_homework'];
+                                                $id_sub = $row['id_subject'];
+                                                $id_class = $row['id_class'];
+                                                $name = $row['name_homework'];
+                                                $sdate = $row['start_date'];
+                                                $edate = $row['end_date'];
+                                                $home_level = $row['home_level'];
+                                ?>
+                                                <tr>
+                                                    <td><?php echo $id_home; ?></td>                                
+                                                    <td><?php echo $id_sub; ?></td>                                 
+                                                    <td><?php echo $id_class; ?></td>                                 
+                                                    <td><?php echo $name ?></td>                                 
+                                                    <td><?php echo $sdate; ?></td>                                 
+                                                    <td><?php echo $edate; ?></td>                                                                 
+                                                    <td class="status"><?php echo $home_level; ?></td>                                                                 
+                                                    <td>
+                                                        <a href="connect_database/update_homework.php?id_home=<?php echo $id_home ?>" class="update-icon">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="connect_database/delete_homework.php?id_home=?<?php echo $id_home ?>" class="update-icon">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                <?php
+                                            }
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>

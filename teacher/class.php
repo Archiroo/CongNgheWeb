@@ -42,7 +42,7 @@
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="connect_database/delete_class.php?id_class=<?php echo $id_class; ?>" class="delete-icon">
+                                                            <a href="connect_database/delete_class.php?id_class=<?php echo $id_class; ?>" class="delete-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>
