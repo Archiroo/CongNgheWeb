@@ -20,6 +20,12 @@ include('header.php');
                 </a>
             </li>
             <li>
+                <a href="class.php">
+                    <span class="fas fa-house-user"></span>
+                    <span>Class</span>
+                </a>
+            </li>
+            <li>
                 <a href="student.php">
                     <span class="fas fa-user"></span>
                     <span>Student</span>
