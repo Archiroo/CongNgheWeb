@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 29, 2021 lúc 10:03 AM
+-- Thời gian đã tạo: Th10 29, 2021 lúc 01:03 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -77,6 +77,7 @@ INSERT INTO `tb_homwork` (`id_home`, `id_sub`, `id_class`, `home_name`, `start_d
 CREATE TABLE `tb_mark` (
   `id_home` int(11) DEFAULT NULL,
   `id_student` int(11) DEFAULT NULL,
+  `baitap` int(11) NOT NULL,
   `finish_date` datetime DEFAULT NULL,
   `team` char(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mark` float DEFAULT NULL,
@@ -87,10 +88,10 @@ CREATE TABLE `tb_mark` (
 -- Đang đổ dữ liệu cho bảng `tb_mark`
 --
 
-INSERT INTO `tb_mark` (`id_home`, `id_student`, `finish_date`, `team`, `mark`, `status`) VALUES
-(1, 1, '2021-10-28 15:00:07', 'user_1.jpg', 9, 1),
-(1, 2, '2021-10-28 15:00:07', 'user_2.jpg', 8.5, 1),
-(4, 3, '2021-10-29 10:02:25', 'user1.jpg', 7, 0);
+INSERT INTO `tb_mark` (`id_home`, `id_student`, `baitap`, `finish_date`, `team`, `mark`, `status`) VALUES
+(1, 1, 0, '2021-10-28 15:00:07', 'user_1.jpg', 9, 1),
+(1, 2, 0, '2021-10-28 15:00:07', 'user_2.jpg', 8.5, 1),
+(4, 3, 0, '2021-10-29 10:02:25', 'user1.jpg', 7, 0);
 
 -- --------------------------------------------------------
 
@@ -104,17 +105,18 @@ CREATE TABLE `tb_student` (
   `name_student` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `gender` tinyint(4) DEFAULT NULL,
   `image_student` char(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email_student` char(50) COLLATE utf8_unicode_ci DEFAULT NULL
+  `email_student` char(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `phone` char(15) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tb_student`
 --
 
-INSERT INTO `tb_student` (`id_student`, `id_class`, `name_student`, `gender`, `image_student`, `email_student`) VALUES
-(1, 1, 'Nguyễn Văn Tân', 1, 'user_default.jpg', 'nvantan@gmail.com'),
-(2, 2, 'Hồ Hồng Quân', 1, 'user_default.jpg', 'hhongquan@gmail.com'),
-(3, 3, 'Nguyễn Minh Vương', 1, 'user_default.jpg', 'nmvuong@gmail.com');
+INSERT INTO `tb_student` (`id_student`, `id_class`, `name_student`, `gender`, `image_student`, `email_student`, `phone`) VALUES
+(1, 1, 'Nguyễn Văn Tân', 1, 'user_default.jpg', 'nvantan@gmail.com', ''),
+(2, 2, 'Hồ Hồng Quân', 1, 'user_default.jpg', 'hhongquan@gmail.com', ''),
+(3, 3, 'Nguyễn Minh Vương', 1, 'user_default.jpg', 'nmvuong@gmail.com', '');
 
 -- --------------------------------------------------------
 

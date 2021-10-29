@@ -298,8 +298,38 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     background-repeat: no-repeat;
 }
 
-
-
+/* SUBJECT */
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+.box-container .box{
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 2rem;
+    border: var(--border);
+    
+}
+.box-container .box .box-image img{
+    height: 18rem;
+    width: 100%;
+    border: 3px solid #efefef;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 1.5rem; 
+}
+.box-container .box .box-image h3{
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--rose);
+}
+.box-container .box a{
+    color: var(--main-color);
+    text-decoration: underline;
+    font-size: 1.7rem;
+}
 
 
 

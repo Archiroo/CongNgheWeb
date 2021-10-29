@@ -3,59 +3,37 @@ include('sidebar.php');
 include('search.php');
 ?>
     <main>
-        <section class="recent">
-            <div class="activity-grid">
-                <div class="activity-card">
-                    <h3>Recent activity</h3>
-                    <div class="table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Class</th> <!--userlevel = 2-->
-                                    <th>Student</th>
-                                    <th>Finish date</th>
-                                    <th>Team</th>
-                                    <th>Mark</th>
-                                    <th>Status</th>
-                                    <th>Update</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>61PM1</td>
-                                    <td>Nguyễn Minh Đức</td>                          
-                                    <td>29, Oc 2021</td>
-                                    <td class="td-team">
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                    </td>
-                                    <td>9</td>
-                                    <td>
-                                        <span class="badge success">Success</span>
-                                    </td>                                                                                               
-                                    <td>
-                                        <a href="#">
-                                            Sửa
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#">
-                                            Xóa
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <h2 class="dash-title">Overiew</h2>
+        <div class="box-container">
+            <div class="box">
+                <div class="box-image">
+                    <img src="../image/cnweb.jpg" alt="">
+                    <h3>Công nghệ web</h3>
                 </div>
+                <a href="">View all</a>       
             </div>
-        </section>
-    </div>
-
+            <div class="box">
+                <div class="box-image">
+                    <img src="../image/ai.jpg" alt="">
+                    <h3>Trí tuệ nhân tạo</h3>
+                </div>
+                <a href="">View all</a>       
+            </div>
+            <div class="box">
+                <div class="box-image">
+                    <img src="../image/hqtcsdl.jpg" alt="">
+                    <h3>Hệ quản trị cơ sở dữ liệu</h3>
+                </div>
+                <a href="">View all</a>       
+            </div>
+            <div class="box">
+                <div class="box-image">
+                    <img src="../image/hdh.jpg" alt="">
+                    <h3>Hệ điều hành</h3>
+                </div>
+                <a href="">View all</a>       
+            </div>
+        </div>
 <?php
 include('footer.php');
 ?>
