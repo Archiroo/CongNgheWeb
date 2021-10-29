@@ -402,8 +402,18 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     .card-single {
         margin-bottom: 1rem;
     }
+    .box-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .box-container .box .box-image img{
+        height: 15rem;
+    }
 }
-
+@media only screen and (max-width: 450px){
+    .box-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
 
 
 
