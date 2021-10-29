@@ -67,12 +67,12 @@ include('search.php');
                                                     </td>
                                                     <td><?php echo $phone;?></td>
                                                     <td>
-                                                        <a href="#" class="update-icon">
+                                                        <a href="connect_database/update_student.php?id_student=<?php echo $id_student;?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="#" class="delete-icon">
+                                                        <a href="connect_database/delete_student.php?id_student=<?php echo $id_student;?>" class="delete-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>

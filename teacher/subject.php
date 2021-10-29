@@ -3,7 +3,7 @@ include('sidebar.php');
 include('search.php');
 ?>
     <main>
-        <a href="" class="btn btn-add"><i class="fas fa-plus"></i> Add subject</a>
+        <a href="connect_database/add_subject.php" class="btn btn-add"><i class="fas fa-plus"></i> Add subject</a>
         <section class="recent">
             <div class="activity-grid">
                 <div class="activity-card">
@@ -21,55 +21,49 @@ include('search.php');
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Công nghệ web</td>
-                                    <td>Thiết kế website</td>                                    
-                                    <td>Thiết kế website abc</td>                                    
-                                    <td>
-                                        <a href="#" class="update-icon">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="delete-icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Công nghệ web</td>
-                                    <td>Thiết kế website</td>                                    
-                                    <td>Thiết kế website abc</td>                                    
-                                    <td>
-                                        <a href="#" class="update-icon">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="delete-icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Công nghệ web</td>
-                                    <td>Thiết kế website</td>                                    
-                                    <td>Thiết kế website abc</td>                                    
-                                    <td>
-                                        <a href="#" class="update-icon">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="delete-icon">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                
+                                <!-- CODE PHP -->
+                                <?php
+                                    $sql = "SELECT * FROM tb_subject";
+                                    $res = mysqli_query($conn, $sql);
+                                    if($res == TRUE)
+                                    {
+                                        $count = mysqli_num_rows($res);
+                                        if($count>0)
+                                        {
+                                            while($row = mysqli_fetch_assoc($res))
+                                            {
+                                                $id_subject = $row['id_subject'];
+                                                $name_subject = $row['name_subject'];
+                                                $desription = $row['desription'];
+                                                $img_subject = $row['img_subject'];
+                                ?>
+                                                <tr>
+                                                    <td><?php echo $id_subject; ?></td>
+                                                    <td><?php echo $name_subject; ?></td>                                 
+                                                    <td><?php echo $desription ?></td>                                 
+                                                    <td>
+                                                        <img src="../image/<?php echo $img_subject; ?>" alt="" width="100px">
+                                                    </td>                                 
+                                                    <td>
+                                                        <a href="connect_database/update_subject.php?id_subject=<?php echo $id_subject;?>" class="update-icon">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="connect_database/delete_student.php?id_subject=<?php echo $id_subject; ?>" class="delete-icon">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                <?php
+                                            }
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>
