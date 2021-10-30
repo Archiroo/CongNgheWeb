@@ -3,7 +3,7 @@ include('sidebar.php');
 include('search.php');
 ?>
     <main>
-        <a href="connect_database/add_student.php" class="btn btn-add"><i class="fas fa-user-plus"></i> Add student</a>
+        <a href="add_student.php" class="btn btn-add"><i class="fas fa-user-plus"></i> Add student</a>
         <section class="recent">
             <div class="activity-grid">
                 <div class="activity-card">
@@ -67,12 +67,12 @@ include('search.php');
                                                     </td>
                                                     <td><?php echo $phone;?></td>
                                                     <td>
-                                                        <a href="connect_database/update_student.php?id_student=<?php echo $id_student;?>" class="update-icon">
+                                                        <a href="update_student.php?id_student=<?php echo $id_student;?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="connect_database/delete_student.php?id_student=<?php echo $id_student;?>" class="delete-icon">
+                                                        <a href="delete_student.php?id_student=<?php echo $id_student;?>" class="delete-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>

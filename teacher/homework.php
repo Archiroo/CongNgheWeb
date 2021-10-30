@@ -3,7 +3,7 @@ include('sidebar.php');
 include('search.php');
 ?>
     <main>
-        <a href="connect_database/add_homework.php" class="btn btn-add"><i class="fas fa-plus"></i> Add homework</a>
+        <a href="add_homework.php" class="btn btn-add"><i class="fas fa-plus"></i> Add homework</a>
         <section class="recent">
             <div class="activity-grid">
                 <div class="activity-card">
@@ -52,12 +52,12 @@ include('search.php');
                                                     <td><?php echo $edate; ?></td>                                                                 
                                                     <td class="status"><?php echo $home_level; ?></td>                                                                 
                                                     <td>
-                                                        <a href="connect_database/update_homework.php?id_home=<?php echo $id_home ?>" class="update-icon">
+                                                        <a href="update_homework.php?id_home=<?php echo $id_home ?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="connect_database/delete_homework.php?id_home=<?php echo $id_home ?>" class="update-icon">
+                                                        <a href="delete_homework.php?id_home=<?php echo $id_home ?>" class="update-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>

@@ -55,12 +55,12 @@ include('search.php');
                                                     <td class="status"><?php echo $mark; ?></td>                                                                 
                                                     <td class="status"><?php echo $status; ?></td>                                                                                                                                
                                                     <td>
-                                                        <a href="connect_database/update_mark.php?id_home=<?php echo $id_home ?>,id_student=<?php echo $id_home?>" class="update-icon">
+                                                        <a href="update_mark.php?id_home=<?php echo $id_home ?>,id_student=<?php echo $id_home?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="connect_database/delete_mark.php?id_home=<?php echo $id_home ?>,id_student=<?php echo $id_home?>" class="update-icon">
+                                                        <a href="delete_mark.php?id_home=<?php echo $id_home ?>,id_student=<?php echo $id_home?>" class="update-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>

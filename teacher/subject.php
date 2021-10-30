@@ -3,7 +3,7 @@ include('sidebar.php');
 include('search.php');
 ?>
     <main>
-        <a href="connect_database/add_subject.php" class="btn btn-add"><i class="fas fa-plus"></i> Add subject</a>
+        <a href="add_subject.php" class="btn btn-add"><i class="fas fa-plus"></i> Add subject</a>
         <section class="recent">
             <div class="activity-grid">
                 <div class="activity-card">
@@ -45,12 +45,12 @@ include('search.php');
                                                         <img src="../image/<?php echo $img_subject; ?>" alt="" width="100px">
                                                     </td>                                 
                                                     <td>
-                                                        <a href="connect_database/update_subject.php?id_subject=<?php echo $id_subject;?>" class="update-icon">
+                                                        <a href="update_subject.php?id_subject=<?php echo $id_subject;?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="connect_database/delete_student.php?id_subject=<?php echo $id_subject; ?>" class="delete-icon">
+                                                        <a href="delete_student.php?id_subject=<?php echo $id_subject; ?>" class="delete-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>

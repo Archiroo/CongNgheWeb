@@ -3,7 +3,7 @@
     include('search.php');
 ?>
     <main>
-        <a href="connect_database/add_class.php" class="btn btn-add"><i class="fas fa-plus"></i> Add class</a>
+        <a href="add_class.php" class="btn btn-add"><i class="fas fa-plus"></i> Add class</a>
         <div>
             <!-- <h2 style="font-weight: 400; color:green; margin-top: 2rem;">Thêm thành công!</h2> -->
         </div>
@@ -40,12 +40,12 @@
                                                     <td><?php echo $id_class; ?></td>
                                                     <td><?php echo $name_class; ?></td>                                 
                                                     <td>
-                                                        <a href="connect_database/update_class.php?id_class=<?php echo $id_class; ?>" class="update-icon">
+                                                        <a href="update_class.php?id_class=<?php echo $id_class; ?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                            <a href="connect_database/delete_class.php?id_class=<?php echo $id_class; ?>" class="delete-icon">
+                                                            <a href="delete_class.php?id_class=<?php echo $id_class; ?>" class="delete-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>
