@@ -162,7 +162,6 @@ html{
     padding: 0rem 2rem;
     align-items: center;
     justify-content: space-between;
-
     transition: left 500ms;
 }
 
@@ -233,5 +232,39 @@ html{
 
 /* from mark */
 .main-mark{
+    position: fixed;
     margin-top: 60px;
+    z-index: 100;
+    width: calc(100% - 24rem);
+    background: #fff;
+    padding: 0rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+    transition: left 500ms;
+}
+
+.main-mark h1{
+    font-size: 2.5rem;
+    padding: 3rem;
+}
+.table-mark{
+    width:100%;
+    
+}
+.table-mark tr{
+    background-color: #f33f5a;
+    border-style: 1px solid;
+}
+.table-mark th {
+    padding: 15px;
+    float: left;
+    font-size: 1.5rem;
+}
+.table-mark td {
+    columns: 6;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+.test{
+    width: 500px;
 }
