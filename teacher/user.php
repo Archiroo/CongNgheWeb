@@ -2,7 +2,7 @@
     include('sidebar.php');
 ?>
     <main>
-        <a href="add_user.php" class="btn btn-add"><i class="fas fa-plus"></i> Add class</a>
+        <a href="add_user.php" class="btn btn-add"><i class="fas fa-plus"></i> Add user</a>
         <div>
             <!-- <h2 style="font-weight: 400; color:green; margin-top: 2rem;">Thêm thành công!</h2> -->
         </div>
@@ -44,6 +44,7 @@
                                                 $date = $row['regisdate'];
                                                 $level = $row['user_level'];
                                                 $status = $row['user_status'];
+                                                
                                 ?>
                                                 <tr>
                                                     <td><?php echo $user_id; ?></td>
