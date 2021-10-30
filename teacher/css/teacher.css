@@ -100,7 +100,6 @@ html{
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    margin-top: 1rem;
 }
 .sidebar .sidebar-header .brand span{
     font-size: 2rem;
@@ -122,7 +121,7 @@ html{
     font-size: 1.7rem;
 }
 .sidebar .sidebar-menu ul li{
-    padding: 2rem;
+    padding: 1.5rem 2.5rem;
 }
 .sidebar .sidebar-menu ul li:hover{
     background-color: var(--main-color-hover);
@@ -347,21 +346,25 @@ tbody tr:nth-child(even) { /*xen kẽ*/
 .status{
     text-align: center;
 }
-/* SUBJECT */
+
+/* SUBJECT CONTACT */
 .box-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
 }
 .box-container .box{
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
     background-color: #fff;
     border-radius: 2rem;
     border: var(--border);
     
 }
+.box-container .box:hover{
+    cursor: pointer;
+}
 .box-container .box .box-image img{
-    height: 18rem;
+    height: 13rem;
     width: 100%;
     border: 0.3rem solid #efefef;
     background-size: cover;
@@ -369,15 +372,13 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     border: none;
     border-radius: 1.5rem; 
 }
-.box-container .box .box-image h3{
-    font-size: 1.7rem;
-    font-weight: 400;
-    color: var(--rose);
-}
 .box-container .box a{
     color: var(--main-color);
+    font-size: 1.5rem;
+    color: var(--rose);
+}
+.box-container .box a:hover{
     text-decoration: underline;
-    font-size: 1.7rem;
 }
 
 /* FORM THÊM */

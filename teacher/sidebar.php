@@ -27,8 +27,14 @@
                 </a>
             </li>
             <li>
-                <a href="student.php">
+                <a href="user.php">
                     <span class="fas fa-user"></span>
+                    <span>User</span>
+                </a>
+            </li>
+            <li>
+                <a href="student.php">
+                    <span class="fas fa-user-friends"></span>
                     <span>Student</span>
                 </a>
             </li>

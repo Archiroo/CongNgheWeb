@@ -23,9 +23,10 @@ include('sidebar.php');
                             <div class="box">
                                 <div class="box-image">
                                     <img src="../image/<?php echo $img_subject; ?>" alt="">
-                                    <h3><?php echo $name_subject; ?></h3>
+                                    <a href="comment.php?id_subject=<?php echo $id_subject;?>">
+                                        <?php echo $name_subject; ?>
+                                    </a>
                                 </div>
-                                <a href="connect_database/contact.php?id_subject=<?php echo $id_subject;?>">View all</a>       
                             </div>
             <?php
                         }
