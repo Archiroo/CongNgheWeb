@@ -20,20 +20,23 @@
 ?>
 <!-- CODE THÊM -->
 <?php
-    // btn add
+    // CODE PHP
     if(isset($_POST['submit_add'])){
-        $id_class = $_POST['class_id'];
-        $name_class = $_POST['class_name'];
+        $class_id = $_POST['class_id'];
+        $class_name = $_POST['class_name'];
 
         $sql = "INSERT INTO tb_class(id_class, name_class)
-                VALUES('$id_class', '$name_class')";
-        $result = mysqli_query($conn,$sql);
+                VALUES('$class_id', '$class_name')";
+
+        $res = mysqli_query($conn, $sql);
+
         if($res>0){
             header("Location:class.php");
         }
-        else
-        {
+        else{
             header("Location:add_class.php");
         }
+        mysqli_close($conn);
+
     }
 ?>
