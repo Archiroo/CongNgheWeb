@@ -68,14 +68,17 @@ html{
 .btn-add-connect{
     margin-top: 0;
     padding: 0.9rem 2.5rem;
+    margin-right: 3rem;
 }
-.btn-add-connect:last-child{
+.btn-cancel{
+    margin-top: 0;
+    padding: 0.9rem 2.5rem;
     background-color: var(--cancel);
-    margin-left: 3rem;
 }
-.btn-add-connect:last-child:hover{
+.btn-cancel:hover{
     background-color: var(--cancel-hover);
 }
+
 /*SIDEBAR*/
 #sidebar-toggle{
     display: none;

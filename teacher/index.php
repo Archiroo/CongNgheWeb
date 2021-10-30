@@ -1,6 +1,5 @@
 <?php
 include('sidebar.php');
-include('search.php');
 ?>
     <main>
         <h2 class="dash-title">Overiew</h2>

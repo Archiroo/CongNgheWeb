@@ -1,6 +1,5 @@
 <?php
 include('sidebar.php');
-include('search.php');
 ?>
     <main>
         <a href="add_student.php" class="btn btn-add"><i class="fas fa-user-plus"></i> Add student</a>

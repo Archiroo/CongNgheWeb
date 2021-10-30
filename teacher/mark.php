@@ -1,6 +1,5 @@
 <?php
 include('sidebar.php');
-include('search.php');
 ?>
     <main>
         <section class="recent">

@@ -1,6 +1,5 @@
 <?php
 include('sidebar.php');
-include('search.php');
 ?>
     <main>
         <a href="add_subject.php" class="btn btn-add"><i class="fas fa-plus"></i> Add subject</a>

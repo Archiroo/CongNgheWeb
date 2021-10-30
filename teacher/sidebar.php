@@ -1,6 +1,6 @@
 <?php
-    include('header.php');
     include('connect_database/connect.php');
+    include('header.php');
 ?>
 <input type="checkbox" id="sidebar-toggle">
 <div class="sidebar">
@@ -65,4 +65,17 @@
         </ul>
     </div>
 </div>
+<!-- SEARCH -->
+<div class="main-content">
+    <header>
+        <div class="search-wrapper">
+            <span class="ti-search"></span>
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="social-icons">
+            <div>
+                <img src="../image/user_1.jpg" alt="">
+            </div>
+        </div>
+    </header>
 
