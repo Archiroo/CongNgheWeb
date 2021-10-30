@@ -397,6 +397,9 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     background: #fff;
     border: var(--border);
 }
+.register .form-group .read:hover{
+    cursor: pointer;
+}
 select{
     font-size: 1.6rem;
     padding: 0.5rem;
