@@ -16,41 +16,37 @@ include('dashboard.php');
         }
     }
     ?>
-    <h1 class="subject-name"><?php echo $name_subject;?></h1>
-    
+    <h1 class="subject-name"><?php echo $name_subject; ?></h1>
+
     <?php
-        $sql2 
+    $sql2 = "SELECT * from tb_homework where id_subject = '$id_subject'";
+    $res2 = mysqli_query($conn, $sql2);
+    if (mysqli_num_rows($res2) > 0) {
+        while ($row2 = mysqli_fetch_assoc($res2)) {
+            $id_homework = $row2['id_homework'];
+            $name_homework = $row2['name_homework'];
+            $start_date = $row2['start_date'];
+            $end_date = $row2['end_date']
     ?>
-    <div class="homework-name">
-        <div class="body">
-            <a href="">
-                <h2 id="title">title</h2>
-            </a>
-            <div class="date">
-                <h3>Opened:</h3>
-                <h3>date</h3>
+            <div class="homework-name">
+                <div class="body">
+                    <a href="<?php echo SITEURL;?>/mark.php?id_homework=<?php echo $id_homework;?>">
+                        <h2 id="title"><?php echo $name_homework?></h2>
+                    </a>
+                    <div class="date">
+                        <h3>Opened:</h3>
+                        <h3><?php echo $start_date;?></h3>
+                    </div>
+                    <div class="date">
+                        <h3>Due:</h3>
+                        <h3><?php echo $end_date;?></h3>
+                    </div>
+                </div>
             </div>
-            <div class="date">
-                <h3>Due:</h3>
-                <h3>date</h3>
-            </div>
-        </div>
-    </div>
-    <div class="homework-name">
-        <div class="body">
-            <a href="">
-                <h2 id="title">title</h2>
-            </a>
-            <div class="date">
-                <h3>Opened:</h3>
-                <h3>date</h3>
-            </div>
-            <div class="date">
-                <h3>Due:</h3>
-                <h3>date</h3>
-            </div>
-        </div>
-    </div>
+    <?php
+        }
+    }
+    ?>
 </div>
 <?php
 include('footer.php');
