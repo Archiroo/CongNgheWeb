@@ -154,7 +154,7 @@ html{
     align-items: center; /*căn thẻ p ra giữa*/
     justify-content: center; /*căn ra giữa màn*/
     flex-flow: column; /*văn bản theo chiều dọc*/
-    background:url(../image/bg_index.jpg) no-repeat;
+    background: url(image/bg_index.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -171,7 +171,6 @@ html{
     padding:1rem 0;
     width:70rem;
 }
-/* SEARCH */
 
 /* Form sinh viên*/
 #list{ 
@@ -300,3 +299,4 @@ html{
 .CN-Web h4{
     margin-left: 25px;
 }
+
