@@ -31,7 +31,9 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject'])) {
             <h3 class="date"><?php echo $end_date;?></h3>
         </div>
     </div>
-    
+    <?php
+
+    ?>
     <table class="table-mark">
         <tr>
             <th>Tên sinh viên</th>
@@ -54,6 +56,9 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject'])) {
             <td>Hồ Hồng Quân</td>
         </tr>
     </table>
+    <button><a href="">Nộp bài</a></button>
+    <button><a href="">Sửa bài</a></button>
+    <button><a href="">Xóa bài</a></button>
 </div>
 
 <?php
