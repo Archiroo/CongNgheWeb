@@ -271,5 +271,8 @@ html{
 }
 .date-mark .date{
     margin-left: 0.5rem;
-    color: rgb(170, 169, 169)
+    color: rgb(170, 169, 169);
+}
+.main-mark .box1{
+    margin-bottom: 4rem;
 }

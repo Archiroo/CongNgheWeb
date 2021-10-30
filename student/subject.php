@@ -26,11 +26,11 @@ include('dashboard.php');
             $id_homework = $row2['id_homework'];
             $name_homework = $row2['name_homework'];
             $start_date = $row2['start_date'];
-            $end_date = $row2['end_date']
+            $end_date = $row2['end_date'];
     ?>
             <div class="homework-name">
                 <div class="body">
-                    <a href="<?php echo SITEURL;?>/mark.php?id_homework=<?php echo $id_homework;?>">
+                    <a href="<?php echo SITEURL;?>/mark.php?id_homework=<?php echo $id_homework;?>&id_subject=<?php echo $id_subject;?>">
                         <h2 id="title"><?php echo $name_homework?></h2>
                     </a>
                     <div class="date">
