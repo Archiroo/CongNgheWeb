@@ -1,9 +1,16 @@
 <?php
-    include('./dashboard.php')
+include('./dashboard.php')
 ?>
- <div class="main-mark">
+<div class="main-mark">
     <h1>Bài tập thiết kết giao diện</h1>
-
+    <div class="date-mark">
+        <h3>Opened:</h3>
+        <h3 class="date">date</h3>
+    </div>
+    <div class="date-mark">
+        <h3>Opened:</h3>
+        <h3 class="date">date</h3>
+    </div>
     <table class="table-mark">
         <tr>
             <th>Tên sinh viên</th>
@@ -26,8 +33,8 @@
             <td>Hồ Hồng Quân</td>
         </tr>
     </table>
- </div>
+</div>
 
- <?php
-    include('./footer.php');
- ?>
+<?php
+include('./footer.php');
+?>
