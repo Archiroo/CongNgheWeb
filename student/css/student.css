@@ -216,8 +216,20 @@ html{
     font-size: 20px;
     color: var(--rose);
 }
-.homework-name .body div{
+.homework-name .body .date{
     margin-left: 1rem;
     color: rgb(170, 169, 169);
     display: flex;
+}
+.homework-name .edit {
+    margin-left: 60px;
+}
+.homework-name .edit button{
+    margin: 15px 15px 5px 15px;
+    padding: 5px;
+    background-color: white;
+
+}
+.homework-name .edit button a{
+    color:var(--rose);
 }

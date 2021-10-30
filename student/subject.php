@@ -14,30 +14,38 @@ include('dashboard.php');
     <div class="homework-name">
         <div class="body">
             <h2 id="title">title</h2>
-            <div>
+            <div class="date">
                 <h3>Opened:</h3>
                 <h3>date</h3>
             </div>
-            <div>
+            <div class="date">
                 <h3>Due:</h3>
                 <h3>date</h3>
             </div>
         </div>
-        <a href="">Nộp bài</a>
+        <div class="edit">
+            <button><a href="">Add</a></button>
+            <button><a href="">Update</a></button>
+            <button><a href="">Delete</a></button>
+        </div>
     </div>
     <div class="homework-name">
         <div class="body">
             <h2 id="title">title</h2>
-            <div>
-                <h3>Opened: </h3>
+            <div class="date">
+                <h3>Opened:</h3>
                 <h3>date</h3>
             </div>
-            <div>
-                <h3>Due: </h3>
+            <div class="date">
+                <h3>Due:</h3>
                 <h3>date</h3>
             </div>
         </div>
-        <a href="">Nộp bài</a>
+        <div class="edit">
+            <button><a href="">Add</a></button>
+            <button><a href="">Update</a></button>
+            <button><a href="">Delete</a></button>
+        </div>
     </div>
 </div>
 <?php
