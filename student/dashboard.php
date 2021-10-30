@@ -1,4 +1,5 @@
 <?php
+    include('config.php');
     include('./header.php');
 ?>
 <input type="checkbox" id="sidebar-toggle"> 

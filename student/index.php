@@ -1,5 +1,4 @@
 <?php
-include('config.php');
 include('dashboard.php');
 ?>
 
@@ -21,7 +20,7 @@ include('dashboard.php');
                         <h3><?php echo $name ?></h3>
                     </div>
                     <div class="card-footer">
-                        <a href="<?php echo SITEURL; ?>./subject.php?id_subject=<?php echo $id?>">View all</a>
+                        <a href="<?php echo SITEURL; ?>/subject.php?id_subject=<?php echo $id?>">View all</a>
                     </div>
                 </div>
         <?php

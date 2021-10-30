@@ -202,8 +202,22 @@ html{
 .main-subject{
     margin-top: 60px;
 }
+.main-subject .subject-name{
+    font-size: 35px;
+    padding: 2rem 0 2rem 2rem;
+}
 .homework-name{
     border-top: 1.5px groove;
     border-bottom: 1.5px groove;
-    width: 50%;
+    width: 45%;
+    margin: 2rem 0 2rem 6rem;
 } 
+.homework-name #title{
+    font-size: 20px;
+    color: var(--rose);
+}
+.homework-name .body div{
+    margin-left: 1rem;
+    color: rgb(170, 169, 169);
+    display: flex;
+}
