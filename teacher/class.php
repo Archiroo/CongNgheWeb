@@ -4,6 +4,9 @@
 ?>
     <main>
         <a href="connect_database/add_class.php" class="btn btn-add"><i class="fas fa-plus"></i> Add class</a>
+        <div>
+            <!-- <h2 style="font-weight: 400; color:green; margin-top: 2rem;">Thêm thành công!</h2> -->
+        </div>
         <section class="recent">
             <div class="activity-grid">
                 <div class="activity-card">

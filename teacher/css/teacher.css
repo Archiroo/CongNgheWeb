@@ -2,8 +2,9 @@
 :root{
     --blue: #468acf;
     --drak-blue: #1c78d4;
+    --cancel:  #f75b72;
     --rose: #ff4e68;
-    --rose-hover: #f33f5a;
+    --cancel-hover: #f7697e;
     --black: #444;
     --border: 0.1rem solid rgba(0,0,0,0.1);
     --border-hover: 0.1rem solid var(--black);
@@ -63,6 +64,17 @@ html{
 }
 .delete-icon:hover{
     color: var(--btn-add);
+}
+.btn-add-connect{
+    margin-top: 0;
+    padding: 0.9rem 2.5rem;
+}
+.btn-add-connect:last-child{
+    background-color: var(--cancel);
+    margin-left: 3rem;
+}
+.btn-add-connect:last-child:hover{
+    background-color: var(--cancel-hover);
 }
 /*SIDEBAR*/
 #sidebar-toggle{
@@ -365,8 +377,32 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     font-size: 1.7rem;
 }
 
-
-
+/* FORM THÊM */
+.register .form-group span{
+    font-size: 1.6rem;
+}
+.register .first-span{
+    margin-top: 2rem;
+}
+.register .form-group input{
+    display: block;
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    min-width: 60rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0 2rem 0;
+    background: #fff;
+    border: var(--border);
+}
+select{
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    min-width: 60rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0 2rem 0;
+    background: #fff;
+    border: var(--border);
+}
 
 
 
