@@ -154,10 +154,16 @@ html{
     cursor: pointer;
 }
 .main-content main {
+    position: fixed;
     margin-top: 60px;
-    min-height: 90vh;
-    padding: 1rem 2rem;
-    background: #f1f5f9;
+    z-index: 100;
+    width: calc(100% - 24rem);
+    background: #fff;
+    padding: 0rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: left 500ms;
 }
 
 .main-content main h2{
@@ -166,13 +172,13 @@ html{
 }
 
 .dash-cards img{
-    width: 25rem;
+    width: 23rem;
     border-radius: 5px;
 }
 .dash-cards{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
     margin-left: 2rem;
 }
 .card-single{
@@ -224,12 +230,5 @@ html{
 .homework-name .edit {
     margin-left: 60px;
 }
-.homework-name .edit button{
-    margin: 15px 15px 5px 15px;
-    padding: 5px;
-    background-color: white;
 
-}
-.homework-name .edit button a{
-    color:var(--rose);
-}
+/* from m */
