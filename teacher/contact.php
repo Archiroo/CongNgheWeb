@@ -5,34 +5,37 @@ include('search.php');
     <main>
         <h2 class="dash-title">Overiew</h2>
         <div class="box-container">
-            <div class="box">
-                <div class="box-image">
-                    <img src="../image/cnweb.jpg" alt="">
-                    <h3>Công nghệ web</h3>
-                </div>
-                <a href="">View all</a>       
-            </div>
-            <div class="box">
-                <div class="box-image">
-                    <img src="../image/ai.jpg" alt="">
-                    <h3>Trí tuệ nhân tạo</h3>
-                </div>
-                <a href="">View all</a>       
-            </div>
-            <div class="box">
-                <div class="box-image">
-                    <img src="../image/hqtcsdl.jpg" alt="">
-                    <h3>Hệ quản trị cơ sở dữ liệu</h3>
-                </div>
-                <a href="">View all</a>       
-            </div>
-            <div class="box">
-                <div class="box-image">
-                    <img src="../image/hdh.jpg" alt="">
-                    <h3>Hệ điều hành</h3>
-                </div>
-                <a href="">View all</a>       
-            </div>
+            <!-- CODE PHP -->
+            <?php
+                $sql = "SELECT * FROM tb_subject";
+                $res = mysqli_query($conn, $sql);
+                if($res == TRUE)
+                {
+                    $count = mysqli_num_rows($res);
+                    if($count>0)
+                    {
+                        while($row = mysqli_fetch_assoc($res))
+                        {
+                            $id_subject = $row['id_subject'];
+                            $name_subject = $row['name_subject'];
+                            $desription = $row['desription'];
+                            $img_subject = $row['img_subject'];
+            ?>
+                            <div class="box">
+                                <div class="box-image">
+                                    <img src="../image/<?php echo $img_subject; ?>" alt="">
+                                    <h3><?php echo $name_subject; ?></h3>
+                                </div>
+                                <a href="connect_database/contact.php?id_subject=<?php echo $id_subject;?>">View all</a>       
+                            </div>
+            <?php
+                        }
+                    }
+                    else{
+
+                    }
+                }
+            ?>
         </div>
 <?php
 include('footer.php');
