@@ -5,11 +5,36 @@
         <form action="" method="POST" class="register" enctype="multipart/form-data">
             <div class="form-group first-span">
                 <span>Class</span>
-                <input type="text" class="form-control" name="class">
+                <select name="class" style="display:block;">
+                    <!-- Lấy dữ liệu từ bảng office -->
+                    <?php
+                    $sql = "SELECT * FROM tb_class";
+                    $res = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($res)) {
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            echo '<option value="' . $row['id_class'] . '">' . $row['id_class'] . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <span>User ID</span>
-                <input type="text" class="form-control" name="user_id">
+                <select name="user" style="display:block;">
+                    <!-- Lấy dữ liệu từ bảng office -->
+                    <?php
+                    $sql1 = "SELECT * FROM tb_user";
+                    $res1 = mysqli_query($conn, $sql1);
+
+                    if (mysqli_num_rows($res1)) {
+                        while ($row1 = mysqli_fetch_assoc($res1)) {
+                            echo '<option value="' . $row1['user_id'] . '">' . $row1['user_id'] . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
+                
             </div>
             <div class="form-group">
                 <span>Name</span>
@@ -32,10 +57,9 @@
                 <br>
                 <input type="file" name="image" class="file">
             </div>
-            <input type="submit" name="submit" value="Add class" class="btn btn-add btn-add-connect">
-            <a href="class.php" class="btn btn-add btn-cancel">Cancel</a>
+            <input type="submit" name="submit" value="Add student" class="btn btn-add btn-add-connect">
+            <a href="student.php" class="btn btn-add btn-cancel">Cancel</a>
             <div style="margin-bottom: 5rem;">
-
             </div>
         </form>      
 <?php
@@ -45,26 +69,47 @@
 <?php
     // CODE PHP
     if(isset($_POST['submit'])){
-        $class_id = $_POST['class_id'];
-        $class_name = $_POST['class_name'];
-        if($class_id != "" && $class_name != "")
-        {
-            $sql = "INSERT INTO tb_class(id_class, name_class)
-                    VALUES('$class_id', '$class_name')";
-    
-            $res = mysqli_query($conn, $sql);    
-            if($res >0){
-                header("Location:class.php");
-            }
-            else{
-                header("Location:add_class.php");
-            }
-            mysqli_close($conn);
+        $class = $_POST['class'];
+        $user_id = $_POST['user'];
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        if(isset($_POST['gender'])){
+            $gender = $_POST['gender'];
         }
         else{
-            header("Location:add_class.php");
+            $gender = "0";
         }
+        if(isset($_FILES['image']['name']))
+        {
+            $image_name = $_FILES['image']['name'];
+            if($image_name!="")
+            {
+                $source_path = $_FILES['image']['tmp_name'];
 
+                $dess_path = "../image".$image_name;
 
+                $upload = move_uploaded_file($source_path, $dess_path);
+                if($upload== FALSE)
+                {
+                    die();
+                }
+            }
+        }
+        else
+        {
+            $image_name = "user_default.jpg";
+        }
+         
+        $sql2 = "INSERT INTO tb_student(id_class, user_id, name_student, gender, image_student, phone) 
+        VALUES ('$class', '$user_id','$name', '$gender', '$image_name', '$phone')";
+        $res2 = mysqli_query($conn, $sql2);
+        if($res2 > 0)
+        {
+            header("Location:class.php");
+        }
+        else
+        {
+            header("Location:add_student.php");   
+        }
     }
 ?>
