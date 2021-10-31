@@ -1,4 +1,5 @@
 <?php
+    include('connect_database/connect.php');
     include('sidebar.php');
 ?>
     <main>
