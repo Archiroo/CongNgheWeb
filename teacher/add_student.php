@@ -10,12 +10,7 @@
         $user_id = $_POST['user'];
         $name = $_POST['name'];
         $phone = $_POST['phone'];
-        if(isset($_POST['gender'])){
-            $gender = $_POST['gender'];
-        }
-        else{
-            $gender = "0";
-        }
+        $gender = $_POST['gender'];
         if(isset($_FILES['image']['name']))
         {
             $image_name = $_FILES['image']['name'];
@@ -112,4 +107,46 @@
         </form>      
 <?php
     include('footer.php');
+?>
+<?php
+    // CODE PHP
+    if(isset($_POST['submit'])){
+        $class = $_POST['class'];
+        $user_id = $_POST['user'];
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $gender = $_POST['gender'];
+        if(isset($_FILES['image']['name']))
+        {
+            $image_name = $_FILES['image']['name'];
+            if($image_name!="")
+            {
+                $source_path = $_FILES['image']['tmp_name'];
+
+                $dess_path = "../image/image_database/".$image_name;
+
+                $upload = move_uploaded_file($source_path, $dess_path);
+                if($upload== FALSE)
+                {
+                    die();
+                }
+            }
+        }
+        else
+        {
+            $image_name = "user_default.jpg";
+        }
+         
+        $sql2 = "INSERT INTO tb_student(id_class, user_id, name_student, gender, image_student, phone) 
+        VALUES ('$class', '$user_id','$name', '$gender', '$image_name', '$phone')";
+        $res2 = mysqli_query($conn, $sql2);
+        if($res2 > 0)
+        {
+            header("Location:student.php");
+        }
+        else
+        {
+            header("Location:add_student.php");   
+        }
+    }
 ?>
