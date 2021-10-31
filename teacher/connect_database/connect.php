@@ -9,7 +9,7 @@
     $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
     if($conn)
     {
-        mysqli_query($conn, "SET NAMES 'UTF8'");
+        
     }
     else
     {

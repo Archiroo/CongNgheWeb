@@ -41,28 +41,44 @@
         // Kiểm tra email đã có chưa
         $sql = "SELECT * FROM tb_user WHERE user_name ='$user_name' OR user_email = '$email'";
         $res = mysqli_query($conn, $sql);
-        if(mysqli_num_rows($res) == 0)
+        if(mysqli_num_rows($res) > 0)
         {
-            if($user_pass1 == $user_pass2)
-            {
-                // $code = md5(uniqid(rand(), true));
-                $pass_hash = password_hash($user_pass1, PASSWORD_DEFAULT);
-                $sql2 = "INSERT INTO tb_user(user_name, user_pass, user_email, user_level)
-                    VALUES('$user_name', '$pass_hash', '$email', $level)";
-                $res2 = mysqli_query($conn, $sql2);
-                if($res2==TRUE){
-                    header("Location:user.php");
-                }
-                else{
-                    header("Location:add_user.php");
-                }
-            }
-            else{
-                header("Location:add_user.php");
-            }
+            echo "Email, user đã tồn tại";
+    //         if($user_pass1 == $user_pass2)
+    //         {
+    //             // $code = md5(uniqid(rand(), true));
+    //             $pass_hash = password_hash($user_pass1, PASSWORD_DEFAULT);
+    //             $sql2 = "INSERT INTO tb_user(user_name, user_pass, user_email, user_level)
+    //                 VALUES('$user_name', '$pass_hash', '$email', $level)";
+    //             $res2 = mysqli_query($conn, $sql2);
+    //             if($res2==TRUE){
+    //                 echo "Thành công";
+    //             }
+    //             else{
+    //                 header("Location:add_user.php");
+    //             }
+    //         }
+    //         else{
+    //             header("Location:add_user.php");
+    //         }
         }
         else{
-            header("Location:add_user.php");
+            if($pass1 == $pass2)
+            {
+                $sql2 = "INSERT INTO tb_user(user_name, user_pass, user_email, user_level)
+                     VALUES('$user_name', '$pass1', '$email', $level)";
+                if(mysqli_query($conn, $sql2) > 0)
+                {
+                    header('location:'.SITEURL.'teacher/user.php');
+                }
+                else{
+                    echo "Thêm không thành công";
+                }
+            }
+            else
+            {
+                echo "Mật khẩu không trùng nhau";
+            }
         }
     }
 ?>

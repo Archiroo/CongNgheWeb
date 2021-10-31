@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    include('connect_database/connect.php');
+?>
 
 <head>
     <meta charset="UTF-8">

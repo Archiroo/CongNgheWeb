@@ -8,9 +8,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Education website</title>
 </head>
 <body>
@@ -32,10 +31,12 @@
         </form>
     </div>
     <!-- JQUERY -->
-    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- BOOSTRAP -->
-    <script src="js/bootstrap.bundle.min.js"></script>
     <!-- SCRIPT -->
     <script src="js/myscript.js"></script>
 </body>
 </html>
+<?php
+
+?>
