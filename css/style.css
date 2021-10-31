@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 :root{
-    --yellow: #f8d02d;
-    --dark-yellow: #eebf04;
-    --blue: #468acf;
-    --drak-blue: #1c78d4;
+    --main-color: #027581;
+    --main-color-hover: #1a7f8a;
     --rose: #ff4e68;
     --rose-hover: #f33f5a;
     --black: #444;
@@ -30,24 +28,24 @@ html{
     padding: 0.9rem 1rem;
     border-radius: 0.5rem;
     color: #fff;
-    background-color: var(--yellow);
+    background-color: var(--main-color);
     font-size: 2rem;
     cursor: pointer;
 }
 .btn:hover{
-    background-color: var(--dark-yellow);
+    background-color: var(--main-color-hover);
     color: #fff;
 }
 .btn-index{
     padding:.7rem 3rem;
     color:#fff;
-    background:var(--yellow);
+    background:var(--main-color);
     border-radius: 5rem;
     margin-top: 1rem;
 }
 .btn-index:hover{
     color: #fff;
-    background-color: var(--dark-yellow);
+    background-color: var(--main-color-hover);
 }
 .btn-canel{
     background-color: var(--rose);
@@ -126,7 +124,7 @@ html{
     font-size: 1.5rem;
 }
 .login-form-container form p a{
-    color: var(--yellow);
+    color: var(--main-color);
     text-decoration: underline;
 }
 .login-form-container  #close-login-btn{
@@ -134,7 +132,6 @@ html{
     top: 1.5rem;
     right: 2.5rem;
     font-size: 3rem;
-    color: var(--black);
     cursor: pointer;
 }
 /*SIGN UP FORM*/
@@ -154,7 +151,7 @@ html{
     align-items: center; /*căn thẻ p ra giữa*/
     justify-content: center; /*căn ra giữa màn*/
     flex-flow: column; /*văn bản theo chiều dọc*/
-    background: url(image/bg_index.jpg) no-repeat;
+    background: url(../image/bg_index.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -172,131 +169,4 @@ html{
     width:70rem;
 }
 
-/* Form sinh viên*/
-#list{ 
-    display: none;
-}
-.menu {
-    height: 100%;
-    width: 240px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: #027581;
-    z-index: 100;
-    padding: 10px;
-    overflow-y: auto; /*trục dọc*/
-    transition: width 500ms;
-}
-.menu i{
-    font-size: 20px;
-}
-.menu-header{
-    display: flex; /*sử dụng flexbox và nằm trên cùng 1 hàng*/
-    justify-content: space-between; /*đẩy sang 2 bên*/
-    align-items: center; /*căn giữa*/
-    height: 60px;
-    padding: 0rem 1rem;
-}
-.menu-main{
-    padding: 1rem;
-}
-.menu ul {
-    list-style: none;
-}
-.menu li {
-    margin-bottom: 1.2rem;
-}
-.menu li a {
-    color: #fff;
-    font-size: 15px;
-    text-decoration: none;
-}
-.menu span:last-child{
-    padding-left: 0.6rem;
-}
-
-#list:checked ~ .menu{
-    width: 70px;
-}
-#list:checked ~ .menu .menu-header h3 span,
-#list:checked ~ .menu li span:last-child {
-    display: none;
-}
-#list:checked ~ .menu .menu-header,
-#list:checked ~ .menu li {
-    display: flex;
-    justify-content: center;
-}
-#list:checked ~ .main-content{ 
-    margin-left: 70px; /*phần main kéo theo*/
-}
-#list:checked ~ .main-content .header{
-    left: 60px;  /*Phần thanh tìm kiếm*/
-}
-.main-content{
-    position: relative;
-    margin-left: 240px; /*độ rộng thanh menu là 240px*/
-    transition: margin-left 500ms;
-    width: 100%;
-}
-.main-content .user-imge{
-    width: 30px;
-    border-radius: 100%;
-}
-.header{
-    /* background-color: green; */
-    padding: 15px;
-    width: 100%;
-    height: 90px;
-    border-bottom: thin;
-    background-color: white;
-}
-.main-content .box2 {
-    justify-content: end;
-    display: flex;
-}
-.main-content .box2 i{
-    font-size: 20px;
-    margin: 10px;
-}
-.main-content .icon-search{
-    font-size: 20px;
-    padding: 5px;
-}
-.main-content .search{
-    height: 30px;
-    border-radius: 5px;
-    margin-right: 20px;
-    border-style: groove;
-    width: 300px;
-}
-.button-search{
-    background-color: #fff;
-    color: black;
-    height: 30px;
-    font-size: 10px;
-}
-.subject{
-    padding: 30px;
-}
-.subject-click img {
-    width: 250px;
-    margin-top: 25px;
-    margin-left: 25px;
-}
-.subject-click{
-    text-decoration: none;
-    color: var(--rose);    
-}
-.CN-Web{
-    border: lightgray;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    width: 350px;
-    height: 250px;
-}
-.CN-Web h4{
-    margin-left: 25px;
-}
 
