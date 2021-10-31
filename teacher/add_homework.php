@@ -4,7 +4,7 @@
 ?>
 <!-- CODE THÊM -->
     <main>
-        <form action="" method="POST" class="register">
+        <form action="" method="POST" class="register" enctype="multipart/form-data">
         <?php
             // CODE PHP
             if(isset($_POST['submit'])){
@@ -13,9 +13,24 @@
                 $name_home = $_POST['name_homework'];
                 $endate= $_POST['end_date'];
                 $level = $_POST['level'];
+                if(isset($_FILES['image']['name']))
+                {
+                    $image_name = $_FILES['image']['name'];
+                    if($image_name!="")
+                    {
+                        $source_path = $_FILES['image']['tmp_name'];
 
-                $sql3 = "INSERT INTO tb_homework(id_subject, id_class, name_homework, end_date, home_level) 
-                VALUES ('$id_sub', '$id_class', '$name_home','$endate', '$level')";
+                        $dess_path = "../image/image_database/".$image_name;
+
+                        $upload = move_uploaded_file($source_path, $dess_path);
+                        if($upload== FALSE)
+                        {
+                            die();
+                        }
+                    }
+                }
+                $sql3 = "INSERT INTO tb_homework(id_subject, id_class, name_homework, excercise, end_date, home_level) 
+                VALUES ('$id_sub', '$id_class', '$name_home','$image_name','$endate', '$level')";
                 $res3 = mysqli_query($conn, $sql3);
                 if($res3 > 0)
                 {
@@ -60,6 +75,11 @@
             <div class="form-group">
                 <span>Name</span>
                 <input type="text" class="form-control" name="name_homework">
+            </div>
+            <div class="gender">
+                <span>Image</span>
+                <br>
+                <input type="file" name="image" class="file">
             </div>
             <div class="form-group">
                 <span>End date</span>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 31, 2021 lúc 04:40 PM
+-- Thời gian đã tạo: Th10 31, 2021 lúc 07:13 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -55,7 +55,8 @@ CREATE TABLE `tb_homework` (
   `id_subject` char(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_class` char(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `name_homework` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `start_date` datetime DEFAULT NULL,
+  `excercise` char(100) COLLATE utf8_unicode_ci NOT NULL,
+  `start_date` datetime DEFAULT current_timestamp(),
   `end_date` datetime DEFAULT NULL,
   `home_level` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -64,11 +65,14 @@ CREATE TABLE `tb_homework` (
 -- Đang đổ dữ liệu cho bảng `tb_homework`
 --
 
-INSERT INTO `tb_homework` (`id_homework`, `id_subject`, `id_class`, `name_homework`, `start_date`, `end_date`, `home_level`) VALUES
-(1, 'CSE_485', '61PM1', 'Thiết kế website dùng boostrap', '2021-10-29 22:30:00', '2021-10-31 22:30:00', 0),
-(2, 'CSE_486', '61HTTT', 'Bài tập trigger', '2021-10-29 22:30:00', '2021-10-30 22:30:27', 0),
-(3, 'CSE_492', '61CNTT', 'Vẽ cây theo phương pháp leo đồi', '2021-11-01 22:30:00', '2021-11-03 22:30:00', 0),
-(4, 'CSE_485', '61PM2', 'Thiết kế website du lịch', '2021-10-29 22:30:00', '2021-11-03 22:30:30', 0);
+INSERT INTO `tb_homework` (`id_homework`, `id_subject`, `id_class`, `name_homework`, `excercise`, `start_date`, `end_date`, `home_level`) VALUES
+(1, 'CSE_485', '61PM1', 'Thiết kế website dùng boostrap', '', '2021-10-29 22:30:00', '2021-10-31 22:30:00', 0),
+(2, 'CSE_486', '61HTTT', 'Bài tập trigger', '', '2021-10-29 22:30:00', '2021-10-30 22:30:27', 0),
+(3, 'CSE_492', '61CNTT', 'Vẽ cây theo phương pháp leo đồi', '', '2021-11-01 22:30:00', '2021-11-03 22:30:00', 0),
+(4, 'CSE_485', '61PM2', 'Thiết kế website du lịch', '', '2021-10-29 22:30:00', '2021-11-03 22:30:30', 0),
+(5, 'CSE_486', '61PM1', 'Bài tập về thủ tục', '', '2021-11-01 00:54:07', '2021-11-03 12:00:00', 0),
+(6, 'CSE_486', '61CNTT', 'Vẽ cây tìm kiếm', '', '2021-11-01 01:11:00', '2021-11-02 22:00:00', 0),
+(7, 'CSE_114', '61HTTT', 'Phòng cháy chữa cháy', 'baitap2.pdf', '2021-11-01 01:12:28', '2021-11-05 22:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -80,7 +84,7 @@ CREATE TABLE `tb_mark` (
   `id_homework` int(11) DEFAULT NULL,
   `id_student` int(11) DEFAULT NULL,
   `excercise` char(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `finish_date` datetime DEFAULT NULL,
+  `finish_date` datetime DEFAULT current_timestamp(),
   `team` char(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mark` float DEFAULT 0,
   `mark_status` tinyint(4) DEFAULT 0
@@ -116,9 +120,7 @@ CREATE TABLE `tb_student` (
 
 INSERT INTO `tb_student` (`id_student`, `id_class`, `user_id`, `name_student`, `gender`, `image_student`, `phone`) VALUES
 (1, '61PM1', 2, 'Hồ Hồng Quân', b'1', 'student_1.jpg', '096 2222222'),
-(2, '61HTTT', 4, 'Nguyễn Minh Vương', b'1', 'student_2.jpg', '096 3333333'),
-(3, '61KT', 3, 'Nguyễn Văn Tân', b'1', 'student_3.jpg', '096 4444444'),
-(4, '58KTPM', 5, 'Trịnh Hoàng Long', b'1', 'student_4.jpg', '096 2223324'),
+(2, '61HTTT', 4, 'Nguyễn Minh Vương', b'1', 'student_3.jpg', '096 3333333'),
 (6, '61KT', 17, 'Nguyễn Thu Hằng', b'0', 'student_6.jpg', '096 5269082'),
 (57, '61KT', 16, 'Nguyễn Thị Hương Lan', b'0', 'student_6.jpg', '096 2538322');
 
@@ -140,6 +142,7 @@ CREATE TABLE `tb_subject` (
 --
 
 INSERT INTO `tb_subject` (`id_subject`, `name_subject`, `desription`, `img_subject`) VALUES
+('CSE_114', 'Tin học đại cương', 'Nhập môn lập trình', 'subject_5.jpg'),
 ('CSE_482', 'Hệ điều hành', 'Thông tin máy tính', 'subject_4.jpg'),
 ('CSE_485', 'Công nghệ web', 'Thiết kế website', 'subject_1.jpg'),
 ('CSE_486', 'Hệ quản trị cơ sở dữ liệu', 'Thiết kế database, view, proc', 'subject_2.jpg'),
@@ -228,7 +231,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT cho bảng `tb_homework`
 --
 ALTER TABLE `tb_homework`
-  MODIFY `id_homework` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_homework` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `tb_user`
