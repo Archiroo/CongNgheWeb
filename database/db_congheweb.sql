@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 31, 2021 lúc 10:18 AM
+-- Thời gian đã tạo: Th10 31, 2021 lúc 04:40 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -42,7 +42,7 @@ INSERT INTO `tb_class` (`id_class`, `name_class`) VALUES
 ('61HTTT', '61 Hệ thống thông tin'),
 ('61KT', '61 Kế toán'),
 ('61PM1', '61 Công nghệ phần mềm 1'),
-('61PM2', '61 Công nghệ phần mềm 2');
+('61PM2', '61 Công nghệ phần mềm');
 
 -- --------------------------------------------------------
 
@@ -118,8 +118,9 @@ INSERT INTO `tb_student` (`id_student`, `id_class`, `user_id`, `name_student`, `
 (1, '61PM1', 2, 'Hồ Hồng Quân', b'1', 'student_1.jpg', '096 2222222'),
 (2, '61HTTT', 4, 'Nguyễn Minh Vương', b'1', 'student_2.jpg', '096 3333333'),
 (3, '61KT', 3, 'Nguyễn Văn Tân', b'1', 'student_3.jpg', '096 4444444'),
-(4, '58KTPM', 5, 'Trịnh Hoàng Long', b'1', 'student_5.jpg', '096 2223324'),
-(29, '61PM2', 17, 'Nguyễn Thị Hương', b'1', 'student_6.jpg', '096 5223434');
+(4, '58KTPM', 5, 'Trịnh Hoàng Long', b'1', 'student_4.jpg', '096 2223324'),
+(6, '61KT', 17, 'Nguyễn Thu Hằng', b'0', 'student_6.jpg', '096 5269082'),
+(57, '61KT', 16, 'Nguyễn Thị Hương Lan', b'0', 'student_6.jpg', '096 2538322');
 
 -- --------------------------------------------------------
 
@@ -171,8 +172,8 @@ INSERT INTO `tb_user` (`user_id`, `user_name`, `user_pass`, `user_email`, `regis
 (3, 'nvtan', '12345', 'nvantan@gmail.com', '2021-10-29 22:29:00', 0, 1, ''),
 (4, 'nmvuong', '12345', 'nmvuong@gmail.com', '2021-10-29 22:29:00', 0, 1, ''),
 (5, 'thlong', '12345', 'thlong@mgail.com', '2021-10-29 22:31:00', 0, 1, ''),
-(16, 'aksjka', '123', 'amdn@gmail.com', '2021-10-31 10:21:02', 0, 0, ''),
-(17, 'abcde', '1234', 'acbc@gmail.com', '2021-10-31 10:22:44', 0, 0, '');
+(16, 'nthlan', '123', 'nthlan@gmail.com', '2021-10-31 10:21:02', 0, 1, ''),
+(17, 'tbloan', '12345', 'tbloan@gmail.com', '2021-10-31 10:22:44', 0, 1, '');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -228,12 +229,6 @@ ALTER TABLE `tb_user`
 --
 ALTER TABLE `tb_homework`
   MODIFY `id_homework` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT cho bảng `tb_student`
---
-ALTER TABLE `tb_student`
-  MODIFY `id_student` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `tb_user`
