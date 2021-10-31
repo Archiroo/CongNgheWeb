@@ -20,7 +20,7 @@ include('dashboard.php');
 
     <?php
     //bảng student
-    $sql3="SELECT * from tb_student where user_id = 2";
+    $sql3="SELECT * from tb_student where user_id = 4";
     $res3=mysqli_query($conn,$sql3);
     if ($res3 == TRUE) {
         $count1 = mysqli_num_rows($res3);

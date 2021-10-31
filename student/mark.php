@@ -67,7 +67,7 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
             <td>
                 <?php
                 if (isset($excercise)) { ?>
-                    <a href="../document/<?php echo $excercise; ?>"><?php echo $excercise; ?></a>
+                    <a href="download.php?file=<?php echo $excercise; ?>"><?php echo $excercise; ?></a>
                 <?php
                 }
 
