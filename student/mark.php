@@ -80,8 +80,7 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
                 <?php
                 if (isset($excercise)) {
                     echo 'Đã nộp bài';
-                }
-                else{
+                } else {
                     echo 'Chưa nộp bài';
                 }
                 ?>
@@ -99,16 +98,18 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
             <th>Điểm</th>
             <td>
                 <?php
-                    if (isset($excercise)) {
-                        echo $mark;
-                    }
+                if (isset($excercise)) {
+                    echo $mark;
+                }
                 ?>
             </td>
         </tr>
     </table>
-    <button><a href="">Nộp bài</a></button>
-    <button><a href="">Sửa bài</a></button>
-    <button><a href="">Xóa bài</a></button>
+    <div class="btn">
+        <button><a href="<?php echo SITEURL?>/add-mark.php?id_homework=<?php echo $id_homework;?>&id_subject=<?php echo $id_subject;?>&id_student=<?php echo $id_student;?>">Nộp bài</a></button>
+        <button><a href="<?php echo SITEURL?>/update-mark.php?id_homework=<?php echo $id_homework;?>&id_subject=<?php echo $id_subject;?>&id_student=<?php echo $id_student;?>">Sửa bài</a></button>
+        <button><a href="<?php echo SITEURL?>/delete-mark.php?id_homework=<?php echo $id_homework;?>&id_subject=<?php echo $id_subject;?>&id_student=<?php echo $id_student;?>">Xóa bài</a></button>
+    </div>
 </div>
 
 <?php

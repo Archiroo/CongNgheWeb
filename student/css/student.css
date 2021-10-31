@@ -279,3 +279,16 @@ html{
 .table-mark a{
     color: var(--rose);
 }
+.main-mark button{
+    background-color: white;
+    border: 1px solid;
+    padding: 6px;
+    margin: 10px;
+}
+.main-mark .btn{
+    margin-top: 15px;
+    margin-left: 3rem;   
+}
+.main-mark .btn a{
+    color: var(--rose);
+}
