@@ -49,6 +49,7 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
         </div>
         <div class="btn-add">
             <button type="submit" name="submit">Sửa bài</button>
+            <button><a href="<?php echo SITEURL;?>/mark.php?id_homework=<?php echo $id_homework;?>&id_subject=<?php echo $id_subject;?>&id_student=<?php echo $id_student;?>">Quay lại</a></button>
         </div>
     </form>
 
