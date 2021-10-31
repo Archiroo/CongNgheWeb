@@ -48,7 +48,7 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
             <input type="file" name="file" id="fileToUpload">
         </div>
         <div class="btn-add">
-            <button type="submit" name="submit">Nộp bài</button>
+            <button type="submit" name="submit">Sửa bài</button>
         </div>
     </form>
 
@@ -60,7 +60,7 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
 
             $sql3 = "UPDATE tb_mark set 
                 excercise = '$fileName',
-                date_time = now(),
+                finish_date = now()
                 where id_homework = '$id_homework'
                 and id_student = '$id_student'
             ";
@@ -71,6 +71,7 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
                 echo "sucess";
             }
             else{
+                echo 'fail';
             }
         }
         

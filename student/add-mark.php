@@ -63,7 +63,7 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
 
             if($res3==true){
                 move_uploaded_file($fileTmpName,$path);
-                echo "sucess";
+                echo "sucess";?><?php
             }
             else{
             }
