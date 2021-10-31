@@ -1,5 +1,6 @@
 <?php
-    include('sidebar.php');
+    include('connect_database/connect.php');
+    include('header.php');
 ?>
     <main>
         <form action="" method="POST" class="register">
@@ -69,7 +70,7 @@
                      VALUES('$user_name', '$pass1', '$email', $level)";
                 if(mysqli_query($conn, $sql2) > 0)
                 {
-                    header('location:'.SITEURL.'teacher/user.php');
+                    header("Location:user.php");
                 }
                 else{
                     echo "Thêm không thành công";
