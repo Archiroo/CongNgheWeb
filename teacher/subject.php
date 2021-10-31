@@ -50,7 +50,7 @@
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="delete_student.php?id_subject=<?php echo $id_subject; ?>" class="delete-icon">
+                                                        <a href="delete_subject.php?id_subject=<?php echo $id_subject; ?>" class="delete-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>
