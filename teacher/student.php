@@ -1,5 +1,6 @@
 <?php
-include('sidebar.php');
+    include('connect_database/connect.php');
+    include('header.php');
 ?>
     <main>
         <a href="add_student.php" class="btn btn-add"><i class="fas fa-user-plus"></i> Add student</a>

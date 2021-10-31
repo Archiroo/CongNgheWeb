@@ -1,6 +1,6 @@
 <?php
     include('connect_database/connect.php');
-    include('sidebar.php');
+    include('header.php');
 ?>
     <main>
         <a href="add_class.php" class="btn btn-add"><i class="fas fa-plus"></i> Add class</a>

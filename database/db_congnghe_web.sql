@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 29, 2021 lúc 05:55 PM
+-- Thời gian đã tạo: Th10 31, 2021 lúc 10:18 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -37,6 +37,7 @@ CREATE TABLE `tb_class` (
 --
 
 INSERT INTO `tb_class` (`id_class`, `name_class`) VALUES
+('58KTPM', '58 Kĩ thuật phần mềm'),
 ('61CNTT', '61 Công nghệ thông tin'),
 ('61HTTT', '61 Hệ thống thông tin'),
 ('61KT', '61 Kế toán'),
@@ -55,18 +56,19 @@ CREATE TABLE `tb_homework` (
   `id_class` char(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `name_homework` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `start_date` datetime DEFAULT NULL,
-  `end_date` datetime DEFAULT NULL
+  `end_date` datetime DEFAULT NULL,
+  `home_level` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tb_homework`
 --
 
-INSERT INTO `tb_homework` (`id_homework`, `id_subject`, `id_class`, `name_homework`, `start_date`, `end_date`) VALUES
-(1, 'CSE_485', '61PM1', 'Thiết kế website dùng boostrap', '2021-10-29 22:30:00', '2021-10-31 22:30:00'),
-(2, 'CSE_486', '61HTTT', 'Bài tập trigger', '2021-10-29 22:30:00', '2021-10-30 22:30:27'),
-(3, 'CSE_492', '61CNTT', 'Vẽ cây theo phương pháp leo đồi', '2021-11-01 22:30:00', '2021-11-03 22:30:00'),
-(4, 'CSE_485', '61PM2', 'Thiết kế website du lịch', '2021-10-29 22:30:00', '2021-11-03 22:30:30');
+INSERT INTO `tb_homework` (`id_homework`, `id_subject`, `id_class`, `name_homework`, `start_date`, `end_date`, `home_level`) VALUES
+(1, 'CSE_485', '61PM1', 'Thiết kế website dùng boostrap', '2021-10-29 22:30:00', '2021-10-31 22:30:00', 0),
+(2, 'CSE_486', '61HTTT', 'Bài tập trigger', '2021-10-29 22:30:00', '2021-10-30 22:30:27', 0),
+(3, 'CSE_492', '61CNTT', 'Vẽ cây theo phương pháp leo đồi', '2021-11-01 22:30:00', '2021-11-03 22:30:00', 0),
+(4, 'CSE_485', '61PM2', 'Thiết kế website du lịch', '2021-10-29 22:30:00', '2021-11-03 22:30:30', 0);
 
 -- --------------------------------------------------------
 
@@ -89,8 +91,8 @@ CREATE TABLE `tb_mark` (
 --
 
 INSERT INTO `tb_mark` (`id_homework`, `id_student`, `excercise`, `finish_date`, `team`, `mark`, `mark_status`) VALUES
-(1, 1, 'bai_1.jpg', '2021-10-30 09:00:00', 'user_1.jpg', 0, 0),
-(2, 2, 'bai_2.jpg', '2021-10-29 00:00:00', 'user1.jpg', 0, 0);
+(1, 1, 'bai_1.docx', '2021-10-30 09:00:00', 'user_1.jpg', 0, 0),
+(2, 2, 'bai_2.pdf', '2021-10-29 00:00:00', 'student_1.jpg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -104,7 +106,7 @@ CREATE TABLE `tb_student` (
   `user_id` int(11) DEFAULT NULL,
   `name_student` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `gender` bit(1) DEFAULT NULL,
-  `image_student` char(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_student` char(30) COLLATE utf8_unicode_ci DEFAULT 'user_default.jpg',
   `phone` char(15) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -115,7 +117,9 @@ CREATE TABLE `tb_student` (
 INSERT INTO `tb_student` (`id_student`, `id_class`, `user_id`, `name_student`, `gender`, `image_student`, `phone`) VALUES
 (1, '61PM1', 2, 'Hồ Hồng Quân', b'1', 'student_1.jpg', '096 2222222'),
 (2, '61HTTT', 4, 'Nguyễn Minh Vương', b'1', 'student_2.jpg', '096 3333333'),
-(3, '61KT', 3, 'Nguyễn Văn Tân', b'1', 'student_3.jpg', '096 4444444');
+(3, '61KT', 3, 'Nguyễn Văn Tân', b'1', 'student_3.jpg', '096 4444444'),
+(4, '58KTPM', 5, 'Trịnh Hoàng Long', b'1', 'student_5.jpg', '096 2223324'),
+(29, '61PM2', 17, 'Nguyễn Thị Hương', b'1', 'student_6.jpg', '096 5223434');
 
 -- --------------------------------------------------------
 
@@ -149,23 +153,26 @@ INSERT INTO `tb_subject` (`id_subject`, `name_subject`, `desription`, `img_subje
 CREATE TABLE `tb_user` (
   `user_id` int(11) NOT NULL,
   `user_name` char(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `user_pass` char(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_pass` char(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_email` char(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `regisdate` datetime DEFAULT NULL,
+  `regisdate` datetime DEFAULT current_timestamp(),
   `user_level` tinyint(4) DEFAULT NULL,
-  `user_status` tinyint(4) DEFAULT 0
+  `user_status` tinyint(4) DEFAULT 0,
+  `code` char(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tb_user`
 --
 
-INSERT INTO `tb_user` (`user_id`, `user_name`, `user_pass`, `user_email`, `regisdate`, `user_level`, `user_status`) VALUES
-(1, 'admin', '12345', 'admin@gmail.com', '2021-10-29 22:27:00', 1, 1),
-(2, 'hhquan', '12345', 'hhongquan@gmail.com', '2021-10-29 22:28:00', 0, 1),
-(3, 'nvtan', '12345', 'nvantan@gmail.com', '2021-10-29 22:29:00', 0, 1),
-(4, 'nmvuong', '12345', 'nmvuong@gmail.com', '2021-10-29 22:29:00', 0, 1),
-(5, 'thlong', '12345', 'thlong@mgail.com', '2021-10-29 22:31:00', 0, 0);
+INSERT INTO `tb_user` (`user_id`, `user_name`, `user_pass`, `user_email`, `regisdate`, `user_level`, `user_status`, `code`) VALUES
+(1, 'admin', '12345', 'admin@gmail.com', '2021-10-29 22:27:00', 1, 1, ''),
+(2, 'hhquan', '12345', 'hhongquan@gmail.com', '2021-10-29 22:28:00', 0, 1, ''),
+(3, 'nvtan', '12345', 'nvantan@gmail.com', '2021-10-29 22:29:00', 0, 1, ''),
+(4, 'nmvuong', '12345', 'nmvuong@gmail.com', '2021-10-29 22:29:00', 0, 1, ''),
+(5, 'thlong', '12345', 'thlong@mgail.com', '2021-10-29 22:31:00', 0, 1, ''),
+(16, 'aksjka', '123', 'amdn@gmail.com', '2021-10-31 10:21:02', 0, 0, ''),
+(17, 'abcde', '1234', 'acbc@gmail.com', '2021-10-31 10:22:44', 0, 0, '');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -226,13 +233,13 @@ ALTER TABLE `tb_homework`
 -- AUTO_INCREMENT cho bảng `tb_student`
 --
 ALTER TABLE `tb_student`
-  MODIFY `id_student` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_student` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

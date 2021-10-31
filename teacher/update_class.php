@@ -29,7 +29,7 @@
             </div>
             <input type="submit" name="submit" value="Update class" class="btn btn-add btn-add-connect">
             <a href="class.php" class="btn btn-add btn-cancel">Cancel</a>
-        </form>      
+        </form>
 <?php
     include('footer.php');
 ?>
