@@ -20,7 +20,7 @@
             }
             if($level == 0)
             {
-                $_SESSION['login-admin'] = $user;
+                $_SESSION['login-student'] = $user;
                 header("Location:student/index.php");
             }
         }

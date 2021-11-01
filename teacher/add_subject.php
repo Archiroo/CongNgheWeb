@@ -1,14 +1,15 @@
 <?php
-    include('connect_database/connect.php');
     include('header.php');
 ?>
 <!-- CODE THÊM -->
     <main>
         <form action="" method="POST" class="register" enctype="multipart/form-data">
-            <?php
+        <?php
+                // CODE PHP
                 if(isset($_POST['submit'])){
-                    $sub_id = $_POST['id_sub'];
+                    $id_sub = $_POST['id_sub'];
                     $name_sub = $_POST['name_sub'];
+                    $des_sub = $_POST['des_sub'];
                     if(isset($_FILES['image']['name']))
                     {
                         $image_name = $_FILES['image']['name'];
@@ -27,22 +28,20 @@
                     }
                     else
                     {
-                        $image_name = "user_default.jpg";
+                        
                     }
-                    $des_sub = $_POST['des_sub'];
-                    $sql = "INSERT INTO tb_subject(id_subject, name_subject, desription, img_subject)
-                            VALUES ('$sub_id', '$name_sub', '$des_sub', '$image_name')";
-                    $res = mysqli_query($conn, $sql);
-                    if($res==TRUE)
+                    
+                    $sql1 = "INSERT INTO tb_subject(id_subject, name_subject, description, img_subject) 
+                    VALUES ('$id_sub', '$name_sub','$des_sub', '$image_name')";
+                    $res1 = mysqli_query($conn, $sql1);
+                    if($res1 == TRUE)
                     {
                         header("Location:subject.php");
                     }
                     else
                     {
-                        header("Location:add_subject.php");
+                        header("Location:add_subject.php");   
                     }
-            
-            
                 }
             ?>
             <div class="form-group first-span">
@@ -62,7 +61,7 @@
                 <br>
                 <input type="file" name="image" class="file">
             </div>
-            <input type="submit" name="submit" value="Add class" class="btn btn-add btn-add-connect">
+            <input type="submit" name="submit" value="Add subject" class="btn btn-add btn-add-connect">
             <a href="subject.php" class="btn btn-add btn-cancel">Cancel</a>
         </form>      
 <?php

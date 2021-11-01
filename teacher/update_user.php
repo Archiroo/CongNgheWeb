@@ -70,7 +70,7 @@
                 <span>Level</span>
                 <input type="text" class="form-control" name="level" value="<?php echo $level; ?>">
             </div>            
-            <input type="submit" name="submit" value="Update student" class="btn btn-add btn-add-connect">
+            <input type="submit" name="submit" value="Update user" class="btn btn-add btn-add-connect">
             <a href="user.php" class="btn btn-add btn-cancel">Cancel</a>
         </form>
 <?php
