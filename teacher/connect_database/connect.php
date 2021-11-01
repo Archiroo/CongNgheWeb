@@ -1,5 +1,5 @@
 <?php
-    // session_start();
+    session_start();
     define('SITEURL', 'http://localhost/CongNgheWeb/');
     define('LOCALHOST', 'localhost');
     define('DB_USERNAME', 'root');

@@ -1,5 +1,9 @@
 <?php
     include('connect_database/connect.php');
+    if(!isset($_SESSION['login-admin'])) //nếu khác admin thì ra ngoài
+    {
+        header("Location:../index.php");
+    }
 
 ?>
 <head>

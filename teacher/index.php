@@ -1,5 +1,5 @@
 <?php
-include('sidebar.php');
+    include('header.php');
 ?>
     <main>
         <h2 class="dash-title">Overiew</h2>
