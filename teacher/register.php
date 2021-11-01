@@ -5,7 +5,7 @@
     }
 ?>
     <main>
-        <a href="add_homework.php?id_subject=<?php echo $id;?>" class="btn btn-add"><i class="fas fa-plus"></i> Add homework</a>
+        <a href="homework_id.php?id_subject=<?php echo $id;?>" class="btn btn-add">Homework</a>
         <section class="recent">
             <div class="activity-grid">
                 <div class="activity-card">
