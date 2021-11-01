@@ -3,118 +3,82 @@
     include('header.php');
 ?>
     <main>
-    <form action="" method="POST" class="register">
         <?php
-            // CODE PHP
-            if(isset($_POST['submit'])){
-                $id_sub = $_POST['subject'];
-                $id_class = $_POST['class'];
-                $name_home = $_POST['name_homework'];
-                $endate= $_POST['end_date'];
-                $level = $_POST['level'];
-
-                $sql3 = "INSERT INTO tb_homework(id_subject, id_class, name_homework, end_date, home_level) 
-                VALUES ('$id_sub', '$id_class', '$name_home','$endate', '$level')";
-                $res3 = mysqli_query($conn, $sql3);
-                if($res3 > 0)
-                {
-                    header("Location:homework.php");
-                }
-                else
-                {
-                    header("Location:add_homework.php");   
-                }
-            }
-        ?>
-            <div class="form-group first-span">
-                <span>ID subject</span>
-                <select name="subject" style="display:block;">
-                    <?php
-                    $sql = "SELECT * FROM tb_subject";
-                    $res = mysqli_query($conn, $sql);
-
-                    if (mysqli_num_rows($res)) {
-                        while ($row = mysqli_fetch_assoc($res)) {
-                            echo '<option value="' . $row['id_subject'] . '">' . $row['id_subject'] . '</option>';
-                        }
-                    }
-                    ?>
-                </select>
-            </div>           
-            <div class="form-group first-span">
-                <span>ID class</span>
-                <select name="class" style="display:block;">
-                    <?php
-                    $sql1 = "SELECT * FROM tb_class";
-                    $res2 = mysqli_query($conn, $sql1);
-
-                    if (mysqli_num_rows($res2)) {
-                        while ($row = mysqli_fetch_assoc($res2)) {
-                            echo '<option value="' . $row['id_class'] . '">' . $row['id_class'] . '</option>';
-                        }
-                    }
-                    ?>
-                </select>
-            </div>           
-            <div class="form-group">
-                <span>Name</span>
-                <input type="text" class="form-control" name="name_homework">
-            </div>
-            <div class="form-group">
-                <span>End date</span>
-                <input type="datetime-local" class="form-control" name="end_date">
-            </div>
-            <div class="form-group first-span">
-                <span>Level homework</span>
-                <select name="level" style="display:block;">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                </select>
-            </div>    
-            <input type="submit" name="submit" value="Add homework" class="btn btn-add btn-add-connect">
-            <a href="homework.php" class="btn btn-add btn-cancel">Cancel</a>            
-        </form>    
-        <!-- CODE SỬA -->
-        <?php
-            if(isset($_POST['submit']))
+            if(isset($_GET['id_home']))
             {
-                $name1 = $_POST['name'];
-                $des1 = $_POST['des'];
-                $sql1 = "UPDATE tb_subject SET name_subject = '$name1', desription = '$des1'
-                            WHERE id_subject = '$id_sub'";
+                $id_home = $_GET['id_home'];
+                $id_class = $_GET['id_class'];
+                $id_sub = $_GET['id_sub'];
+                $sql1 = "SELECT * FROM tb_homework where id_homework = '$id_home'";
                 $res1 = mysqli_query($conn, $sql1);
-                if($res1 == TRUE)
+                $count = mysqli_num_rows($res1);
+                if($count==1)
                 {
-                    header("Location:subject.php");
-                }
-                else
-                {
-                    header("Location:update_subject.php");
+                    $row = mysqli_fetch_assoc($res1);
+                    $name_homework= $row['name_homework'];
+                    $excer = $row['excercise'];
+                    $end_date = $row['end_date'];
+                    $level = $row['home_level'];
                 }
             }
         ?>
-
+        <!-- CODE PHP -->
+<?php
+    if(isset($_POST['submit']))
+    {
+        $name1 = $_POST['name_homework'];
+        $exer1 = $_POST['image'];
+        $end_date1 = $_POST['end_date'];
+        $levl1 = $_POST['level_homework'];
+        if($name1 != "")
+        {
+            $sql = "UPDATE tb_homework SET name_homework = '$name1', excercise = '$exer1', end_date = '$end_date1', home_level = '$level'
+                        WHERE id_homework = '$id_home'";
+            $res = mysqli_query($conn, $sql);
+            if($res == TRUE)
+            {
+                header("Location:homework.php");
+            }
+            else
+            {
+                header("Location:update_homework.php");
+            }
+        }
+    }
+?>
 
         <form action="" method="POST" class="register">
             <div class="form-group first-span">
-                <span>ID Subject</span>
-                <input type="text" class="form-control read" readonly value="<?php echo $id_sub ?>">
+                <span>ID homework</span>
+                <input type="text" class="form-control read" readonly value="<?php echo $id_home?>">
+            </div>
+            <div class="form-group first-span">
+                <span>ID class</span>
+                <input type="text" class="form-control read" readonly value="<?php echo $id_class?>">
+            </div>
+            <div class="form-group first-span">
+                <span>ID subject</span>
+                <input type="text" class="form-control read" readonly value="<?php echo $id_sub;?>">
             </div>
             <div class="form-group">
-                <span>Name subject</span>
-                <input type="text" class="form-control" name="name" value="<?php echo $name_sub;?>">
-            </div>
-            <div class="form-group">
-                <span>Description</span>
-                <input type="text" class="form-control" name="des" value="<?php echo $des_sub;?>">
+                <span>Name homework</span>
+                <input type="text" class="form-control" name="name_homework" value="<?php echo $name_homework;?>">
             </div>
             <div class="gender">
                 <span>Image</span>
                 <br>
-                <input type="file" name="image" class="file" value="<?php echo $image; ?>">
-            </div>        
-            <input type="submit" name="submit" value="Update student" class="btn btn-add btn-add-connect">
-            <a href="subject.php" class="btn btn-add btn-cancel">Cancel</a>
+                <input type="file" name="image" class="file" value="<?php echo $excer; ?>">
+            </div>
+            <div class="form-group">
+                <span>End date</span>
+                <input type="datetime-local" class="form-control" name="end_date" value="<?php echo $date = date("Y-m-d\TH:i:s", strtotime($end_date)); ?>">
+            </div>
+            <div class="form-group">
+                <span>Level homework</span>
+                <input type="text" class="form-control" name="level_homework" value="<?php echo $level; ?>">
+            </div>          
+            <input type="submit" name="submit" value="Update homework" class="btn btn-add btn-add-connect">
+            <a href="homework.php" class="btn btn-add btn-cancel">Cancel</a>
         </form>
 <?php
     include('footer.php');
