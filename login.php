@@ -1,8 +1,5 @@
 <?php
-    $con=mysqli_connect('localhost', 'root', '', 'db_congheweb');
-    if(!$con){
-        die('không thể kết nối');
-    }
+    include('teacher/connect_database/connect.php');
 
     if(isset($_POST['login']))
     {
@@ -11,22 +8,24 @@
         $sql = "SELECT * FROM tb_user WHERE user_name='$user' and user_pass = '$pass'";
         $res = mysqli_query($con, $sql);
         $count = mysqli_num_rows($res);
-        if($count > 0)
+        if($count == 1)
         {
             $row = mysqli_fetch_assoc($res);
             $user_id = $row['user_id'];
-            $user_level = $row['user_level'];
-            if($user_level == true)
+            $level = $row['user_level'];
+            if($level == 1)
             {
-                header("Location: teacher/index.php");
+                $_SESSION['login-admin'] = $user;
+                header("Location:teacher/index.php");
             }
-            else
+            if($level == 0)
             {
-                header('location: student/index.php?user_id='.$user_id);
+                $_SESSION['login-admin'] = $user;
+                header("Location:student/index.php");
             }
         }
         else{
-            echo "Lỗi";
+            header("Location:index.php");
         }
     }
 ?>

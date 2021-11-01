@@ -24,7 +24,7 @@
                             <div class="box">
                                 <div class="box-image">
                                     <img src="../image/<?php echo $img_subject; ?>" alt="">
-                                    <a href="comment.php?id_subject=<?php echo $id_subject;?>">
+                                    <a href="register.php?id_subject=<?php echo $id_subject;?>">
                                         <?php echo $name_subject; ?>
                                     </a>
                                 </div>
