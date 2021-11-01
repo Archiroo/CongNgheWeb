@@ -3,7 +3,8 @@ include('dashboard.php');
 ?>
 <div class="main-subject">
     <?php
-    if (isset($_GET['id_subject'])) {
+    if (isset($_GET['id_subject']) && isset($_GET['user_id'])) {
+        $user_id = $_GET['user_id'];
         $id_subject = $_GET['id_subject'];
         $sql = "SELECT * from tb_subject WHERE id_subject = '$id_subject'";
         $res = mysqli_query($conn, $sql);
@@ -20,7 +21,7 @@ include('dashboard.php');
 
     <?php
     //bảng student
-    $sql3="SELECT * from tb_student where user_id = 4";
+    $sql3="SELECT * from tb_student where user_id = $user_id";
     $res3=mysqli_query($conn,$sql3);
     if ($res3 == TRUE) {
         $count1 = mysqli_num_rows($res3);
@@ -29,6 +30,7 @@ include('dashboard.php');
             $id_student = $row3['id_student'];
         }
     }
+
     // bảng homework
     $sql2 = "SELECT * from tb_homework where id_subject = '$id_subject'";
     $res2 = mysqli_query($conn, $sql2);

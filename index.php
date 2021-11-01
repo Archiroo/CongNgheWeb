@@ -21,19 +21,19 @@
     </div>
     <div class="login-form-container login">
         <div id="close-login-btn" class="fas fa-times"></div>
-        <form action="" method="POST">
+        <form action="login.php" method="POST">
             <h3>sign in</h3>
             <span>User name</span>
-            <input type="text" name="username" class="box" placeholder="Enter your username" id="">
+            <input type="text" name="user_name" class="box" placeholder="Enter your username" id="">
             <span>Pass word</span>
-            <input type="password" name="userpass" class="box" placeholder="Enter your password" id="">
+            <input type="password" name="user_pass" class="box" placeholder="Enter your password" id="">
             <div class="checkbox">
                 <input type="checkbox" name="" class="remember-me">
                 <label for="remember-me">Remember-me</label>
             </div>
-            <input type="submit" value="Sign in" class="btn btn-sign-in">
-            <p>For get password ? <a href="#">Click Here</a></p>
-            <p>Don't have an account ? <a href="sign-up.php">Create One</a></p>
+            <!-- <input type="submit" value="Sign in" class="btn btn-sign-in" name="login"> -->
+            <button type="submit" name="login" class="btn btn-sign-in">Sign in</button>
+            <p>For get password ? <a href="#">Click Here</a></p>   
         </form>
     </div>
     <!-- JQUERY -->
@@ -42,33 +42,4 @@
     <!-- SCRIPT -->
     <script src="js/myscript.js"></script>
 </body>
-
 </html>
-<?php
-    include('teacher/connect_database/connect.php');
-    if(isset($_POST['submit']))
-    {
-        $user = $_POST['username'];
-        $pass = $_POST['userpass'];
-        $sql = "SELECT * FROM tb_user WHERE user_name='$user'";
-        $res = mysqli_query($conn, $sql);
-        $count = mysqli_num_rows($res);
-        if($count==1)
-        {
-            $row = mysqli_fetch_assoc($res);
-            $user_level = $row['user_level'];
-            if($user_level == 1)
-            {
-                header("Location:");
-            }
-            else
-            {
-                echo "Sinh viên";
-            }
-        }
-        else{
-            echo "Lỗi";
-        }
-    }
-
-?>

@@ -5,6 +5,11 @@ include('dashboard.php');
 <main>
     <h2>Overview</h2>
     <?php
+        if(isset($_GET['user_id'])){
+            $user_id = $_GET['user_id'];
+        }
+    ?>
+    <?php
     $sql = "SELECT * from tb_subject";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
@@ -20,7 +25,7 @@ include('dashboard.php');
                         <h3><?php echo $name ?></h3>
                     </div>
                     <div class="card-footer">
-                        <a href="<?php echo SITEURL; ?>/subject.php?id_subject=<?php echo $id?>">View all</a>
+                        <a href="<?php echo SITEURL; ?>/subject.php?id_subject=<?php echo $id?>&user_id=<?php echo $user_id?>">View all</a>
                     </div>
                 </div>
         <?php
