@@ -1,5 +1,4 @@
 <?php
-    include('connect_database/connect.php');
     include('header.php');
 ?>
     <main>
@@ -7,61 +6,57 @@
             if(isset($_GET['id_student']))
             {
                 $id_std = $_GET['id_student'];
-                $sql1 = "SELECT * FROM tb_student WHERE id_student = '$id_std'";
-                $res1 = mysqli_query($conn, $sql1);
-                $count = mysqli_num_rows($res1);
-                if($count==1)
-                {
-                    $row = mysqli_fetch_assoc($res1);
-                    $id_class = $row['id_class'];
-                    $id_user = $row['user_id'];
-                    $name_std = $row['name_student'];
-                    $gender = $row['gender'];
-                    $image = $row['image_student'];
-                    $phone = $row['phone'];
-                }
             }
+            $sql = "SELECT * FROM tb_student WHERE id_student = '$id_std'";
+            $res = mysqli_query($conn, $sql);
+            $count = mysqli_num_rows($res);
+            if($count==1)
+            {
+                $row = mysqli_fetch_assoc($res);
+                $user_id = $row['user_id'];
+                $name_std = $row['name_student'];
+                $gender = $row['gender'];
+                $image = $row['image_student'];
+                $phone = $row['phone'];
+            }
+            
         ?>
         <!-- CODE PHP -->
-<?php
-    if(isset($_POST['submit']))
-    {
-        $name1 = $_POST['name'];
-        $gender1 = $_POST['gender'];
-        $image1 = $_POST['image'];
-        $phone1 = $_POST['phone'];
-        if($name1 != "")
-        {
-            $sql = "UPDATE tb_student SET name_student = '$name1', gender = '$gender1', image_student = '$image1', phone = '$phone1'
-                        WHERE id_student= '$id_std'";
-            $res = mysqli_query($conn, $sql);
-            if($res == TRUE)
-            {
-                header("Location:student.php");
-            }
-            else
-            {
-                header("Location:update_student.php");
-            }
-        }
-    }
-?>
 
         <form action="" method="POST" class="register">
+            <?php
+                if(isset($_POST['submit']))
+                {
+                    $name1 = $_POST['name'];
+                    $gender1 = $_POST['gender'];
+                    $image1 = $_POST['image'];
+                    $phone1 = $_POST['phone'];
+                    if($name1 != "")
+                    {
+                        $sql1 = "UPDATE tb_student SET name_student = '$name1', gender = '$gender1', image_student = '$image1', phone = '$phone1'
+                                    WHERE id_student= '$id_std'";
+                        $res1 = mysqli_query($conn, $sql1);
+                        if($res1 == TRUE)
+                        {
+                            header("Location:student.php");
+                        }
+                        else
+                        {
+                            header("Location:update_student.php");
+                        }
+                    }
+                }
+            ?>
             <div class="form-group first-span">
                 <span>ID Student</span>
                 <input type="text" class="form-control read" readonly value="<?php echo $id_std?>">
             </div>
-            <div class="form-group first-span">
-                <span>ID Class</span>
-                <input type="text" class="form-control read" readonly value="<?php echo $id_class?>">
-            </div>
-            <div class="form-group first-span">
+            <div class="form-group">
                 <span>ID user</span>
-                <input type="text" class="form-control read" readonly value="<?php echo $id_user?>">
+                <input type="text" class="form-control read" readonly value="<?php echo $user_id?>">
             </div>
             <div class="form-group">
-                <span>Name student</span>
+                <span>Name</span>
                 <input type="text" class="form-control" name="name" value="<?php echo $name_std;?>">
             </div>
             <div class="gender">

@@ -1,5 +1,4 @@
 <?php
-    include('connect_database/connect.php');
     include('header.php');
 ?>
     <main>
