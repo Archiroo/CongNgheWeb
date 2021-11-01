@@ -52,7 +52,7 @@
                                                     <td><?php echo $edate; ?></td>                                                                 
                                                     <td class="status"><?php echo $home_level; ?></td>                                                                 
                                                     <td>
-                                                        <a href="update_homework.php?id_home=<?php echo $id_home ?>" class="update-icon">
+                                                        <a href="update_homework.php?id_home=<?php echo $id_home ?>&&id_class=<?php echo $id_class ?>&&id_sub=<?php echo $id_sub ?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>

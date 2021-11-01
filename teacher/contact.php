@@ -1,5 +1,6 @@
 <?php
-include('sidebar.php');
+    include('connect_database/connect.php');
+    include('header.php');
 ?>
     <main>
         <h2 class="dash-title">Overiew</h2>
