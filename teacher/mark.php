@@ -1,5 +1,6 @@
 <?php
-include('sidebar.php');
+    include('connect_database/connect.php');
+    include('header.php');
 ?>
     <main>
         <section class="recent">
@@ -51,15 +52,30 @@ include('sidebar.php');
                                                             <img src="../image/<?php echo $team?>" alt="">
                                                         </div>
                                                     </td>                                
-                                                    <td class="status"><?php echo $mark; ?></td>                                                                 
-                                                    <td class="status"><?php echo $status; ?></td>                                                                                                                                
+                                                    <td class="status"><?php echo $mark; ?></td>                                                                                               
                                                     <td>
-                                                        <a href="update_mark.php?id_home=<?php echo $id_home ?>,id_student=<?php echo $id_home?>" class="update-icon">
+                                                        <?php
+                                                            if($status==1)
+                                                            {
+                                                                ?>
+                                                                <span class="badge success">Success</span>
+                                                                <?php
+                                                            }
+                                                            else
+                                                            {
+                                                                ?>
+                                                                <span class="badge warning">Processing</span>
+                                                                <?php
+                                                            }
+                                                        ?>
+                                                    </td>                                                                                                                                 
+                                                    <td>
+                                                        <a href="update_mark.php?id_home=<?php echo $id_home ?>&&id_student=<?php echo $id_std; ?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="delete_mark.php?id_home=<?php echo $id_home ?>,id_student=<?php echo $id_home?>" class="update-icon">
+                                                        <a href="delete_mark.php?id_home=<?php echo $id_home ?>&&id_student=<?php echo $id_std;?>" class="update-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>
