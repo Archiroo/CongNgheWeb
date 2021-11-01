@@ -78,3 +78,6 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
         
     ?>
 </div>
+<?php
+include('footer.php');
+?>
