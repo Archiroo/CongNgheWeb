@@ -36,12 +36,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="class.php">
-                        <span class="fas fa-house-user"></span>
-                        <span>Class</span>
-                    </a>
-                </li>
-                <li>
                     <a href="user.php">
                         <span class="fas fa-user"></span>
                         <span>User</span>

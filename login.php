@@ -6,7 +6,7 @@
         $user = $_POST['user_name'];
         $pass = $_POST['user_pass'];
         $sql = "SELECT * FROM tb_user WHERE user_name='$user' and user_pass = '$pass'";
-        $res = mysqli_query($con, $sql);
+        $res = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($res);
         if($count == 1)
         {
