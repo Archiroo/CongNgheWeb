@@ -1,5 +1,4 @@
 <?php
-    include('connect_database/connect.php');
     include('header.php');
 ?>
     <main>
@@ -13,8 +12,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>ID Class</th>
-                                    <th>User id</th>
+                                    <th>User ID</th>
                                     <th>Name</th>
                                     <th>Gender</th>
                                     <th>Image</th>
@@ -26,7 +24,7 @@
                             <tbody>
                                 <!-- CODE PHP -->
                                 <?php
-                                    $sql = "SELECT * FROM tb_student";
+                                    $sql = "SELECT * FROM tb_student where id_student != 1";
                                     $res = mysqli_query($conn, $sql);
                                     if($res == TRUE)
                                     {
@@ -35,19 +33,18 @@
                                         {
                                             while($row = mysqli_fetch_assoc($res))
                                             {
-                                                $id_student = $row['id_student'];
-                                                $id_class = $row['id_class'];
-                                                $user_id = $row['user_id'];
+                                                $id_std = $row['id_student'];
+                                                $id_user = $row['user_id'];
+                                                $name_std = $row['name_student'];
                                                 $name_student = $row['name_student'];
                                                 $gender = $row['gender'];
                                                 $image = $row['image_student'];
                                                 $phone = $row['phone'];
                                 ?>
                                                 <tr>
-                                                    <td><?php echo $id_student;?></td>
-                                                    <td><?php echo $id_class;?></td>
-                                                    <td><?php echo $user_id; ?></td>
-                                                    <td><?php echo $name_student; ?></td>
+                                                    <td><?php echo $id_std;?></td>
+                                                    <td><?php echo $id_user;?></td>
+                                                    <td><?php echo $name_std; ?></td>
                                                     <td>
                                                         <?php 
                                                             if($gender == 1)
@@ -67,12 +64,12 @@
                                                     </td>
                                                     <td><?php echo $phone;?></td>
                                                     <td>
-                                                        <a href="update_student.php?id_student=<?php echo $id_student;?>" class="update-icon">
+                                                        <a href="update_student.php?id_student=<?php echo $id_std;?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="delete_student.php?id_student=<?php echo $id_student;?>" class="delete-icon">
+                                                        <a href="delete_student.php?id_student=<?php echo $id_std;?>" class="delete-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>

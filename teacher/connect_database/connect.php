@@ -6,10 +6,10 @@
     define('DB_PASSWORD', '');
     define('DB_NAME', 'db_cuoiki');
 
-    $con = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
-    if($con)
+    $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+    if($conn)
     {
-        mysqli_query($con, "SET NAMES 'UTF8'");
+        mysqli_query($conn, "SET NAMES 'UTF8'");
     }
     else
     {
