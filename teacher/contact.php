@@ -1,5 +1,4 @@
 <?php
-    include('connect_database/connect.php');
     include('header.php');
 ?>
     <main>
@@ -18,7 +17,7 @@
                         {
                             $id_subject = $row['id_subject'];
                             $name_subject = $row['name_subject'];
-                            $desription = $row['desription'];
+                            $desription = $row['description'];
                             $img_subject = $row['img_subject'];
             ?>
                             <div class="box">
