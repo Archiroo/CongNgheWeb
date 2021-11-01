@@ -45,7 +45,7 @@
                                                 <tr>
                                                     <td class="status"><?php echo  $id_home;?></td>                                
                                                     <td class="status"><?php echo $id_std; ?></td>                                 
-                                                    <td><?php echo $excercise; ?></td>                                 
+                                                    <td><?php echo $excercise; ?></td>                                                     
                                                     <td><?php echo $finish ?></td>                                 
                                                     <td class="td-team">
                                                         <div class="img-1 img_alone">
