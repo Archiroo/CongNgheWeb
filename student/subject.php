@@ -18,7 +18,9 @@ include('dashboard.php');
     }
     ?>
     <h1 class="subject-name"><?php echo $name_subject; ?></h1>
-
+    <div class="team">
+        <a href="register-project.php?id_subject=<?php echo $id_subject;?>&id_student=<?php echo $id_student?>">Register Project</a>
+    </div>
     <?php
     // bảng homework
     $sql2 = "SELECT * from tb_homework where id_subject = '$id_subject'";
@@ -29,7 +31,8 @@ include('dashboard.php');
             $name_homework = $row2['name_homework'];
             $start_date = $row2['start_date'];
             $end_date = $row2['end_date'];
-            $excer = $row2['excercise']
+            $excer = $row2['excercise'];
+            $home_level = $row2['home_level']
     ?>
             <div class="homework-name">
                 <div class="body">

@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 02, 2021 lúc 03:46 PM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.10
+-- Host: 127.0.0.1
+-- Generation Time: Nov 02, 2021 at 07:02 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `db_cuoiki`
+-- Database: `db_cuoiki`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tb_homework`
+-- Table structure for table `tb_homework`
 --
 
 CREATE TABLE `tb_homework` (
@@ -38,7 +38,7 @@ CREATE TABLE `tb_homework` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tb_homework`
+-- Dumping data for table `tb_homework`
 --
 
 INSERT INTO `tb_homework` (`id_homework`, `id_subject`, `name_homework`, `excercise`, `start_date`, `end_date`, `home_level`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `tb_homework` (`id_homework`, `id_subject`, `name_homework`, `excerc
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tb_mark`
+-- Table structure for table `tb_mark`
 --
 
 CREATE TABLE `tb_mark` (
@@ -66,7 +66,7 @@ CREATE TABLE `tb_mark` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tb_mark`
+-- Dumping data for table `tb_mark`
 --
 
 INSERT INTO `tb_mark` (`id_homework`, `id_student`, `number_student`, `submit_homework`, `finish_date`, `mark`, `status`) VALUES
@@ -86,7 +86,7 @@ INSERT INTO `tb_mark` (`id_homework`, `id_student`, `number_student`, `submit_ho
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tb_register`
+-- Table structure for table `tb_register`
 --
 
 CREATE TABLE `tb_register` (
@@ -95,7 +95,7 @@ CREATE TABLE `tb_register` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tb_register`
+-- Dumping data for table `tb_register`
 --
 
 INSERT INTO `tb_register` (`id_student`, `id_subject`) VALUES
@@ -114,7 +114,7 @@ INSERT INTO `tb_register` (`id_student`, `id_subject`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tb_student`
+-- Table structure for table `tb_student`
 --
 
 CREATE TABLE `tb_student` (
@@ -127,7 +127,7 @@ CREATE TABLE `tb_student` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tb_student`
+-- Dumping data for table `tb_student`
 --
 
 INSERT INTO `tb_student` (`id_student`, `user_id`, `name_student`, `gender`, `image_student`, `phone`) VALUES
@@ -141,7 +141,7 @@ INSERT INTO `tb_student` (`id_student`, `user_id`, `name_student`, `gender`, `im
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tb_subject`
+-- Table structure for table `tb_subject`
 --
 
 CREATE TABLE `tb_subject` (
@@ -152,7 +152,7 @@ CREATE TABLE `tb_subject` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tb_subject`
+-- Dumping data for table `tb_subject`
 --
 
 INSERT INTO `tb_subject` (`id_subject`, `name_subject`, `description`, `img_subject`) VALUES
@@ -165,7 +165,30 @@ INSERT INTO `tb_subject` (`id_subject`, `name_subject`, `description`, `img_subj
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tb_user`
+-- Table structure for table `tb_team`
+--
+
+CREATE TABLE `tb_team` (
+  `id_team` int(11) NOT NULL,
+  `id_subject` char(30) DEFAULT NULL,
+  `id_student` int(11) DEFAULT NULL,
+  `name_project` varchar(255) DEFAULT NULL,
+  `name_student1` varchar(255) DEFAULT NULL,
+  `name_student2` varchar(255) DEFAULT NULL,
+  `name_student3` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_team`
+--
+
+INSERT INTO `tb_team` (`id_team`, `id_subject`, `id_student`, `name_project`, `name_student1`, `name_student2`, `name_student3`) VALUES
+(1, 'CSE_485', 2, 'Website bán giày', 'Trịnh Hoàng Long', 'Nguyễn Minh Đức', 'Hà Việt Dũng');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -180,7 +203,7 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tb_user`
+-- Dumping data for table `tb_user`
 --
 
 INSERT INTO `tb_user` (`user_id`, `user_name`, `user_pass`, `user_email`, `regisdate`, `user_level`, `user_status`, `code`) VALUES
@@ -197,94 +220,113 @@ INSERT INTO `tb_user` (`user_id`, `user_name`, `user_pass`, `user_email`, `regis
 (11, 'tqcong', '12345', 'tqcong@gmail.com', '2021-11-01 22:47:35', 0, 0, NULL);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `tb_homework`
+-- Indexes for table `tb_homework`
 --
 ALTER TABLE `tb_homework`
   ADD PRIMARY KEY (`id_homework`),
   ADD KEY `id_subject` (`id_subject`);
 
 --
--- Chỉ mục cho bảng `tb_mark`
+-- Indexes for table `tb_mark`
 --
 ALTER TABLE `tb_mark`
   ADD KEY `id_homework` (`id_homework`),
   ADD KEY `id_student` (`id_student`);
 
 --
--- Chỉ mục cho bảng `tb_register`
+-- Indexes for table `tb_register`
 --
 ALTER TABLE `tb_register`
   ADD KEY `id_student` (`id_student`),
   ADD KEY `id_subject` (`id_subject`);
 
 --
--- Chỉ mục cho bảng `tb_student`
+-- Indexes for table `tb_student`
 --
 ALTER TABLE `tb_student`
   ADD PRIMARY KEY (`id_student`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Chỉ mục cho bảng `tb_subject`
+-- Indexes for table `tb_subject`
 --
 ALTER TABLE `tb_subject`
   ADD PRIMARY KEY (`id_subject`);
 
 --
--- Chỉ mục cho bảng `tb_user`
+-- Indexes for table `tb_team`
+--
+ALTER TABLE `tb_team`
+  ADD PRIMARY KEY (`id_team`),
+  ADD KEY `id_student` (`id_student`);
+
+--
+-- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `tb_homework`
+-- AUTO_INCREMENT for table `tb_homework`
 --
 ALTER TABLE `tb_homework`
   MODIFY `id_homework` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `tb_user`
+-- AUTO_INCREMENT for table `tb_team`
+--
+ALTER TABLE `tb_team`
+  MODIFY `id_team` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `tb_homework`
+-- Constraints for table `tb_homework`
 --
 ALTER TABLE `tb_homework`
   ADD CONSTRAINT `tb_homework_ibfk_1` FOREIGN KEY (`id_subject`) REFERENCES `tb_subject` (`id_subject`);
 
 --
--- Các ràng buộc cho bảng `tb_mark`
+-- Constraints for table `tb_mark`
 --
 ALTER TABLE `tb_mark`
   ADD CONSTRAINT `tb_mark_ibfk_1` FOREIGN KEY (`id_homework`) REFERENCES `tb_homework` (`id_homework`),
   ADD CONSTRAINT `tb_mark_ibfk_2` FOREIGN KEY (`id_student`) REFERENCES `tb_student` (`id_student`);
 
 --
--- Các ràng buộc cho bảng `tb_register`
+-- Constraints for table `tb_register`
 --
 ALTER TABLE `tb_register`
   ADD CONSTRAINT `tb_register_ibfk_1` FOREIGN KEY (`id_student`) REFERENCES `tb_student` (`id_student`),
   ADD CONSTRAINT `tb_register_ibfk_2` FOREIGN KEY (`id_subject`) REFERENCES `tb_subject` (`id_subject`);
 
 --
--- Các ràng buộc cho bảng `tb_student`
+-- Constraints for table `tb_student`
 --
 ALTER TABLE `tb_student`
   ADD CONSTRAINT `tb_student_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tb_user` (`user_id`);
+
+--
+-- Constraints for table `tb_team`
+--
+ALTER TABLE `tb_team`
+  ADD CONSTRAINT `tb_team_ibfk_1` FOREIGN KEY (`id_student`) REFERENCES `tb_student` (`id_student`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
