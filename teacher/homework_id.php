@@ -49,7 +49,7 @@
                                                     <td><?php echo $id_sub; ?></td>                                                                
                                                     <td><?php echo $name ?></td>                                 
                                                     <td>
-                                                        <a href="dowload_homework.php?file=<?php echo $row['excercise'] ?>">
+                                                        <a href="dowload_excercise.php?file=<?php echo $row['excercise'] ?>">
                                                             <?php echo $excer;?>
                                                         </a>
                                                     </td>                                 

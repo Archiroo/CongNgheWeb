@@ -48,8 +48,12 @@
                                 ?>
                                                 <tr>
                                                     <td class="status"><?php echo $name_std; ?></td>                                
-                                                    <td class="status"><?php echo $id_sub; ?></td>                                 
-                                                    <td><?php echo $excer; ?></td>                                                     
+                                                    <td class="status"><?php echo $id_sub; ?></td>    
+                                                    <td>
+                                                        <a href="dowload_homework.php?file=<?php echo $row['submit_homework'] ?>">
+                                                            <?php echo $excer;?>
+                                                        </a>
+                                                    </td>                                                                                 
                                                     <td><?php echo $end_date ?></td>                                 
                                                     <td><?php echo $finish; ?></td>                                 
                                                     <!-- <td class="td-team">
