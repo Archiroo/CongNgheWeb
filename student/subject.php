@@ -18,9 +18,6 @@ include('dashboard.php');
     }
     ?>
     <h1 class="subject-name"><?php echo $name_subject; ?></h1>
-    <div class="team">
-        <a href="register-project.php?id_subject=<?php echo $id_subject;?>&id_student=<?php echo $id_student?>">Register Project</a>
-    </div>
     <?php
     // bảng homework
     $sql2 = "SELECT * from tb_homework where id_subject = '$id_subject'";
@@ -51,6 +48,14 @@ include('dashboard.php');
                         <h3>Excercise:</h3>
                         <a href="download_excercise.php?file=<?php echo $excer; ?>"><?php echo $excer; ?></a>
                     </div>
+                    <?php
+                        if($home_level==1){?>
+                            <div class="team">
+                                <a href="register-project.php?id_subject=<?php echo $id_subject; ?>&id_homework=<?php echo $id_homework; ?>&id_student=<?php echo $id_student ?>">Register Team</a>
+                            </div>
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
     <?php
