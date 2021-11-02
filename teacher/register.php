@@ -5,6 +5,9 @@
     }
 ?>
     <main>
+        <a href="add_register.php?id_subject=<?php echo $id;?>" class="btn btn-add" style="margin-right: 2rem;">
+            <i class="fas fa-user-plus" style="margin-right: 0.5rem;"></i>Add student
+        </a>
         <a href="homework_id.php?id_subject=<?php echo $id;?>" class="btn btn-add">Homework</a>
         <section class="recent">
             <div class="activity-grid">

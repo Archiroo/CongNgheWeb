@@ -1,5 +1,4 @@
 <?php
-    include('connect_database/connect.php');
     include('header.php');
 ?>
     <main>
@@ -12,7 +11,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>ID student</th> <!--userlevel = 2-->
+                                    <th>ID student</th>
                                     <th>Excercise</th>
                                     <th>Finish date</th>
                                     <th>Team</th>
@@ -38,9 +37,8 @@
                                                 $id_std = $row['id_student'];
                                                 $excercise = $row['excercise'];
                                                 $finish = $row['finish_date'];
-                                                $team = $row['team'];
                                                 $mark = $row['mark'];
-                                                $status = $row['mark_status'];
+                                                $status = $row['status'];
                                 ?>
                                                 <tr>
                                                     <td class="status"><?php echo  $id_home;?></td>                                
