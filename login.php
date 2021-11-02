@@ -19,10 +19,11 @@
                 header("Location:teacher/index.php");
             }
             if($level == 0)
-            {
-                $_SESSION['login-admin'] = $user;
-                header('location: student/index.php?user_id='.$user_id);
-                // header('location: student/index.php');
+            {   
+                $_SESSION['user_id'] = $user_id;
+                $_SESSION['login-student'] = $user;
+                // header('location: student/index.php?user_id='.$user_id);
+                header('location: student/index.php');
             }
         }
         else{

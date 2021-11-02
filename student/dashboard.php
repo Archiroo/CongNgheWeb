@@ -1,5 +1,9 @@
 <?php
     include('config.php');
+    if(!isset($_SESSION['login-student'])) //nếu khác admin thì ra ngoài
+    {
+        header("Location:../index.php");
+    }
     include('./header.php');
 ?>
 <input type="checkbox" id="sidebar-toggle"> 

@@ -43,8 +43,8 @@ include('dashboard.php');
                     <div class="date">
                         <h3>Due:</h3>
                         <h3><?php echo $end_date; ?></h3>
-                    </div class="date">
-                    <div class="date">
+                    </div>
+                    <div class="work">
                         <h3>Excercise:</h3>
                         <a href="download_excercise.php?file=<?php echo $excer; ?>"><?php echo $excer; ?></a>
                     </div>
