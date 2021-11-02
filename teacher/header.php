@@ -54,6 +54,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="contact.php">
+                        <span class="fas fa-comments"></span>
+                        <span>Contact</span>
+                    </a>
+                </li>
+                <li>
                     <a href="homework.php">
                         <span class="fas fa-paste"></span>
                         <span>Homework</span>
@@ -63,12 +69,6 @@
                     <a href="mark.php">
                         <span class="fas fa-poll"></span>
                         <span>Mark</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="contact.php">
-                        <span class="fas fa-comments"></span>
-                        <span>Contact</span>
                     </a>
                 </li>
                 <li>

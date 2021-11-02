@@ -2,7 +2,7 @@
     include('header.php');
 ?>
     <main>
-        <a href="add_user.php" class="btn btn-add"><i class="fas fa-plus"></i> Add user</a>
+        <a href="add_user.php" class="btn btn-add"><i class="fas fa-user-plus"></i> Add user</a>
         <div>
             <!-- <h2 style="font-weight: 400; color:green; margin-top: 2rem;">Thêm thành công!</h2> -->
         </div>

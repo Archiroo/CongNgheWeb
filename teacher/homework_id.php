@@ -1,7 +1,11 @@
 <?php
     include('header.php');
+    if(isset($_GET['id_subject'])){
+        $id = $_GET['id_subject'];
+    }
 ?>
     <main>
+        <a href="add_homework.php?id_subject=<?php echo $id;?>" class="btn btn-add"><i class="fas fa-plus"></i> Add homework</a>
         <section class="recent">
             <div class="activity-grid">
                 <div class="activity-card">
@@ -16,14 +20,14 @@
                                     <th>Excercise</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
-                                    <th>Update</th>
-                                    <th>Delete</th>
+                                    <th>Level</th>
+                                    <th>Back</th>
                                 </tr>
                             </thead>
                             <tbody><tbody>
                                 <!-- CODE PHP -->
                                 <?php
-                                    $sql = "SELECT * FROM tb_homework WHERE home_level = 0 ORDER BY id_subject";
+                                    $sql = "SELECT * FROM tb_homework WHERE id_subject = '$id'";
                                     $res = mysqli_query($conn, $sql);
                                     if($res == TRUE)
                                     {
@@ -50,18 +54,13 @@
                                                         </a>
                                                     </td>                                 
                                                     <td><?php echo $sdate; ?></td>                                 
-                                                    <td><?php echo $edate; ?></td>
+                                                    <td><?php echo $edate; ?></td>                                                                                                                              
+                                                    <td class="status"><?php echo $home_level; ?></td>                                                                                                                              
                                                     <td>
-                                                        <a href="update_homework.php?id_home=<?php echo $id_home;?>&&id_sub=<?php echo $id_sub; ?>" class="update-icon">
-                                                            <i class="fas fa-edit"></i>
+                                                        <a href="contact.php" class="delete-icon">
+                                                            <i class="fas fa-arrow-right"></i>
                                                         </a>
                                                     </td>
-                                                    <td>
-                                                        <a href="delete_homework.php?id_home=<?php echo $id_home;?>&&id_sub=<?php echo $id_sub; ?>" class="delete-icon">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </a>
-                                                    </td>                                                                                                                              
-
                                                 </tr>
                                 <?php
                                             }

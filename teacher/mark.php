@@ -1,5 +1,4 @@
 <?php
-    include('connect_database/connect.php');
     include('header.php');
 ?>
     <main>
@@ -11,21 +10,24 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>ID student</th> <!--userlevel = 2-->
+                                    <th>Name</th>
+                                    <th>Subject</th>
                                     <th>Excercise</th>
-                                    <th>Finish date</th>
-                                    <th>Team</th>
+                                    <th>End date</th>
+                                    <th>Finish</th>
                                     <th>Mark</th>
-                                    <th>Mark status</th>
+                                    <th>Satus</th>
                                     <th>Update</th>
-                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- CODE PHP -->
                                 <?php
-                                    $sql = "SELECT * FROM tb_mark";
+                                    $sql = "SELECT tb_homework.id_homework, tb_student.id_student, 
+                                                    name_student, id_subject, submit_homework, end_date, finish_date, mark, status
+                                            FROM tb_homework, tb_mark, tb_student
+                                            WHERE tb_homework.id_homework = tb_mark.id_homework 
+                                            AND tb_student.id_student = tb_mark.id_student and home_level = 0";
                                     $res = mysqli_query($conn, $sql);
                                     if($res == TRUE)
                                     {
@@ -36,23 +38,26 @@
                                             {
                                                 $id_home = $row['id_homework'];
                                                 $id_std = $row['id_student'];
-                                                $excercise = $row['excercise'];
+                                                $id_sub = $row['id_subject'];
+                                                $name_std = $row['name_student'];
+                                                $excer = $row['submit_homework'];
+                                                $end_date = $row['end_date'];
                                                 $finish = $row['finish_date'];
-                                                $team = $row['team'];
                                                 $mark = $row['mark'];
-                                                $status = $row['mark_status'];
+                                                $status = $row['status'];
                                 ?>
                                                 <tr>
-                                                    <td class="status"><?php echo  $id_home;?></td>                                
-                                                    <td class="status"><?php echo $id_std; ?></td>                                 
-                                                    <td><?php echo $excercise; ?></td>                                                     
-                                                    <td><?php echo $finish ?></td>                                 
-                                                    <td class="td-team">
+                                                    <td class="status"><?php echo $name_std; ?></td>                                
+                                                    <td class="status"><?php echo $id_sub; ?></td>                                 
+                                                    <td><?php echo $excer; ?></td>                                                     
+                                                    <td><?php echo $end_date ?></td>                                 
+                                                    <td><?php echo $finish; ?></td>                                 
+                                                    <!-- <td class="td-team">
                                                         <div class="img-1 img_alone">
-                                                            <img src="../image/<?php echo $team?>" alt="">
+                                                            <img src="../image/" alt="">
                                                         </div>
-                                                    </td>                                
-                                                    <td class="status"><?php echo $mark; ?></td>                                                                                               
+                                                    </td>                                 -->
+                                                    <td class="status"><?php echo $mark; ?></td>                                                                                              
                                                     <td>
                                                         <?php
                                                             if($status==1)
@@ -74,11 +79,7 @@
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>
-                                                    <td>
-                                                        <a href="delete_mark.php?id_home=<?php echo $id_home ?>&&id_student=<?php echo $id_std;?>" class="update-icon">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </a>
-                                                    </td>
+
                                                 </tr>
                                 <?php
                                             }

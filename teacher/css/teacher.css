@@ -370,12 +370,14 @@ tbody tr:nth-child(even) { /*xen kẽ*/
     background-size: cover;
     background-repeat: no-repeat;
     border: none;
-    border-radius: 1.5rem; 
+    border-radius: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 .box-container .box a{
     color: var(--main-color);
     font-size: 1.5rem;
     color: var(--rose);
+    margin-left: 0.3rem;
 }
 .box-container .box a:hover{
     text-decoration: underline;
