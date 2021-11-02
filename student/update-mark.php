@@ -57,7 +57,7 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
         if(isset($_POST['submit'])){
             $fileName = $_FILES['file']['name'];
             $fileTmpName = $_FILES['file']['tmp_name'];
-            $path = "document/".$fileName;
+            $path = "../image/".$fileName;
 
             $sql3 = "UPDATE tb_mark set 
                 excercise = '$fileName',

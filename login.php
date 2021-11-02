@@ -21,7 +21,7 @@
             if($level == 0)
             {
                 $_SESSION['login-admin'] = $user;
-                header("Location:student/index.php");
+                header('location: student/index.php?user_id='.$user_id);
             }
         }
         else{

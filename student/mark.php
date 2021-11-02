@@ -52,7 +52,7 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
             $excercise = $row3['excercise'];
             $finish_date = $row3['finish_date'];
             $mark = $row3['mark'];
-            $mark_status = $row3['mark_status'];
+            $mark_status = $row3['status'];
         }
     }
 
@@ -108,7 +108,6 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
     <div class="btn">
         <button><a href="<?php echo SITEURL?>/add-mark.php?id_homework=<?php echo $id_homework;?>&id_subject=<?php echo $id_subject;?>&id_student=<?php echo $id_student;?>">Nộp bài</a></button>
         <button><a href="<?php echo SITEURL?>/update-mark.php?id_homework=<?php echo $id_homework;?>&id_subject=<?php echo $id_subject;?>&id_student=<?php echo $id_student;?>">Sửa bài</a></button>
-        <button><a href="<?php echo SITEURL?>/delete-mark.php?id_homework=<?php echo $id_homework;?>&id_subject=<?php echo $id_subject;?>&id_student=<?php echo $id_student;?>">Xóa bài</a></button>
     </div>
 </div>
 

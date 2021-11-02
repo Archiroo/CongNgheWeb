@@ -14,7 +14,7 @@
     <div class="sidebar-menu">
         <ul>
             <li>
-                <a href="./index.php">
+                <a href="index.php">
                     <span class="ti-home"></span>
                     <span>Home</span>
                 </a>
@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="../sign-out.php">
                     <span class="fas fa-power-off"></span>
                     <span>Log out</span>
                 </a>
