@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 02, 2021 lúc 10:43 AM
+-- Thời gian đã tạo: Th10 02, 2021 lúc 03:46 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -43,7 +43,7 @@ CREATE TABLE `tb_homework` (
 
 INSERT INTO `tb_homework` (`id_homework`, `id_subject`, `name_homework`, `excercise`, `start_date`, `end_date`, `home_level`) VALUES
 (1, 'CSE_482', 'Tính sự bế tắc', 'baitap1.pdf', '2021-11-01 21:02:24', '2021-11-02 21:00:00', 0),
-(2, 'CSE_485', 'Thiết kế website sử dụng boostrap 5', 'baitap2.pdf', '2021-11-01 21:02:24', '2021-11-05 22:00:00', 0),
+(2, 'CSE_485', 'Thiết kế website sử dụng boostrap 5', 'baitap3.pdf', '2021-11-01 21:02:24', '2021-11-05 22:00:00', 0),
 (3, 'CSE_485', 'Thiết kế website bán hàng', 'baitap3.pdf', '2021-11-01 21:03:28', '2021-11-05 23:59:59', 1),
 (4, 'CSE_485', 'Thiết kế website quản lý', 'baitap3.pdf', '2021-11-01 21:04:33', '2021-11-05 00:00:00', 1),
 (5, 'CSE_486', 'Bài tập thủ tục', 'baitap2.pdf', '2021-11-01 21:05:30', '2021-11-03 21:00:00', 1),
@@ -70,11 +70,18 @@ CREATE TABLE `tb_mark` (
 --
 
 INSERT INTO `tb_mark` (`id_homework`, `id_student`, `number_student`, `submit_homework`, `finish_date`, `mark`, `status`) VALUES
-(1, 2, 0, 'baitap1.zip', '2021-11-01 21:16:21', 8, 1),
+(1, 2, 0, 'baitap1.zip', '2021-11-01 21:16:21', 9, 1),
 (5, 3, 0, 'baitap3.zip', '2021-11-01 21:17:24', 9, 1),
 (2, 2, 1, 'baitap2.zip', '2021-11-01 21:18:29', 0, 0),
 (3, 3, 1, 'baitap4.zip', '2021-11-01 21:18:29', 0, 0),
-(3, 5, 0, 'baitap4.zip', '2021-11-02 16:22:53', 0, 0);
+(3, 5, 0, 'baitap4.zip', '2021-11-02 16:22:53', 0, 0),
+(1, 5, 0, 'baitaip1.zip', '2021-11-02 20:11:06', 7, 1),
+(1, 3, 0, 'baitap2.zip', '2021-11-02 20:11:06', 10, 1),
+(7, 2, 0, 'baitaip1.zip', '2021-11-02 20:13:16', 9, 1),
+(7, 3, 0, 'baitap3.zip', '2021-11-02 20:13:16', 0, 0),
+(7, 5, 0, 'baitap2.zip', '2021-11-02 20:21:05', 0, 0),
+(2, 4, 0, 'baitap2.zip', '2021-11-02 20:25:24', 0, 0),
+(2, 5, 0, 'baitap1.zip', '2021-11-02 20:27:32', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -94,10 +101,15 @@ CREATE TABLE `tb_register` (
 INSERT INTO `tb_register` (`id_student`, `id_subject`) VALUES
 (2, 'CSE_485'),
 (2, 'CSE_482'),
-(3, 'CSE_485'),
 (3, 'CSE_486'),
 (5, 'CSE_114'),
-(5, 'CSE_482');
+(4, 'CSE_485'),
+(5, 'CSE_482'),
+(3, 'CSE_482'),
+(5, 'CSE_485'),
+(6, 'CSE_114'),
+(3, 'CSE_114'),
+(6, 'CSE_485');
 
 -- --------------------------------------------------------
 
