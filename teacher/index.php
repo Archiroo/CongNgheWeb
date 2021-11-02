@@ -81,76 +81,79 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Project</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th>Team</th>
+                                    <th>ID Team</th>
+                                    <th>Name Project</th>
+                                    <th>Start date</th>
+                                    <th>End date</th>
+                                    <th>Finish date</th>
                                     <th>Status</th>
-                                    
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>App Development</td>
-                                    <td>15 Aug, 2020</td>
-                                    <td>22 Aug, 2020</td>
-                                    <td class="td-team">
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="badge success">Success</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>App Development</td>
-                                    <td>15 Aug, 2020</td>
-                                    <td>22 Aug, 2020</td>
-                                    <td class="td-team">
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="badge success">Success</span>
-                                    </td>
-                                </tr>
-                                <tr>
+                                <?php 
+                                    $sql4 = "SELECT * FROM tb_team, tb_homework, tb_mark 
+                                    Where tb_team.id_homework = tb_homework.id_homework
+                                    AND tb_homework.id_homework = tb_mark.id_homework 
+                                    AND tb_homework.home_level = 1";
+                                    $res4 = mysqli_query($conn, $sql4);
+                                    if($res4 == TRUE)
+                                    {
+                                        $count4 = mysqli_num_rows($res4);
+                                        if($count4>0){
+                                            while($row4 = mysqli_fetch_assoc($res4))
+                                            {
+                                                $id_team = $row4['id_team'];
+                                                $name_project = $row4['name_homework'];
+                                                $start_date = $row4['start_date'];
+                                                $end_date = $row4['end_date'];
+                                                $finish_date = $row4['finish_date'];
+                                ?>
+                                                <tr>
+                                                    <td><?php echo $id_team;?></td>
+                                                    <td><?php echo $name_project?></td>
+                                                    <td><?php echo $start_date;?></td>
+                                                    <td><?php echo $end_date;?></td>
+                                                    <td><?php echo $finish_date;?></td>
+                                                    <td>
+                                                        <?php 
+                                                            $date1 = strtotime($end_date);
+                                                            $date2 =  strtotime($finish_date);
+                                                            $date3 = $date2 - $date1;
+                                                            if($date3>0)
+                                                            {
+                                                                ?>
+                                                                    <span class="badge warning">Processing</span>
+                                                                <?php
+                                                            }
+                                                            else
+                                                            {
+                                                                ?>
+                                                                    <span class="badge success">Success</span>
+                                                                <?php 
+                                                            }
+                                                        ?>
+                                                    </td>
+                                                </tr>
+                                <?php
+                                            }
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                    }
+                                        
+                                    ?>
+                                <!-- <tr>
                                     <td>3</td>
                                     <td>Logo Design</td>
                                     <td>15 Aug, 2020</td>
                                     <td>22 Aug, 2020</td>
-                                    <td class="td-team">
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="img-1">
-                                            <img src="../image/user_1.jpg" alt="">
-                                        </div>
-                                    </td>
+                                
                                     <td>
                                         <span class="badge warning">Processing</span>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
