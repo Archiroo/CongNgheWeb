@@ -1,7 +1,7 @@
 <?php
     if(!empty($_GET['file'])){
         $fileName  = basename($_GET['file']);
-        $filePath  = "../image/".$fileName;
+        $filePath  = "../image/image_database/debai/".$fileName;
         
         if(!empty($fileName) && file_exists($filePath)){
             //define header

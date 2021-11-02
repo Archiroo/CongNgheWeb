@@ -5,8 +5,8 @@ include('dashboard.php');
 <main>
     <h2>Overview</h2>
     <?php
-    if (isset($_GET['user_id'])) {
-        $user_id = $_GET['user_id'];
+    if (isset($_SESSION['user_id'])) {
+        $user_id = $_SESSION['user_id'];
         $sql1 = "SELECT id_student from tb_student where user_id = '$user_id'";
         $res1 = mysqli_query($conn, $sql1);
         if ($res1 == true) {
@@ -41,7 +41,7 @@ include('dashboard.php');
                                     <h3><?php echo $name ?></h3>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="<?php echo SITEURL; ?>/subject.php?id_subject=<?php echo $id_subject ?>&user_id=<?php echo $user_id ?>">View all</a>
+                                    <a href="<?php echo SITEURL; ?>/subject.php?id_subject=<?php echo $id_subject ?>&id_student=<?php echo $id_student ?>">View all</a>
                                 </div>
                             </div>
         <?php

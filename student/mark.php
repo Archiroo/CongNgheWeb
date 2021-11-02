@@ -49,7 +49,7 @@ if (isset($_GET['id_homework']) && isset($_GET['id_subject']) && isset($_GET['id
         $count3 = mysqli_num_rows($res3);
         if ($count3 > 0) {
             $row3 = mysqli_fetch_assoc($res3);
-            $excercise = $row3['excercise'];
+            $excercise = $row3['submit_homework'];
             $finish_date = $row3['finish_date'];
             $mark = $row3['mark'];
             $mark_status = $row3['status'];

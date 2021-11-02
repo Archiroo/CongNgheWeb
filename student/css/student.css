@@ -223,7 +223,11 @@ html{
 .homework-name .edit {
     margin-left: 60px;
 }
-
+.homework-name .body .work a{
+    text-decoration: none;
+    color: var(--rose);
+    font-size: 15px;
+}
 /* from mark */
 .main-mark{
     position: fixed;
