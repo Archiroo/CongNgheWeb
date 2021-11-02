@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 01, 2021 lúc 03:46 PM
+-- Thời gian đã tạo: Th10 02, 2021 lúc 10:43 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -43,10 +43,11 @@ CREATE TABLE `tb_homework` (
 
 INSERT INTO `tb_homework` (`id_homework`, `id_subject`, `name_homework`, `excercise`, `start_date`, `end_date`, `home_level`) VALUES
 (1, 'CSE_482', 'Tính sự bế tắc', 'baitap1.pdf', '2021-11-01 21:02:24', '2021-11-02 21:00:00', 0),
-(2, 'CSE_485', 'Thiết kế website sử dụng boostrap', 'baitap2.pdf', '2021-11-01 21:02:24', '2021-11-03 22:00:00', 0),
+(2, 'CSE_485', 'Thiết kế website sử dụng boostrap 5', 'baitap2.pdf', '2021-11-01 21:02:24', '2021-11-05 22:00:00', 0),
 (3, 'CSE_485', 'Thiết kế website bán hàng', 'baitap3.pdf', '2021-11-01 21:03:28', '2021-11-05 23:59:59', 1),
 (4, 'CSE_485', 'Thiết kế website quản lý', 'baitap3.pdf', '2021-11-01 21:04:33', '2021-11-05 00:00:00', 1),
-(5, 'CSE_486', 'Bài tập thủ tục', 'baitap2.pdf', '2021-11-01 21:05:30', '2021-11-03 21:00:00', 1);
+(5, 'CSE_486', 'Bài tập thủ tục', 'baitap2.pdf', '2021-11-01 21:05:30', '2021-11-03 21:00:00', 1),
+(7, 'CSE_482', 'Tính độ trễ trung bình', 'baitap2.pdf', '2021-11-02 00:45:27', '2021-11-04 12:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -58,7 +59,7 @@ CREATE TABLE `tb_mark` (
   `id_homework` int(11) DEFAULT NULL,
   `id_student` int(11) DEFAULT NULL,
   `number_student` int(11) DEFAULT 0,
-  `excercise` char(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `submit_homework` char(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `finish_date` datetime DEFAULT current_timestamp(),
   `mark` float DEFAULT 0,
   `status` tinyint(4) DEFAULT 0
@@ -68,11 +69,12 @@ CREATE TABLE `tb_mark` (
 -- Đang đổ dữ liệu cho bảng `tb_mark`
 --
 
-INSERT INTO `tb_mark` (`id_homework`, `id_student`, `number_student`, `excercise`, `finish_date`, `mark`, `status`) VALUES
-(1, 2, 0, 'baitap1.pdf', '2021-11-01 21:16:21', 0, 0),
-(5, 3, 0, 'baitap2.pdf', '2021-11-01 21:17:24', 9, 1),
-(2, 2, 1, 'baitap1.pdf', '2021-11-01 21:18:29', 0, 0),
-(3, 3, 1, NULL, '2021-11-01 21:18:29', 0, 0);
+INSERT INTO `tb_mark` (`id_homework`, `id_student`, `number_student`, `submit_homework`, `finish_date`, `mark`, `status`) VALUES
+(1, 2, 0, 'baitap1.zip', '2021-11-01 21:16:21', 8, 1),
+(5, 3, 0, 'baitap3.zip', '2021-11-01 21:17:24', 9, 1),
+(2, 2, 1, 'baitap2.zip', '2021-11-01 21:18:29', 0, 0),
+(3, 3, 1, 'baitap4.zip', '2021-11-01 21:18:29', 0, 0),
+(3, 5, 0, 'baitap4.zip', '2021-11-02 16:22:53', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -93,7 +95,9 @@ INSERT INTO `tb_register` (`id_student`, `id_subject`) VALUES
 (2, 'CSE_485'),
 (2, 'CSE_482'),
 (3, 'CSE_485'),
-(3, 'CSE_486');
+(3, 'CSE_486'),
+(5, 'CSE_114'),
+(5, 'CSE_482');
 
 -- --------------------------------------------------------
 
@@ -117,7 +121,10 @@ CREATE TABLE `tb_student` (
 INSERT INTO `tb_student` (`id_student`, `user_id`, `name_student`, `gender`, `image_student`, `phone`) VALUES
 (1, 1, 'Nguyễn Minh Đức', 1, 'user_1.jpg', '096 1111111'),
 (2, 2, 'Nguyễn Văn Tân', 1, 'student_1.jpg', '096 2222222'),
-(3, 9, 'Nguyễn Thúy Nga', 0, 'student_6.jpg', '096 3333333');
+(3, 9, 'Nguyễn Thúy Nga', 0, 'student_6.jpg', '096 3333333'),
+(4, 3, 'Hồ Hồng Quân', 1, 'student_4.jpg', '086 44444444'),
+(5, 10, 'Nguyễn Thanh Mai', 0, 'student_6.jpg', '096 5555555'),
+(6, 6, 'Vương Khá Ok', 1, 'student_5.jpg', '096 666666');
 
 -- --------------------------------------------------------
 
@@ -140,7 +147,8 @@ INSERT INTO `tb_subject` (`id_subject`, `name_subject`, `description`, `img_subj
 ('CSE_114', 'Tin học đại cương', 'Nhập môn lập trình', 'subject_5.jpg'),
 ('CSE_482', 'Hệ điều hành', 'Chi tiết máy tính', 'subject_4.jpg'),
 ('CSE_485', 'Công nghệ web', 'Lập trình backend website', 'subject_1.jpg'),
-('CSE_486', 'Hệ quản trị cơ sở dữ liệu', 'Database, trigger, view', 'subject_2.jpg');
+('CSE_486', 'Hệ quản trị csdl', 'Database, trigger, view', 'subject_2.jpg'),
+('CSE_492', 'Trí tuệ nhân tạo', 'Phương pháp duyệt cây tìm kiếm', 'subject_3.jpg');
 
 -- --------------------------------------------------------
 
@@ -166,14 +174,15 @@ CREATE TABLE `tb_user` (
 INSERT INTO `tb_user` (`user_id`, `user_name`, `user_pass`, `user_email`, `regisdate`, `user_level`, `user_status`, `code`) VALUES
 (1, 'admin', '12345', 'admin@gmail.com', '2021-11-01 20:44:52', 1, 1, NULL),
 (2, 'nvantan', '12345', 'nvantan@gmail.com', '2021-11-01 20:44:52', 0, 1, NULL),
-(3, 'hhquan', '12345', 'hhquan@gmail.com', '2021-11-01 20:45:43', 0, 0, NULL),
-(4, 'nmvuong', '12345', 'nmvuong@gmail.com', '2021-11-01 20:45:43', 0, 0, NULL),
+(3, 'hhquan', '12345', 'hhquan@gmail.com', '2021-11-01 20:45:43', 0, 1, NULL),
+(4, 'nmvuong', '12345', 'nmvuong@gmail.com', '2021-11-01 20:45:43', 0, 1, NULL),
 (5, 'thlong', '12345', 'thlong@mgail.com', '2021-11-01 20:46:06', 0, 0, NULL),
-(6, 'thhang', '12345', 'nthang@gmail.com', '2021-11-01 20:47:09', 0, 0, NULL),
+(6, 'thhang', '12345', 'nthang@gmail.com', '2021-11-01 20:47:09', 0, 1, NULL),
 (7, 'tbloan', '12345', 'tbloan@gmail.com', '2021-11-01 20:47:44', 0, 0, NULL),
 (8, 'ntthuy', '12345', 'ntthuy@gmail.com', '2021-11-01 20:47:44', 0, 0, NULL),
 (9, 'ntnga', '12345', 'ntnga@gmail.com', '2021-11-01 20:48:40', 0, 1, NULL),
-(10, 'ntmai', '12345', 'ntmai@gmail.com', '2021-11-01 20:48:40', 0, 0, NULL);
+(10, 'ntmai', '12345', 'ntmai@gmail.com', '2021-11-01 20:48:40', 1, 1, NULL),
+(11, 'tqcong', '12345', 'tqcong@gmail.com', '2021-11-01 22:47:35', 0, 0, NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -227,19 +236,13 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT cho bảng `tb_homework`
 --
 ALTER TABLE `tb_homework`
-  MODIFY `id_homework` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT cho bảng `tb_student`
---
-ALTER TABLE `tb_student`
-  MODIFY `id_student` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_homework` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
