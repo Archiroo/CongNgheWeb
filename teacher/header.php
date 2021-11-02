@@ -5,6 +5,7 @@
         header("Location:../index.php");
     }
 
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -66,12 +67,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="mark.php">
-                        <span class="fas fa-poll"></span>
-                        <span>Mark</span>
-                    </a>
-                </li>
-                <li>
                     <a href="../sign-out.php">
                         <span class="fas fa-power-off"></span>
                         <span>Log out</span>
@@ -92,4 +87,5 @@
                     <img src="../image/user_1.jpg" alt="">
                 </div>
             </div>
-        </header>
+        </header> 
+              

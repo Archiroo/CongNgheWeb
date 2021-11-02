@@ -77,8 +77,8 @@
                 <span>Phone</span>
                 <input type="text" class="form-control" name="phone" value="<?php echo $phone; ?>">
             </div>            
-            <input type="submit" name="submit" value="Update student" class="btn btn-add btn-add-connect">
-            <a href="student.php" class="btn btn-add btn-cancel">Cancel</a>
+            <input type="submit" name="submit" value="Update student" class="btn btn-add btn-add-connect" style="margin-bottom: 3rem;">
+            <a href="student.php" class="btn btn-add btn-cancel" style="margin-bottom: 3rem;">Cancel</a>
         </form>
 <?php
     include('footer.php');

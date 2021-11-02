@@ -77,6 +77,7 @@
             </div>           
             <input type="submit" name="submit" value="Update homework" class="btn btn-add btn-add-connect">
             <a href="homework.php" class="btn btn-add btn-cancel">Cancel</a>
+            <div style="margin-bottom: 3rem;">
         </form>
 <?php
     include('footer.php');

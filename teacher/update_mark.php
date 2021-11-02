@@ -66,8 +66,9 @@
                 <span>Mark</span>
                 <input type="text" class="form-control read" name="mark" value="<?php echo $mark;?>">
             </div>
-            <input type="submit" name="submit" value="Update class" class="btn btn-add btn-add-connect">
-            <a href="mark.php" class="btn btn-add btn-cancel">Cancel</a>
+            <input type="submit" name="submit" value="Update mark" class="btn btn-add btn-add-connect">
+            <a href="contact.php" class="btn btn-add btn-cancel">Cancel</a>
+            <div style="margin-bottom: 3rem;">
         </form>
 <?php
     include('footer.php');

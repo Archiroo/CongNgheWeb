@@ -16,7 +16,6 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Pass</th>
                                     <th>Email</th>
                                     <th>Regisdate</th>
                                     <th>Level</th>
@@ -48,8 +47,7 @@
                                 ?>
                                                 <tr>
                                                     <td><?php echo $user_id; ?></td>
-                                                    <td><?php echo $user_name; ?></td>                                 
-                                                    <td><?php echo $user_pass; ?></td>                                 
+                                                    <td><?php echo $user_name; ?></td>                                                                
                                                     <td><?php echo $email; ?></td>                                 
                                                     <td><?php echo $date; ?></td> 
                                                     <td class="status"><?php echo $level ?></td>                                
