@@ -75,7 +75,7 @@
                                                     </td>
                                                     <td><?php echo $phone;?></td>
                                                     <td>
-                                                        <a href="delete_register.php?id_student=<?php echo $id_std;?>,id_sub=<?php echo $id;?>" class="update-icon">
+                                                        <a href="delete_register.php?id_sub=<?php echo $id;?>&&id_std=<?php echo $id_std;?>" class="update-icon">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </td>

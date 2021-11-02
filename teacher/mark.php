@@ -1,5 +1,9 @@
 <?php
     include('header.php');
+    if(isset($_GET['id_sub'])){
+        $id_sub = $_GET['id_sub'];
+        $id_home = $_GET['id_home'];
+    }
 ?>
     <main>
         <section class="recent">
@@ -27,7 +31,7 @@
                                                     name_student, id_subject, submit_homework, end_date, finish_date, mark, status
                                             FROM tb_homework, tb_mark, tb_student
                                             WHERE tb_homework.id_homework = tb_mark.id_homework 
-                                            AND tb_student.id_student = tb_mark.id_student and home_level = 0";
+                                            AND tb_student.id_student = tb_mark.id_student and home_level = 0 and tb_mark.id_homework = '$id_home'";
                                     $res = mysqli_query($conn, $sql);
                                     if($res == TRUE)
                                     {
@@ -36,9 +40,7 @@
                                         {
                                             while($row = mysqli_fetch_assoc($res))
                                             {
-                                                $id_home = $row['id_homework'];
                                                 $id_std = $row['id_student'];
-                                                $id_sub = $row['id_subject'];
                                                 $name_std = $row['name_student'];
                                                 $excer = $row['submit_homework'];
                                                 $end_date = $row['end_date'];
@@ -79,7 +81,7 @@
                                                         ?>
                                                     </td>                                                                                                                                 
                                                     <td>
-                                                        <a href="update_mark.php?id_home=<?php echo $id_home ?>&&id_student=<?php echo $id_std; ?>" class="update-icon">
+                                                        <a href="update_mark.php?id_sub=<?php echo $id_sub;?>&&id_home=<?php echo $id_home;?>&&id_std=<?php echo $id_std; ?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                     </td>

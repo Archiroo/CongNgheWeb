@@ -1,28 +1,25 @@
 <?php
     include('header.php');
+    if(isset($_GET['id_sub'])){
+        $id_sub = $_GET['id_sub'];
+        $id_std = $_GET['id_std'];
+        $id_home = $_GET['id_home'];
+    }
 ?>
     <main>
         <!-- CODE PHP -->
         <?php
-            if(isset($_GET['id_home']))
-            {
-                $id_home = $_GET['id_home'];
-                $id_std = $_GET['id_student'];
-            }
-            $sql = "SELECT tb_homework.id_homework, tb_student.id_student, 
-                    name_student,id_subject, submit_homework, end_date, finish_date, mark, status
-                    FROM tb_homework, tb_mark, tb_student
-                    WHERE tb_homework.id_homework = tb_mark.id_homework 
-                    AND tb_student.id_student = tb_mark.id_student and home_level = 0 
-                    AND tb_homework.id_homework = '$id_home' and tb_student.id_student = '$id_std'";
+            $sql = "SELECT tb_homework.id_homework, name_student, end_date, finish_date, mark, status
+                    FROM tb_homework, tb_student, tb_mark, tb_subject
+                    WHERE tb_student.id_student = tb_mark.id_student AND tb_mark.id_homework = tb_homework.id_homework and home_level = 0
+                    AND tb_homework.id_homework = '$id_home' AND tb_student.id_student = '$id_std'
+                    GROUP BY tb_homework.id_homework, name_student, end_date, finish_date, mark, status";
             $res = mysqli_query($conn, $sql);
             $count = mysqli_num_rows($res);
             if($count==1)
             {
                 $row = mysqli_fetch_assoc($res);
-                $id_sub = $row['id_subject'];
                 $name_std = $row['name_student'];
-                $excer = $row['submit_homework'];
                 $end_date = $row['end_date'];
                 $finish = $row['finish_date'];
                 $mark = $row['mark'];
@@ -38,7 +35,7 @@
                 $res2 = mysqli_query($conn, $sql2);
                 if($res2 == TRUE)
                 {
-                    header("Location:mark.php");
+                    header("Location:contact.php");
                     $sql3 = "UPDATE tb_mark SET status = 1 WHERE id_homework ='$id_home' AND id_student = '$id_std'";
                     $res3 = mysqli_query($conn, $sql3);
                 }
@@ -47,7 +44,7 @@
         ?>
             <div class="form-group first-span">
                 <span>ID homework</span>
-                <input type="text" class="form-control read" readonly value="<?php echo $id_home;?>">
+                <input type="text" class="form-control read" readonly value="<?php echo $id_home?>">
             </div>
             <div class="form-group">
                 <span>Name</span>

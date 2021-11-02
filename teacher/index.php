@@ -8,8 +8,13 @@
                 <div class="card-body">
                     <span class="fas fa-user-graduate"></span>
                     <div>
+                        <?php
+                            $sql = "SELECT * FROM tb_student";
+                            $res = mysqli_query($conn, $sql);
+                            $count = mysqli_num_rows($res);
+                        ?>
                         <h5>Student</h5>
-                        <h4>10</h4>
+                        <h4><?php echo $count; ?></h4>
                         <a href="student.php">
                             View all
                         </a>
@@ -20,8 +25,13 @@
                 <div class="card-body">
                     <span class="fas fa-book-open"></span>
                     <div>
+                        <?php
+                            $sql1 = "SELECT * FROM tb_subject";
+                            $res1 = mysqli_query($conn, $sql1);
+                            $count1 = mysqli_num_rows($res1);
+                        ?>
                         <h5>Subject</h5>
-                        <h4>5</h4>
+                        <h4><?php echo $count1; ?></h4>
                         <a href="subject.php">
                             View all
                         </a>
@@ -32,9 +42,14 @@
                 <div class="card-body">
                     <span class="fas fa-user-tie"></span>
                     <div>
-                        <h5>Teacher</h5>
-                        <h4>3</h4>
-                        <a href="teacher.php">
+                        <h5>Homework</h5>
+                        <?php
+                            $sql2 = "SELECT * FROM tb_homework where home_level=0";
+                            $res2 = mysqli_query($conn, $sql2);
+                            $count2 = mysqli_num_rows($res2);
+                        ?>
+                        <h4><?php echo $count2;?></h4>
+                        <a href="homework.php">
                             View all
                         </a>
                     </div>
@@ -44,8 +59,13 @@
                 <div class="card-body">
                     <span class="fas fa-folder"></span>
                     <div>
+                        <?php
+                            $sql3 = "SELECT * FROM tb_homework where home_level=1";
+                            $res3 = mysqli_query($conn, $sql2);
+                            $count3 = mysqli_num_rows($res3);
+                        ?>
                         <h5>Projects</h5>
-                        <h4>3</h4>
+                        <h4><?php echo $count3;?></h4>
                         <a href="project.php">
                             View all
                         </a>

@@ -1,13 +1,7 @@
 <?php
     include('header.php');
-    if(isset($_GET['id_subject'])){
-        $id_sub = $_GET['id_subject'];
-    }
 ?>
     <main>
-        <a href="add_homework.php?id_subject=<?php echo $id;?>" class="btn btn-add">
-            <i class="fas fa-plus"></i> Add homework
-        </a>
         <section class="recent">
             <div class="activity-grid">
                 <div class="activity-card">
@@ -22,17 +16,14 @@
                                     <th>Excercise</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
-                                    <th>Mark</th>
-                                    <th>Back</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody><tbody>
                                 <!-- CODE PHP -->
                                 <?php
-                                    $sql = "SELECT * FROM tb_homework, tb_register, tb_student
-                                            WHERE tb_homework.id_subject = '$id_sub' AND home_level = 0 AND tb_homework.id_subject = tb_register.id_subject
-                                            AND tb_register.id_student = tb_student.id_student
-                                            GROUP BY tb_homework.id_homework";
+                                    $sql = "SELECT * FROM tb_homework WHERE home_level = 1 ORDER BY id_subject";
                                     $res = mysqli_query($conn, $sql);
                                     if($res == TRUE)
                                     {
@@ -42,8 +33,7 @@
                                             while($row = mysqli_fetch_assoc($res))
                                             {
                                                 $id_home = $row['id_homework'];
-                                                $id_std = $row['id_student'];
-                                                $id_home = $row['id_homework'];
+                                                $id_sub = $row['id_subject'];
                                                 $name = $row['name_homework'];
                                                 $excer= $row['excercise'];
                                                 $sdate = $row['start_date'];
@@ -55,22 +45,23 @@
                                                     <td><?php echo $id_sub; ?></td>                                                                
                                                     <td><?php echo $name ?></td>                                 
                                                     <td>
-                                                        <a href="dowload_excercise.php?file=<?php echo $row['excercise'] ?>">
+                                                        <a href="dowload_homework.php?file=<?php echo $row['excercise'] ?>">
                                                             <?php echo $excer;?>
                                                         </a>
-                                                    </td>                                                                 
+                                                    </td>                                 
                                                     <td><?php echo $sdate; ?></td>                                 
-                                                    <td><?php echo $edate; ?></td>                                                                                                                              
+                                                    <td><?php echo $edate; ?></td>
                                                     <td>
-                                                        <a href="mark.php?id_sub=<?php echo $id_sub;?>&&id_home=<?php echo $id_home;?>" class="update-icon">
+                                                        <a href="update_homework.php?id_home=<?php echo $id_home;?>&&id_sub=<?php echo $id_sub; ?>" class="update-icon">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
-                                                    </td>                                                                                                                            
-                                                    <td>
-                                                        <a href="contact.php" class="delete-icon">
-                                                            <i class="fas fa-arrow-right"></i>
-                                                        </a>
                                                     </td>
+                                                    <td>
+                                                        <a href="delete_homework.php?id_home=<?php echo $id_home;?>&&id_sub=<?php echo $id_sub; ?>" class="delete-icon">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </a>
+                                                    </td>                                                                                                                              
+
                                                 </tr>
                                 <?php
                                             }
