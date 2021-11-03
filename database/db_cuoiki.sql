@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 02, 2021 lúc 08:12 PM
+-- Thời gian đã tạo: Th10 03, 2021 lúc 06:09 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -58,7 +58,6 @@ INSERT INTO `tb_homework` (`id_homework`, `id_subject`, `name_homework`, `excerc
 CREATE TABLE `tb_mark` (
   `id_homework` int(11) DEFAULT NULL,
   `id_student` int(11) DEFAULT NULL,
-  `number_student` int(11) DEFAULT 0,
   `submit_homework` char(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `finish_date` datetime DEFAULT current_timestamp(),
   `mark` float DEFAULT 0,
@@ -69,19 +68,21 @@ CREATE TABLE `tb_mark` (
 -- Đang đổ dữ liệu cho bảng `tb_mark`
 --
 
-INSERT INTO `tb_mark` (`id_homework`, `id_student`, `number_student`, `submit_homework`, `finish_date`, `mark`, `status`) VALUES
-(1, 2, 0, 'baitap1.zip', '2021-11-01 21:16:21', 9, 1),
-(5, 3, 0, 'baitap3.zip', '2021-11-01 21:17:24', 9, 1),
-(2, 2, 1, 'baitap2.zip', '2021-11-01 21:18:29', 0, 0),
-(3, 3, 1, 'baitap4.zip', '2021-11-01 21:18:29', 0, 0),
-(3, 5, 0, 'baitap4.zip', '2021-11-02 16:22:53', 0, 0),
-(1, 5, 0, 'baitaip1.zip', '2021-11-02 20:11:06', 7, 1),
-(1, 3, 0, 'baitap2.zip', '2021-11-02 20:11:06', 10, 1),
-(7, 2, 0, 'baitaip1.zip', '2021-11-02 20:13:16', 9, 1),
-(7, 3, 0, 'baitap3.zip', '2021-11-02 20:13:16', 0, 0),
-(7, 5, 0, 'baitap2.zip', '2021-11-02 20:21:05', 0, 0),
-(2, 4, 0, 'baitap2.zip', '2021-11-02 20:25:24', 0, 0),
-(2, 5, 0, 'baitap1.zip', '2021-11-02 20:27:32', 0, 0);
+INSERT INTO `tb_mark` (`id_homework`, `id_student`, `submit_homework`, `finish_date`, `mark`, `status`) VALUES
+(1, 2, 'baitap1.zip', '2021-11-01 21:16:21', 9, 1),
+(5, 7, 'baitap3.zip', '2021-11-01 21:17:24', 9, 1),
+(2, 2, 'baitap2.zip', '2021-11-01 21:18:29', 0, 0),
+(1, 5, 'baitaip1.zip', '2021-11-02 20:11:06', 7, 1),
+(1, 3, 'baitap2.zip', '2021-11-02 20:11:06', 10, 1),
+(7, 2, 'baitaip1.zip', '2021-11-02 20:13:16', 9, 1),
+(7, 3, 'baitap3.zip', '2021-11-02 20:13:16', 0, 0),
+(7, 5, 'baitap2.zip', '2021-11-02 20:21:05', 0, 0),
+(2, 4, 'baitap2.zip', '2021-11-02 20:25:24', 0, 0),
+(2, 5, 'baitap1.zip', '2021-11-02 20:27:32', 0, 0),
+(4, 5, NULL, '2021-11-08 09:30:00', 0, 0),
+(3, 2, 'baitap2.zip', '2021-11-10 10:00:00', 0, 0),
+(3, 4, 'baitap2.zip', '2021-11-10 10:00:00', 0, 0),
+(3, 6, 'baitap2.zip', '2021-11-10 10:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -186,8 +187,8 @@ CREATE TABLE `tb_team` (
 
 INSERT INTO `tb_team` (`id_team`, `id_homework`, `name_std1`, `name_std2`, `name_std3`) VALUES
 (1, 3, 'Nguyễn Văn Tân', 'Hồ Hồng Quân', 'Nguyễn Minh Vương'),
-(2, 2, 'Nguyễn Quang Linh', NULL, NULL),
-(3, 5, 'Trịnh Hoàng Long', 'Nguyễn Thúy Nga', NULL);
+(2, 4, 'Nguyễn Thanh Mai', NULL, NULL),
+(3, 5, 'Trịnh Hoàng Long', NULL, NULL);
 
 -- --------------------------------------------------------
 

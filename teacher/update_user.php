@@ -72,6 +72,8 @@
             </div>            
             <input type="submit" name="submit" value="Update user" class="btn btn-add btn-add-connect">
             <a href="user.php" class="btn btn-add btn-cancel">Cancel</a>
+            <div style="margin-bottom: 5rem;">
+            </div>
         </form>
 <?php
     include('footer.php');
