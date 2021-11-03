@@ -81,20 +81,20 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>ID Team</th>
-                                    <th>Name Project</th>
+                                    <th>Team</th>
+                                    <th>Project</th>
                                     <th>Start date</th>
                                     <th>End date</th>
                                     <th>Finish date</th>
+                                    <th>Student</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                    $sql4 = "SELECT * FROM tb_team, tb_homework, tb_mark 
-                                    Where tb_team.id_homework = tb_homework.id_homework
-                                    AND tb_homework.id_homework = tb_mark.id_homework 
-                                    AND tb_homework.home_level = 1";
+                                    $sql4 = "SELECT * FROM tb_team, tb_homework, tb_mark, tb_student 
+                                            WHERE tb_team.id_homework = tb_homework.id_homework and home_level = 1
+                                            and tb_mark.id_student = tb_student.id_student and tb_homework.id_homework = tb_mark.id_homework";
                                     $res4 = mysqli_query($conn, $sql4);
                                     if($res4 == TRUE)
                                     {
@@ -107,6 +107,7 @@
                                                 $start_date = $row4['start_date'];
                                                 $end_date = $row4['end_date'];
                                                 $finish_date = $row4['finish_date'];
+                                                $img_std = $row4['image_student'];
                                 ?>
                                                 <tr>
                                                     <td><?php echo $id_team;?></td>
@@ -114,6 +115,11 @@
                                                     <td><?php echo $start_date;?></td>
                                                     <td><?php echo $end_date;?></td>
                                                     <td><?php echo $finish_date;?></td>
+                                                    <td class="td-team" style="margin-left: 2.5rem;">
+                                                        <div class="img-1">
+                                                            <img src="../image/<?php echo $img_std;?>" alt="">
+                                                        </div>
+                                                    </td>
                                                     <td>
                                                         <?php 
                                                             $date1 = strtotime($end_date);
